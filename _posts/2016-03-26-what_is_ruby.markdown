@@ -13,8 +13,9 @@ published: true
 
    {% for category in page.categories %} {{ category }} {% endfor %}
    
-   <img style="width:200px; length:300px; float:right; border:5px blue solid;" src="/images/Yukihiro_Matsumoto.png">
+   <img style="width:50px; length:50px;" src="/images/ruby.png">
    `Ruby:` is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan. According to its creator, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, and Lisp.
+   <img style="width:200px; length:300px; float:right; border:5px blue solid;" src="/images/Yukihiro_Matsumoto.png">
 
    `Ruby` was conceived on February 24, 1993. In a 1999 post to the ruby-talk mailing list, Ruby author `Yukihiro Matsumoto` describes some of his early ideas about the language.
 

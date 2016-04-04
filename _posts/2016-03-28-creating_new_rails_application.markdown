@@ -4,6 +4,7 @@ title: "Creating a new Rails application"
 tags: ruby on rails rails software 
 keywords: ruby rails 
 description: Starting a new Rails application and screencast.
+published: true
 ---
 
    TAGS:
@@ -45,11 +46,3 @@ Now, you are ready to `Rails`
 {% highlight ruby %}
 rails new webalone
 {% endhighlight %}
-
-<!--
-
-<iframe width="100%" height="350" src="http://www.youtube.com/embed/WO82PoAczTc" frameborder="0"> </iframe> 
-
--->
-
-

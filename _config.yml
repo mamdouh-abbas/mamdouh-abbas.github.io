@@ -1,0 +1,20 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Web 4 Sons
+email: mamdouhabbassalama@gmail.com
+description: Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML
+# baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://mamdouh-abbas.github.io" # the base hostname & protocol for your site
+twitter_username: mamdouh_farh
+github_username:  mamdouh-abbas
+gems: [jekyll-paginate,jekyll-sitemap]
+paginate: 10
+
+# Build settings
+markdown: kramdown

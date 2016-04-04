@@ -5,9 +5,40 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://mamdouh-abbas.github.io/</link>
     <atom:link href="http://mamdouh-abbas.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 01:50:42 +0200</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 01:50:42 +0200</lastBuildDate>
+    <pubDate>Mon, 04 Apr 2016 02:37:27 +0200</pubDate>
+    <lastBuildDate>Mon, 04 Apr 2016 02:37:27 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>What is Ruby on Rails</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What is Rails?&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.&lt;/p&gt;
+
+&lt;p&gt;Rails is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.&lt;/p&gt;
+
+&lt;p&gt;The Rails philosophy includes two major guiding principles:&lt;/p&gt;
+
+&lt;p&gt;Don’t Repeat Yourself: DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.&lt;/p&gt;
+
+&lt;p&gt;Convention Over Configuration: Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        
+      </item>
     
       <item>
         <title>Creating a new Rails application</title>

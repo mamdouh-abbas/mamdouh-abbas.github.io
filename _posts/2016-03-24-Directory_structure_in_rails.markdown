@@ -13,7 +13,7 @@ published: true
 
   The root directory of `rails` application has a number of auto-generated files and folders that make up the structure of a `Rails` application.
 <table border='2'>
-  <tr>
+  <tr style="color:red;">
 <td>File/</td><td>Folder Purpose</td>
 </tr>
   <tr>

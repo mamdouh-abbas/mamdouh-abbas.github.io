@@ -14,7 +14,7 @@ published: true
 First, We assume that you installed `Ruby`, you can know that using :
 
 {% highlight ruby %}
-ruby --v
+ruby -v
 {% endhighlight %}
 
 Then, you need to install `Rails`:
@@ -32,17 +32,47 @@ gem install rails --no-ri --no-rdoc
 Also, you can know its version using :
 
 {% highlight ruby %}
-rails --v
+rails -v
 {% endhighlight %}
 
 Now, you are ready to `Rails`
 
-> 1. Open a terminal
+> - Open a terminal
 >
-> 2. Go to the parent folder you want to build you application there.
+> - Go to the parent folder you want to build you application there.
 >
-> 3. Type the following line and press `Enter`.
+> - Type the following line and press `Enter`.
 
 {% highlight ruby %}
-rails new webalone
+rails new autos
 {% endhighlight %}
+
+>
+> - This will generate a directory called `autos` which contains the <a href="/2016/03/24/Directory_structure_in_rails">rails application directory structure</a>.
+>
+> - Change directory to `autos`.
+
+{% highlight ruby %}
+cd autos
+{% endhighlight %}
+
+>
+> - Fire up the `rails server`.
+
+
+{% highlight ruby %}
+rails server 
+or 
+rails s
+{% endhighlight %}
+
+>
+> - Then,browse to `localhost:3000`.
+> - You will see this page:
+
+<img src="/images/rails_welcome.png" alt="rails welcome page" title="rails welcome page">
+
+
+
+
+

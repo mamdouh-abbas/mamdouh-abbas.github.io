@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Directory Structure In Rails</title>
+  <title>Migrating Database</title>
 
   
-  <meta name="description" content="Explaining the directory structure in Rails application">
+  <meta name="description" content="Migrating database in rails application.">
   
 
-  <meta name="keywords" content="directory structure rails ruby">
+  <meta name="keywords" content="ruby rails migrate database">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/24/Directory_structure_in_rails.html">
+  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/24/migrating_database.html">
   <link rel="alternate" type="application/rss+xml" title="Web 4 Sons" href="http://mamdouh-abbas.github.io/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -77,77 +77,43 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Directory Structure In Rails</h2>
+    <h2 class="post-title" itemprop="name headline">Migrating Database</h2>
     <p class="post-meta"><time datetime="2016-03-24T00:00:00+02:00" itemprop="datePublished">Mar 24, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
 </code></pre>
 </div>
 
-<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
-<table border="2">
-  <tr style="color:red;">
-<td>File/</td><td>Folder Purpose</td>
-</tr>
-  <tr>
-    <td>app/</td>
-    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
-    </td>
-  </tr>
-  <tr>
-  <td>bin/</td>
-  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
-  </td>
-  </tr>
-  <tr>
-<td>config/</td>
-<td>Configure your application's routes, database, and more. 
-</td>
-</tr>
-<tr>
-<td>config.ru</td>
-<td>Rack configuration for Rack based servers used to start the application.</td>
-</tr>
-<tr>
-<td>db/</td>
- <td>Contains your current database schema, as well as the database migrations.
- </td>
-</tr>
-<tr>
-<td>Gemfile,Gemfile.lock</td>
-<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
-</tr>
-<tr>
-  <td>lib/</td><td>Extended modules for your application.</td>
-</tr>
-<tr>
-  <td>log/</td><td>Application log files.</td>
-</tr>
-<tr>
-<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
-</tr>
-<tr>
-  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
-</tr>
-<tr>
-  <td>README.rdoc</td>
-  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
-</tr>
-<tr>
-<td>Unit tests, fixtures, and other test apparatus.</td>
-<td>Testing Rails Applications.</td>
-</tr>
-<tr>
-<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
-</tr>
-<tr>
-<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
-</tr>
-</table>
+<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
+
+<p>Or converting ruby code to build database tables, columns, properties, and so on.</p>
+
+<p>This can be done using <code class="highlighter-rouge">rake</code> or “ruby make” command.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamp in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_cars</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
+
+<p>This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).</p>
+
+<p>Ex: If you create rails application via scaffold, you must make migration to create the database tables as :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">model</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
+<span class="n">or</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">model</span> <span class="n">year</span><span class="ss">:integer</span> </code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.</p>
+
+<p>Then after making migration as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
 
   </div>
 
@@ -160,8 +126,8 @@
 */
 
 var disqus_config = function () {
-this.page.url = /2016/03/24/Directory_structure_in_rails.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = /2016/03/24/Directory_structure_in_rails //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = /2016/03/24/migrating_database.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = /2016/03/24/migrating_database //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

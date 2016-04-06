@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Directory Structure In Rails"
-tags:  rails ruby
-keywords: rails ruby
+tags: directory structure rails ruby
+keywords: directory structure rails ruby
 description: Explaining the directory structure in Rails application
 published: true
 ---

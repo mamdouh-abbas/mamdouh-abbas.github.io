@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>What is Ruby on Rails</title>
+  <title>Directory Structure In Rails</title>
 
   
-  <meta name="description" content="What is Ruby on Rails and its history.">
+  <meta name="description" content="Explaining the directory structure in Rails application">
   
 
-  <meta name="keywords" content="ruby rails">
+  <meta name="keywords" content="rails ruby">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html">
+  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/24/Directory_structure_in_rails.html">
   <link rel="alternate" type="application/rss+xml" title="Web 4 Sons" href="http://mamdouh-abbas.github.io/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -77,31 +77,77 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">What is Ruby on Rails</h2>
-    <p class="post-meta"><time datetime="2016-03-28T00:00:00+02:00" itemprop="datePublished">Mar 28, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Directory Structure In Rails</h2>
+    <p class="post-meta"><time datetime="2016-03-24T00:00:00+02:00" itemprop="datePublished">Mar 24, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails 
+<div class="highlighter-rouge"><pre class="highlight"><code>rails  ruby 
 </code></pre>
 </div>
 
-<p>What is Rails?</p>
-
-<p><img style="width:50px; length:50px;" src="/images/rails4.jpeg" />
-<code class="highlighter-rouge">Rails</code> is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.</p>
-
-<p><code class="highlighter-rouge">Rails</code> is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.</p>
-
-<p>The <code class="highlighter-rouge">Rails</code> philosophy includes two major guiding principles:</p>
-
-<p><code class="highlighter-rouge">Don't Repeat Yourself:</code> DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.</p>
-
-<p><code class="highlighter-rouge">Convention Over Configuration:</code> Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.</p>
-
-<p>[<a target="_blank" href="http://guides.rubyonrails.org/getting_started.html">source</a>]</p>
+<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
+<table border="2">
+  <tr>
+<td>File/</td><td>Folder Purpose</td>
+</tr>
+  <tr>
+    <td>app/</td>
+    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
+    </td>
+  </tr>
+  <tr>
+  <td>bin/</td>
+  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
+  </td>
+  </tr>
+  <tr>
+<td>config/</td>
+<td>Configure your application's routes, database, and more. 
+</td>
+</tr>
+<tr>
+<td>config.ru</td>
+<td>Rack configuration for Rack based servers used to start the application.</td>
+</tr>
+<tr>
+<td>db/</td>
+ <td>Contains your current database schema, as well as the database migrations.
+ </td>
+</tr>
+<tr>
+<td>Gemfile,Gemfile.lock</td>
+<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
+</tr>
+<tr>
+  <td>lib/</td><td>Extended modules for your application.</td>
+</tr>
+<tr>
+  <td>log/</td><td>Application log files.</td>
+</tr>
+<tr>
+<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
+</tr>
+<tr>
+  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+</tr>
+<tr>
+  <td>README.rdoc</td>
+  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
+</tr>
+<tr>
+<td>Unit tests, fixtures, and other test apparatus.</td>
+<td>Testing Rails Applications.</td>
+</tr>
+<tr>
+<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
+</tr>
+<tr>
+<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
+</tr>
+</table>
 
   </div>
 
@@ -114,8 +160,8 @@
 */
 
 var disqus_config = function () {
-this.page.url = /2016/03/28/what_is_ruby_on_rails.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = /2016/03/28/what_is_ruby_on_rails //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = /2016/03/24/Directory_structure_in_rails.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = /2016/03/24/Directory_structure_in_rails //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

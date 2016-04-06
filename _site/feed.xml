@@ -5,8 +5,8 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://mamdouh-abbas.github.io/</link>
     <atom:link href="http://mamdouh-abbas.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 04:25:51 +0200</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 04:25:51 +0200</lastBuildDate>
+    <pubDate>Wed, 06 Apr 2016 01:52:19 +0200</pubDate>
+    <lastBuildDate>Wed, 06 Apr 2016 01:52:19 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -30,7 +30,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Convention Over Configuration:&lt;/code&gt; Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.&lt;/p&gt;
 
-&lt;p&gt;[&lt;a href=&quot;http://guides.rubyonrails.org/getting_started.html&quot;&gt;source&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;[&lt;a target=&quot;_blank&quot; href=&quot;http://guides.rubyonrails.org/getting_started.html&quot;&gt;source&lt;/a&gt;]&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
         <link>http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</link>
@@ -127,12 +127,92 @@
 
 &lt;p&gt;By doing this, the machine will something something something.” They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.&lt;/p&gt;
 
-&lt;p&gt;[source: &lt;a href=&quot;https://en.wikipedia.org/wiki/Ruby_programming_language&quot;&gt;wikipedia&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;[source: &lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Ruby_programming_language&quot;&gt;wikipedia&lt;/a&gt;]&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 26 Mar 2016 00:00:00 +0200</pubDate>
         <link>http://mamdouh-abbas.github.io/2016/03/26/what_is_ruby.html</link>
         <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/26/what_is_ruby.html</guid>
+        
+        <category>ruby</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Directory Structure In Rails</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails  ruby 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The root directory of &lt;code class=&quot;highlighter-rouge&quot;&gt;rails&lt;/code&gt; application has a number of auto-generated files and folders that make up the structure of a &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; application.&lt;/p&gt;
+&lt;table border=&quot;2&quot;&gt;
+  &lt;tr&gt;
+&lt;td&gt;File/&lt;/td&gt;&lt;td&gt;Folder Purpose&lt;/td&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;app/&lt;/td&gt;
+    &lt;td&gt;Contains the controllers, models, views, helpers, mailers and assets for your application.
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;bin/&lt;/td&gt;
+  &lt;td&gt;Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+&lt;td&gt;config/&lt;/td&gt;
+&lt;td&gt;Configure your application&#39;s routes, database, and more. 
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;config.ru&lt;/td&gt;
+&lt;td&gt;Rack configuration for Rack based servers used to start the application.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;db/&lt;/td&gt;
+ &lt;td&gt;Contains your current database schema, as well as the database migrations.
+ &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gemfile,Gemfile.lock&lt;/td&gt;
+&lt;td&gt;These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;lib/&lt;/td&gt;&lt;td&gt;Extended modules for your application.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;log/&lt;/td&gt;&lt;td&gt;Application log files.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public/&lt;/td&gt;&lt;td&gt;The only folder seen by the world as-is. Contains static files and compiled assets.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Rakefile&lt;/td&gt;&lt;td&gt;This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;README.rdoc&lt;/td&gt;
+  &lt;td&gt;This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unit tests, fixtures, and other test apparatus.&lt;/td&gt;
+&lt;td&gt;Testing Rails Applications.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tmp/&lt;/td&gt;&lt;td&gt;Temporary files (like cache, pid, and session files).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vendor/&lt;/td&gt;&lt;td&gt;A place for all third-party code. In a typical Rails application this includes vendored gems.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Thu, 24 Mar 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/03/24/Directory_structure_in_rails.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/24/Directory_structure_in_rails.html</guid>
+        
+        <category>rails</category>
         
         <category>ruby</category>
         

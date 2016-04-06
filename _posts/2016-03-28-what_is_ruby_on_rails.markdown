@@ -26,4 +26,4 @@ The `Rails` philosophy includes two major guiding principles:
 
 `Convention Over Configuration:` Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.
 
-[<a href="http://guides.rubyonrails.org/getting_started.html">source</a>]
+[<a target="_blank" href="http://guides.rubyonrails.org/getting_started.html">source</a>]

@@ -81,3 +81,6 @@ ctrl + c
 Also, Note that you don't need to restart rails server every time you make changes to you application as long as you are in development environment.
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/MMUMMAUTq_Y" frameborder="0" allowfullscreen></iframe>
+
+
+

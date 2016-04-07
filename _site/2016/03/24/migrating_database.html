@@ -88,9 +88,9 @@
 </code></pre>
 </div>
 
-<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
+<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
 
-<p>Or converting ruby code to build database tables, columns, properties, and so on.</p>
+<p>Or converting ruby code to build database tables, columns, properties, changes, and so on.</p>
 
 <p>This can be done using <code class="highlighter-rouge">rake</code> or “ruby make” command.</p>
 
@@ -113,6 +113,10 @@
 <p>Then after making migration as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
 
   </div>

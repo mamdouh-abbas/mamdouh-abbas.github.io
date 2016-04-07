@@ -72,7 +72,12 @@ rails s
 
 <img src="/images/rails_welcome.png" alt="rails welcome page" title="rails welcome page">
 
+Note that you can stop rails server using 
 
+{% highlight ruby %}
+ctrl + c
+{% endhighlight %}
 
+Also, Note that you don't need to restart rails server every time you make changes to you application as long as you are in development environment.
 
-
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/MMUMMAUTq_Y" frameborder="0" allowfullscreen></iframe>

@@ -11,9 +11,9 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
-`Migrating Database`: After any changes on database in rails application, you must assure that changes have been applied to the database it self, this is called `Migration`.
+`Migrating Database`: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called `Migration`.
 
-Or converting ruby code to build database tables, columns, properties, and so on.
+Or converting ruby code to build database tables, columns, properties, changes, and so on.
 
 This can be done using `rake` or "ruby make" command.
 
@@ -45,3 +45,8 @@ Then after making migration as:
 rake db:migrate
 {% endhighlight %}
 
+Note that you can undo this migration using 
+
+{% highlight ruby %}
+rake db:rollback
+{% endhighlight %}

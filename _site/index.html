@@ -207,6 +207,58 @@
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/MMUMMAUTq_Y" frameborder="0" allowfullscreen=""></iframe>
 
+<p><br />
+<br /></p>
+
+<p>Now, let’s start our <code class="highlighter-rouge">autos</code> application:</p>
+
+<p>First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">model</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
+<span class="n">or</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">model</span> <span class="n">year</span><span class="ss">:integer</span></code></pre></figure>
+
+<p>This single line will create:</p>
+
+<blockquote>
+
+  <p><code class="highlighter-rouge">car</code> model</p>
+
+  <p><code class="highlighter-rouge">cars</code> controller</p>
+
+  <p><code class="highlighter-rouge">cars</code> views</p>
+
+  <p><code class="highlighter-rouge">cars</code> routes</p>
+
+  <p><code class="highlighter-rouge">cars</code> tests</p>
+
+  <p><code class="highlighter-rouge">cars</code> migration file</p>
+
+</blockquote>
+
+<p>Then we need to create <code class="highlighter-rouge">cars</code> database table using :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>This line will create the <code class="highlighter-rouge">cars</code> table and its database schema in <code class="highlighter-rouge">db/</code> folder.</p>
+
+<p>Now, you are ready to browse you application and make <code class="highlighter-rouge">CRUD</code> operations;</p>
+
+<p><code class="highlighter-rouge">CRUD</code> means :</p>
+
+<blockquote>
+
+  <p><code class="highlighter-rouge">C</code> for <code class="highlighter-rouge">Create</code></p>
+
+  <p><code class="highlighter-rouge">R</code> for <code class="highlighter-rouge">Read</code></p>
+
+  <p><code class="highlighter-rouge">U</code> for <code class="highlighter-rouge">Update</code></p>
+
+  <p><code class="highlighter-rouge">D</code> for <code class="highlighter-rouge">Delete</code></p>
+
+</blockquote>
+
+<p>Now, browse to <code class="highlighter-rouge">localhost:3000</code>, you will see the welcome page for rails application, so browse to <code class="highlighter-rouge">localhost:3000/cars</code> .</p>
 
   </div> -->
 

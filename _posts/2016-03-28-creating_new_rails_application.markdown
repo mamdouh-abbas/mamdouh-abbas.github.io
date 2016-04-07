@@ -82,5 +82,55 @@ Also, Note that you don't need to restart rails server every time you make chang
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/MMUMMAUTq_Y" frameborder="0" allowfullscreen></iframe>
 
+<br>
+<br>
 
+Now, let's start our `autos` application:
 
+First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.
+
+ {% highlight ruby %}
+rails generate scaffold car model:string year:integer
+or
+rails g scaffold car model year:integer
+{% endhighlight %}
+
+This single line will create:
+
+>
+> `car` model
+>
+> `cars` controller
+>
+> `cars` views
+>
+> `cars` routes
+>
+> `cars` tests
+>
+> `cars` migration file
+>
+
+Then we need to create `cars` database table using :
+
+{% highlight ruby %}
+rake db:migrate
+{% endhighlight %}
+
+This line will create the `cars` table and its database schema in `db/` folder.
+
+Now, you are ready to browse you application and make `CRUD` operations;
+
+`CRUD` means :
+
+>
+> `C` for `Create`
+>
+> `R` for `Read`
+>
+> `U` for `Update`
+>
+> `D` for `Delete`
+>
+
+Now, browse to `localhost:3000`, you will see the welcome page for rails application, so browse to `localhost:3000/cars` .

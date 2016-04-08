@@ -5,9 +5,159 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://mamdouh-abbas.github.io/</link>
     <atom:link href="http://mamdouh-abbas.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Apr 2016 13:47:14 +0200</pubDate>
-    <lastBuildDate>Thu, 07 Apr 2016 13:47:14 +0200</lastBuildDate>
+    <pubDate>Sat, 09 Apr 2016 01:15:50 +0200</pubDate>
+    <lastBuildDate>Sat, 09 Apr 2016 01:15:50 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Options for rails command line</title>
+        <description>&lt;p&gt;rails -h
+Usage:
+  rails new APP_PATH [options]&lt;/p&gt;
+
+&lt;p&gt;Options:&lt;/p&gt;
+&lt;table border=&quot;2&quot;&gt;
+&lt;tr&gt;
+	&lt;th&gt; Option
+	&lt;/th&gt;
+	&lt;th&gt; Details
+	&lt;/th&gt;
+&lt;tr&gt;
+&lt;td&gt;-r, [--ruby=PATH]&lt;/td&gt;
+  &lt;td&gt;# Path to the Ruby binary of your choice&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;-m, [--template=TEMPLATE]&lt;/td&gt;
+  &lt;td&gt;# Path to some application template (can be a filesystem path or URL)&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--skip-gemfile], [--no-skip-gemfile]&lt;/td&gt;
+      &lt;td&gt;# Don&#39;t create a Gemfile&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;
+  -B, [--skip-bundle], [--no-skip-bundle]
+  &lt;/td&gt;
+  &lt;td&gt;
+  # Don&#39;t run bundle install
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-G, [--skip-git], [--no-skip-git]&lt;/td&gt;
+  &lt;td&gt;# Skip .gitignore file&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--skip-keeps], [--no-skip-keeps]&lt;/td&gt;
+      &lt;td&gt;# Skip source control .keep files&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-O, [--skip-active-record], [--no-skip-active-record]&lt;/td&gt;
+  &lt;td&gt;# Skip Active Record files&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;-S, [--skip-sprockets], [--no-skip-sprockets]&lt;/td&gt;
+  &lt;td&gt;# Skip Sprockets files&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;[--skip-spring], [--no-skip-spring]&lt;/td&gt;
+      &lt;td&gt;# Don&#39;t install Spring application preloader&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;tr&gt;
+ &lt;td&gt;-d, [--database=DATABASE]&lt;/td&gt;
+  &lt;td&gt;# Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-j, [--javascript=JAVASCRIPT]&lt;/td&gt;
+  &lt;td&gt;# Preconfigure for selected JavaScript library# Default: jquery&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-J, [--skip-javascript], [--no-skip-javascript]&lt;/td&gt;
+  &lt;td&gt;# Skip JavaScript files&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--dev], [--no-dev]&lt;/td&gt;
+      &lt;td&gt;# Setup the application with Gemfile pointing to your Rails checkout&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--edge], [--no-edge]&lt;/td&gt;
+      &lt;td&gt;# Setup the application with Gemfile pointing to Rails repository&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--skip-turbolinks], [--no-skip-turbolinks]&lt;/td&gt;
+      &lt;td&gt;# Skip turbolinks gem&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-T, [--skip-test-unit], [--no-skip-test-unit]&lt;/td&gt;
+  &lt;td&gt;# Skip Test::Unit files&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--rc=RC]&lt;/td&gt;
+      &lt;td&gt;# Path to file containing extra configuration options for rails command&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;[--no-rc], [--no-no-rc]&lt;/td&gt;
+      &lt;td&gt;# Skip loading of extra configuration options from .railsrc file&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td colspan=&quot;2&quot;&gt;Runtime options:&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-f, [--force]&lt;/td&gt;
+  &lt;td&gt;# Overwrite files that already exist
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-p, [--pretend], [--no-pretend]
+  &lt;/td&gt;
+  &lt;td&gt;# Run but do not make any changes
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;
+  -q, [--quiet], [--no-quiet]&lt;/td&gt;
+  &lt;td&gt;# Suppress status output
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;-s, [--skip], [--no-skip]&lt;/td&gt;
+  &lt;td&gt;# Skip files that already exist
+  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td colspan=&quot;2&quot;&gt;
+Rails options:
+&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+&lt;td&gt;-h, [--help], [--no-help]
+&lt;/td&gt;
+&lt;td&gt;# Show this help message and quit
+  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;-v, [--version], [--no-version]&lt;/td&gt;
+  &lt;td&gt;# Show Rails version number and quit&lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;style type=&quot;text/css&quot;&gt;
+tr&gt;td:first-child {
+	color:blue;
+}
+  &lt;/style&gt;
+&lt;/tr&gt;&lt;/table&gt;
+</description>
+        <pubDate>Tue, 29 Mar 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/03/29/Options_for_Rails_command_line.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/29/Options_for_Rails_command_line.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>options</category>
+        
+        
+      </item>
     
       <item>
         <title>What is Ruby on Rails</title>
@@ -135,9 +285,9 @@
 
 &lt;p&gt;First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This single line will create:&lt;/p&gt;
 
@@ -161,7 +311,7 @@
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This line will create the &lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; table and its database schema in &lt;code class=&quot;highlighter-rouge&quot;&gt;db/&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;This line will create the &lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; table and its database schema in &lt;code class=&quot;highlighter-rouge&quot;&gt;db/&lt;/code&gt; folder, this table has two columns, one is brand with data type string and the other is year with data type integer.&lt;/p&gt;
 
 &lt;p&gt;Now, you are ready to browse you application and make &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt; operations;&lt;/p&gt;
 

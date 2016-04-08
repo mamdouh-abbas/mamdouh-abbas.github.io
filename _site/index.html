@@ -93,6 +93,147 @@
   </div>
 <!-- This loops through the paginated posts -->
 
+<span class="date">2016-03-29 00:00:00 +0200</span>
+  <h3><a href="/2016/03/29/Options_for_Rails_command_line.html">Options for rails command line</a></h3>
+  
+  <!-- <div class="content">
+    <p>rails -h
+Usage:
+  rails new APP_PATH [options]</p>
+
+<p>Options:</p>
+<table border="2">
+<tr>
+	<th> Option
+	</th>
+	<th> Details
+	</th>
+<tr>
+<td>-r, [--ruby=PATH]</td>
+  <td># Path to the Ruby binary of your choice</td>
+  </tr>
+  <tr><td>-m, [--template=TEMPLATE]</td>
+  <td># Path to some application template (can be a filesystem path or URL)</td>
+  </tr>
+  <tr>
+  <td>[--skip-gemfile], [--no-skip-gemfile]</td>
+      <td># Don't create a Gemfile</td>
+  </tr>
+  <tr>
+  <td>
+  -B, [--skip-bundle], [--no-skip-bundle]
+  </td>
+  <td>
+  # Don't run bundle install
+  </td>
+  </tr>
+  <tr>
+  <td>-G, [--skip-git], [--no-skip-git]</td>
+  <td># Skip .gitignore file</td>
+  </tr>
+  <tr>
+  <td>[--skip-keeps], [--no-skip-keeps]</td>
+      <td># Skip source control .keep files</td>
+  </tr>
+  <tr>
+  <td>-O, [--skip-active-record], [--no-skip-active-record]</td>
+  <td># Skip Active Record files</td>
+</tr>
+<tr>
+  <td>-S, [--skip-sprockets], [--no-skip-sprockets]</td>
+  <td># Skip Sprockets files</td>
+  </tr>
+<tr>
+  <td>[--skip-spring], [--no-skip-spring]</td>
+      <td># Don't install Spring application preloader</td>
+      </tr>
+<tr>
+ <td>-d, [--database=DATABASE]</td>
+  <td># Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
+  </td>
+  </tr>
+  <tr>
+  <td>-j, [--javascript=JAVASCRIPT]</td>
+  <td># Preconfigure for selected JavaScript library# Default: jquery</td>
+  </tr>
+  <tr>
+  <td>-J, [--skip-javascript], [--no-skip-javascript]</td>
+  <td># Skip JavaScript files</td>
+  </tr>
+  <tr>
+  <td>[--dev], [--no-dev]</td>
+      <td># Setup the application with Gemfile pointing to your Rails checkout</td>
+  </tr>
+  <tr>
+  <td>[--edge], [--no-edge]</td>
+      <td># Setup the application with Gemfile pointing to Rails repository</td>
+  </tr>
+  <tr>
+  <td>[--skip-turbolinks], [--no-skip-turbolinks]</td>
+      <td># Skip turbolinks gem</td>
+      </tr>
+  <tr>
+  <td>-T, [--skip-test-unit], [--no-skip-test-unit]</td>
+  <td># Skip Test::Unit files</td>
+  </tr>
+  <tr>
+  <td>[--rc=RC]</td>
+      <td># Path to file containing extra configuration options for rails command</td>
+  </tr>
+  <tr>
+  <td>[--no-rc], [--no-no-rc]</td>
+      <td># Skip loading of extra configuration options from .railsrc file</td>
+  </tr>
+  <tr>
+  <td colspan="2">Runtime options:</td>
+  </tr>
+  <tr>
+  <td>-f, [--force]</td>
+  <td># Overwrite files that already exist
+  </td>
+  </tr>
+  <tr>
+  <td>-p, [--pretend], [--no-pretend]
+  </td>
+  <td># Run but do not make any changes
+  </td>
+  </tr>
+  <tr>
+  <td>
+  -q, [--quiet], [--no-quiet]</td>
+  <td># Suppress status output
+  </td>
+  </tr>
+  <tr>
+  <td>-s, [--skip], [--no-skip]</td>
+  <td># Skip files that already exist
+  </td>
+  </tr>
+  <tr>
+  <td colspan="2">
+Rails options:
+</td>
+  </tr>
+  <tr>
+<td>-h, [--help], [--no-help]
+</td>
+<td># Show this help message and quit
+  </td>
+  </tr>
+<tr>
+  <td>-v, [--version], [--no-version]</td>
+  <td># Show Rails version number and quit</td>
+  </tr>
+  
+  <style type="text/css">
+tr>td:first-child {
+	color:blue;
+}
+  </style>
+</tr></table>
+
+  </div> -->
+
 <span class="date">2016-03-28 00:00:00 +0200</span>
   <h3><a href="/2016/03/28/what_is_ruby_on_rails.html">What is Ruby on Rails</a></h3>
   
@@ -214,9 +355,9 @@
 
 <p>First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">model</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">brand</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
 <span class="n">or</span>
-<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">model</span> <span class="n">year</span><span class="ss">:integer</span></code></pre></figure>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">brand</span> <span class="n">year</span><span class="ss">:integer</span></code></pre></figure>
 
 <p>This single line will create:</p>
 
@@ -240,7 +381,7 @@
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>This line will create the <code class="highlighter-rouge">cars</code> table and its database schema in <code class="highlighter-rouge">db/</code> folder.</p>
+<p>This line will create the <code class="highlighter-rouge">cars</code> table and its database schema in <code class="highlighter-rouge">db/</code> folder, this table has two columns, one is brand with data type string and the other is year with data type integer.</p>
 
 <p>Now, you are ready to browse you application and make <code class="highlighter-rouge">CRUD</code> operations;</p>
 
@@ -418,6 +559,14 @@
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">Mar 29, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/03/29/Options_for_Rails_command_line.html">Options for rails command line</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">Mar 28, 2016</span>

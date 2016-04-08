@@ -90,9 +90,9 @@ Now, let's start our `autos` application:
 First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.
 
  {% highlight ruby %}
-rails generate scaffold car model:string year:integer
+rails generate scaffold car brand:string year:integer
 or
-rails g scaffold car model year:integer
+rails g scaffold car brand year:integer
 {% endhighlight %}
 
 This single line will create:
@@ -117,7 +117,7 @@ Then we need to create `cars` database table using :
 rake db:migrate
 {% endhighlight %}
 
-This line will create the `cars` table and its database schema in `db/` folder.
+This line will create the `cars` table and its database schema in `db/` folder, this table has two columns, one is brand with data type string and the other is year with data type integer.
 
 Now, you are ready to browse you application and make `CRUD` operations;
 

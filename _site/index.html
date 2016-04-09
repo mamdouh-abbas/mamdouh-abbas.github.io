@@ -93,176 +93,124 @@
   </div>
 <!-- This loops through the paginated posts -->
 
-<span class="date">2016-03-29 00:00:00 +0200</span>
-  <h3><a href="/2016/03/29/Options_for_Rails_command_line.html">Options for rails command line</a></h3>
-  
-  <!-- <div class="content">
-    <p>rails -h
-Usage:
-  rails new APP_PATH [options]</p>
-
-<p>Options:</p>
-<table border="2">
-<tr>
-	<th> Option
-	</th>
-	<th> Details
-	</th>
-<tr>
-<td>-r, [--ruby=PATH]</td>
-  <td># Path to the Ruby binary of your choice</td>
-  </tr>
-  <tr><td>-m, [--template=TEMPLATE]</td>
-  <td># Path to some application template (can be a filesystem path or URL)</td>
-  </tr>
-  <tr>
-  <td>[--skip-gemfile], [--no-skip-gemfile]</td>
-      <td># Don't create a Gemfile</td>
-  </tr>
-  <tr>
-  <td>
-  -B, [--skip-bundle], [--no-skip-bundle]
-  </td>
-  <td>
-  # Don't run bundle install
-  </td>
-  </tr>
-  <tr>
-  <td>-G, [--skip-git], [--no-skip-git]</td>
-  <td># Skip .gitignore file</td>
-  </tr>
-  <tr>
-  <td>[--skip-keeps], [--no-skip-keeps]</td>
-      <td># Skip source control .keep files</td>
-  </tr>
-  <tr>
-  <td>-O, [--skip-active-record], [--no-skip-active-record]</td>
-  <td># Skip Active Record files</td>
-</tr>
-<tr>
-  <td>-S, [--skip-sprockets], [--no-skip-sprockets]</td>
-  <td># Skip Sprockets files</td>
-  </tr>
-<tr>
-  <td>[--skip-spring], [--no-skip-spring]</td>
-      <td># Don't install Spring application preloader</td>
-      </tr>
-<tr>
- <td>-d, [--database=DATABASE]</td>
-  <td># Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
-  </td>
-  </tr>
-  <tr>
-  <td>-j, [--javascript=JAVASCRIPT]</td>
-  <td># Preconfigure for selected JavaScript library# Default: jquery</td>
-  </tr>
-  <tr>
-  <td>-J, [--skip-javascript], [--no-skip-javascript]</td>
-  <td># Skip JavaScript files</td>
-  </tr>
-  <tr>
-  <td>[--dev], [--no-dev]</td>
-      <td># Setup the application with Gemfile pointing to your Rails checkout</td>
-  </tr>
-  <tr>
-  <td>[--edge], [--no-edge]</td>
-      <td># Setup the application with Gemfile pointing to Rails repository</td>
-  </tr>
-  <tr>
-  <td>[--skip-turbolinks], [--no-skip-turbolinks]</td>
-      <td># Skip turbolinks gem</td>
-      </tr>
-  <tr>
-  <td>-T, [--skip-test-unit], [--no-skip-test-unit]</td>
-  <td># Skip Test::Unit files</td>
-  </tr>
-  <tr>
-  <td>[--rc=RC]</td>
-      <td># Path to file containing extra configuration options for rails command</td>
-  </tr>
-  <tr>
-  <td>[--no-rc], [--no-no-rc]</td>
-      <td># Skip loading of extra configuration options from .railsrc file</td>
-  </tr>
-  <tr>
-  <td colspan="2">Runtime options:</td>
-  </tr>
-  <tr>
-  <td>-f, [--force]</td>
-  <td># Overwrite files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td>-p, [--pretend], [--no-pretend]
-  </td>
-  <td># Run but do not make any changes
-  </td>
-  </tr>
-  <tr>
-  <td>
-  -q, [--quiet], [--no-quiet]</td>
-  <td># Suppress status output
-  </td>
-  </tr>
-  <tr>
-  <td>-s, [--skip], [--no-skip]</td>
-  <td># Skip files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td colspan="2">
-Rails options:
-</td>
-  </tr>
-  <tr>
-<td>-h, [--help], [--no-help]
-</td>
-<td># Show this help message and quit
-  </td>
-  </tr>
-<tr>
-  <td>-v, [--version], [--no-version]</td>
-  <td># Show Rails version number and quit</td>
-  </tr>
-  
-  <style type="text/css">
-tr>td:first-child {
-	color:blue;
-}
-  </style>
-</tr></table>
-
-  </div> -->
-
-<span class="date">2016-03-28 00:00:00 +0200</span>
-  <h3><a href="/2016/03/28/what_is_ruby_on_rails.html">What is Ruby on Rails</a></h3>
+<span class="date">2016-03-30 00:00:00 +0200</span>
+  <h3><a href="/2016/03/30/Directory_structure_in_rails.html">Directory Structure In Rails</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails 
+<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
 </code></pre>
 </div>
 
-<p>What is Rails?</p>
-
-<p><img style="width:50px; length:50px;" src="/images/rails4.jpeg" />
-<code class="highlighter-rouge">Rails</code> is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.</p>
-
-<p><code class="highlighter-rouge">Rails</code> is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.</p>
-
-<p>The <code class="highlighter-rouge">Rails</code> philosophy includes two major guiding principles:</p>
-
-<p><code class="highlighter-rouge">Don't Repeat Yourself:</code> DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.</p>
-
-<p><code class="highlighter-rouge">Convention Over Configuration:</code> Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.</p>
-
-<p>[<a target="_blank" href="http://guides.rubyonrails.org/getting_started.html">source</a>]</p>
+<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
+<table border="2">
+  <tr style="color:red;">
+<td>File/</td><td>Folder Purpose</td>
+</tr>
+  <tr>
+    <td>app/</td>
+    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
+    </td>
+  </tr>
+  <tr>
+  <td>bin/</td>
+  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
+  </td>
+  </tr>
+  <tr>
+<td>config/</td>
+<td>Configure your application's routes, database, and more. 
+</td>
+</tr>
+<tr>
+<td>config.ru</td>
+<td>Rack configuration for Rack based servers used to start the application.</td>
+</tr>
+<tr>
+<td>db/</td>
+ <td>Contains your current database schema, as well as the database migrations.
+ </td>
+</tr>
+<tr>
+<td>Gemfile,Gemfile.lock</td>
+<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
+</tr>
+<tr>
+  <td>lib/</td><td>Extended modules for your application.</td>
+</tr>
+<tr>
+  <td>log/</td><td>Application log files.</td>
+</tr>
+<tr>
+<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
+</tr>
+<tr>
+  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+</tr>
+<tr>
+  <td>README.rdoc</td>
+  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
+</tr>
+<tr>
+<td>Unit tests, fixtures, and other test apparatus.</td>
+<td>Testing Rails Applications.</td>
+</tr>
+<tr>
+<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
+</tr>
+<tr>
+<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
+</tr>
+</table>
 
   </div> -->
 
-<span class="date">2016-03-28 00:00:00 +0200</span>
-  <h3><a href="/2016/03/28/creating_new_rails_application.html">Creating a new Rails application</a></h3>
+<span class="date">2016-03-29 00:00:00 +0200</span>
+  <h3><a href="/2016/03/29/migrating_database.html">Migrating Database</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
+
+<p>Or converting ruby code to build database tables, columns, properties, changes, and so on.</p>
+
+<p>This can be done using <code class="highlighter-rouge">rake</code> or “ruby make” command.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamp in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_cars</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
+
+<p>This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).</p>
+
+<p>Ex: If you create rails application via scaffold, you must make migration to create the database tables as :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">model</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
+<span class="n">or</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">model</span> <span class="n">year</span><span class="ss">:integer</span> </code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.</p>
+
+<p>Then after making migration as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+
+  </div> -->
+
+<span class="date">2016-03-26 00:00:00 +0200</span>
+  <h3><a href="/2016/03/26/creating_new_rails_application.html">Creating a new Rails application</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
@@ -403,8 +351,176 @@ tr>td:first-child {
 
   </div> -->
 
-<span class="date">2016-03-26 00:00:00 +0200</span>
-  <h3><a href="/2016/03/26/what_is_ruby.html">What is Ruby programming language</a></h3>
+<span class="date">2016-03-25 00:00:00 +0200</span>
+  <h3><a href="/2016/03/25/Options_for_Rails_command_line.html">Options for rails command line</a></h3>
+  
+  <!-- <div class="content">
+    <p>rails -h
+Usage:
+  rails new APP_PATH [options]</p>
+
+<p>Options:</p>
+<table border="2">
+<tr>
+	<th> Option
+	</th>
+	<th> Details
+	</th>
+<tr>
+<td>-r, [--ruby=PATH]</td>
+  <td># Path to the Ruby binary of your choice</td>
+  </tr>
+  <tr><td>-m, [--template=TEMPLATE]</td>
+  <td># Path to some application template (can be a filesystem path or URL)</td>
+  </tr>
+  <tr>
+  <td>[--skip-gemfile], [--no-skip-gemfile]</td>
+      <td># Don't create a Gemfile</td>
+  </tr>
+  <tr>
+  <td>
+  -B, [--skip-bundle], [--no-skip-bundle]
+  </td>
+  <td>
+  # Don't run bundle install
+  </td>
+  </tr>
+  <tr>
+  <td>-G, [--skip-git], [--no-skip-git]</td>
+  <td># Skip .gitignore file</td>
+  </tr>
+  <tr>
+  <td>[--skip-keeps], [--no-skip-keeps]</td>
+      <td># Skip source control .keep files</td>
+  </tr>
+  <tr>
+  <td>-O, [--skip-active-record], [--no-skip-active-record]</td>
+  <td># Skip Active Record files</td>
+</tr>
+<tr>
+  <td>-S, [--skip-sprockets], [--no-skip-sprockets]</td>
+  <td># Skip Sprockets files</td>
+  </tr>
+<tr>
+  <td>[--skip-spring], [--no-skip-spring]</td>
+      <td># Don't install Spring application preloader</td>
+      </tr>
+<tr>
+ <td>-d, [--database=DATABASE]</td>
+  <td># Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
+  </td>
+  </tr>
+  <tr>
+  <td>-j, [--javascript=JAVASCRIPT]</td>
+  <td># Preconfigure for selected JavaScript library# Default: jquery</td>
+  </tr>
+  <tr>
+  <td>-J, [--skip-javascript], [--no-skip-javascript]</td>
+  <td># Skip JavaScript files</td>
+  </tr>
+  <tr>
+  <td>[--dev], [--no-dev]</td>
+      <td># Setup the application with Gemfile pointing to your Rails checkout</td>
+  </tr>
+  <tr>
+  <td>[--edge], [--no-edge]</td>
+      <td># Setup the application with Gemfile pointing to Rails repository</td>
+  </tr>
+  <tr>
+  <td>[--skip-turbolinks], [--no-skip-turbolinks]</td>
+      <td># Skip turbolinks gem</td>
+      </tr>
+  <tr>
+  <td>-T, [--skip-test-unit], [--no-skip-test-unit]</td>
+  <td># Skip Test::Unit files</td>
+  </tr>
+  <tr>
+  <td>[--rc=RC]</td>
+      <td># Path to file containing extra configuration options for rails command</td>
+  </tr>
+  <tr>
+  <td>[--no-rc], [--no-no-rc]</td>
+      <td># Skip loading of extra configuration options from .railsrc file</td>
+  </tr>
+  <tr>
+  <td colspan="2">Runtime options:</td>
+  </tr>
+  <tr>
+  <td>-f, [--force]</td>
+  <td># Overwrite files that already exist
+  </td>
+  </tr>
+  <tr>
+  <td>-p, [--pretend], [--no-pretend]
+  </td>
+  <td># Run but do not make any changes
+  </td>
+  </tr>
+  <tr>
+  <td>
+  -q, [--quiet], [--no-quiet]</td>
+  <td># Suppress status output
+  </td>
+  </tr>
+  <tr>
+  <td>-s, [--skip], [--no-skip]</td>
+  <td># Skip files that already exist
+  </td>
+  </tr>
+  <tr>
+  <td colspan="2">
+Rails options:
+</td>
+  </tr>
+  <tr>
+<td>-h, [--help], [--no-help]
+</td>
+<td># Show this help message and quit
+  </td>
+  </tr>
+<tr>
+  <td>-v, [--version], [--no-version]</td>
+  <td># Show Rails version number and quit</td>
+  </tr>
+  
+  <style type="text/css">
+tr>td:first-child {
+	color:blue;
+}
+  </style>
+</tr></table>
+
+  </div> -->
+
+<span class="date">2016-03-24 00:00:00 +0200</span>
+  <h3><a href="/2016/03/24/what_is_ruby_on_rails.html">What is Ruby on Rails</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails 
+</code></pre>
+</div>
+
+<p>What is Rails?</p>
+
+<p><img style="width:50px; length:50px;" src="/images/rails4.jpeg" />
+<code class="highlighter-rouge">Rails</code> is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.</p>
+
+<p><code class="highlighter-rouge">Rails</code> is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.</p>
+
+<p>The <code class="highlighter-rouge">Rails</code> philosophy includes two major guiding principles:</p>
+
+<p><code class="highlighter-rouge">Don't Repeat Yourself:</code> DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.</p>
+
+<p><code class="highlighter-rouge">Convention Over Configuration:</code> Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.</p>
+
+<p>[<a target="_blank" href="http://guides.rubyonrails.org/getting_started.html">source</a>]</p>
+
+  </div> -->
+
+<span class="date">2016-03-23 00:00:00 +0200</span>
+  <h3><a href="/2016/03/23/what_is_ruby.html">What is Ruby programming language</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
@@ -434,122 +550,6 @@ tr>td:first-child {
 
   </div> -->
 
-<span class="date">2016-03-24 00:00:00 +0200</span>
-  <h3><a href="/2016/03/24/migrating_database.html">Migrating Database</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
-
-<p>Or converting ruby code to build database tables, columns, properties, changes, and so on.</p>
-
-<p>This can be done using <code class="highlighter-rouge">rake</code> or “ruby make” command.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamp in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_cars</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
-
-<p>This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).</p>
-
-<p>Ex: If you create rails application via scaffold, you must make migration to create the database tables as :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">model</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
-<span class="n">or</span>
-<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">model</span> <span class="n">year</span><span class="ss">:integer</span> </code></pre></figure>
-
-<p>This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.</p>
-
-<p>Then after making migration as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>Note that you can undo this migration using</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
-
-
-  </div> -->
-
-<span class="date">2016-03-24 00:00:00 +0200</span>
-  <h3><a href="/2016/03/24/Directory_structure_in_rails.html">Directory Structure In Rails</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
-</code></pre>
-</div>
-
-<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
-<table border="2">
-  <tr style="color:red;">
-<td>File/</td><td>Folder Purpose</td>
-</tr>
-  <tr>
-    <td>app/</td>
-    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
-    </td>
-  </tr>
-  <tr>
-  <td>bin/</td>
-  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
-  </td>
-  </tr>
-  <tr>
-<td>config/</td>
-<td>Configure your application's routes, database, and more. 
-</td>
-</tr>
-<tr>
-<td>config.ru</td>
-<td>Rack configuration for Rack based servers used to start the application.</td>
-</tr>
-<tr>
-<td>db/</td>
- <td>Contains your current database schema, as well as the database migrations.
- </td>
-</tr>
-<tr>
-<td>Gemfile,Gemfile.lock</td>
-<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
-</tr>
-<tr>
-  <td>lib/</td><td>Extended modules for your application.</td>
-</tr>
-<tr>
-  <td>log/</td><td>Application log files.</td>
-</tr>
-<tr>
-<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
-</tr>
-<tr>
-  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
-</tr>
-<tr>
-  <td>README.rdoc</td>
-  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
-</tr>
-<tr>
-<td>Unit tests, fixtures, and other test apparatus.</td>
-<td>Testing Rails Applications.</td>
-</tr>
-<tr>
-<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
-</tr>
-<tr>
-<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
-</tr>
-</table>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -561,26 +561,18 @@ tr>td:first-child {
   <ul class="post-list">
     
       <li>
+        <span class="post-meta">Mar 30, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/03/30/Directory_structure_in_rails.html">Directory Structure In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
         <span class="post-meta">Mar 29, 2016</span>
 
         <h2>
-          <a class="post-link" href="/2016/03/29/Options_for_Rails_command_line.html">Options for rails command line</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 28, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/03/28/what_is_ruby_on_rails.html">What is Ruby on Rails</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 28, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/03/28/creating_new_rails_application.html">Creating a new Rails application</a>
+          <a class="post-link" href="/2016/03/29/migrating_database.html">Migrating Database</a>
         </h2>
       </li>
     
@@ -588,7 +580,15 @@ tr>td:first-child {
         <span class="post-meta">Mar 26, 2016</span>
 
         <h2>
-          <a class="post-link" href="/2016/03/26/what_is_ruby.html">What is Ruby programming language</a>
+          <a class="post-link" href="/2016/03/26/creating_new_rails_application.html">Creating a new Rails application</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 25, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/03/25/Options_for_Rails_command_line.html">Options for rails command line</a>
         </h2>
       </li>
     
@@ -596,15 +596,15 @@ tr>td:first-child {
         <span class="post-meta">Mar 24, 2016</span>
 
         <h2>
-          <a class="post-link" href="/2016/03/24/migrating_database.html">Migrating Database</a>
+          <a class="post-link" href="/2016/03/24/what_is_ruby_on_rails.html">What is Ruby on Rails</a>
         </h2>
       </li>
     
       <li>
-        <span class="post-meta">Mar 24, 2016</span>
+        <span class="post-meta">Mar 23, 2016</span>
 
         <h2>
-          <a class="post-link" href="/2016/03/24/Directory_structure_in_rails.html">Directory Structure In Rails</a>
+          <a class="post-link" href="/2016/03/23/what_is_ruby.html">What is Ruby programming language</a>
         </h2>
       </li>
     

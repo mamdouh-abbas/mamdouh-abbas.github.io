@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Options for rails command line</title>
+  <title>Directory Structure In Rails</title>
 
   
-  <meta name="description" content="What is Ruby on Rails command line options">
+  <meta name="description" content="Explaining the directory structure in Rails application">
   
 
-  <meta name="keywords" content="ruby rails options">
+  <meta name="keywords" content="directory structure rails ruby">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/29/Options_for_Rails_command_line.html">
+  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/30/Directory_structure_in_rails.html">
   <link rel="alternate" type="application/rss+xml" title="Web 4 Sons" href="http://mamdouh-abbas.github.io/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -77,145 +77,77 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Options for rails command line</h2>
-    <p class="post-meta"><time datetime="2016-03-29T00:00:00+02:00" itemprop="datePublished">Mar 29, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Directory Structure In Rails</h2>
+    <p class="post-meta"><time datetime="2016-03-30T00:00:00+02:00" itemprop="datePublished">Mar 30, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>rails -h
-Usage:
-  rails new APP_PATH [options]</p>
+    <p>TAGS:</p>
 
-<p>Options:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
+</code></pre>
+</div>
+
+<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
 <table border="2">
-<tr>
-	<th> Option
-	</th>
-	<th> Details
-	</th>
-<tr>
-<td>-r, [--ruby=PATH]</td>
-  <td># Path to the Ruby binary of your choice</td>
-  </tr>
-  <tr><td>-m, [--template=TEMPLATE]</td>
-  <td># Path to some application template (can be a filesystem path or URL)</td>
+  <tr style="color:red;">
+<td>File/</td><td>Folder Purpose</td>
+</tr>
+  <tr>
+    <td>app/</td>
+    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
+    </td>
   </tr>
   <tr>
-  <td>[--skip-gemfile], [--no-skip-gemfile]</td>
-      <td># Don't create a Gemfile</td>
-  </tr>
-  <tr>
-  <td>
-  -B, [--skip-bundle], [--no-skip-bundle]
-  </td>
-  <td>
-  # Don't run bundle install
+  <td>bin/</td>
+  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
   </td>
   </tr>
   <tr>
-  <td>-G, [--skip-git], [--no-skip-git]</td>
-  <td># Skip .gitignore file</td>
-  </tr>
-  <tr>
-  <td>[--skip-keeps], [--no-skip-keeps]</td>
-      <td># Skip source control .keep files</td>
-  </tr>
-  <tr>
-  <td>-O, [--skip-active-record], [--no-skip-active-record]</td>
-  <td># Skip Active Record files</td>
+<td>config/</td>
+<td>Configure your application's routes, database, and more. 
+</td>
 </tr>
 <tr>
-  <td>-S, [--skip-sprockets], [--no-skip-sprockets]</td>
-  <td># Skip Sprockets files</td>
-  </tr>
+<td>config.ru</td>
+<td>Rack configuration for Rack based servers used to start the application.</td>
+</tr>
 <tr>
-  <td>[--skip-spring], [--no-skip-spring]</td>
-      <td># Don't install Spring application preloader</td>
-      </tr>
+<td>db/</td>
+ <td>Contains your current database schema, as well as the database migrations.
+ </td>
+</tr>
 <tr>
- <td>-d, [--database=DATABASE]</td>
-  <td># Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
-  </td>
-  </tr>
-  <tr>
-  <td>-j, [--javascript=JAVASCRIPT]</td>
-  <td># Preconfigure for selected JavaScript library# Default: jquery</td>
-  </tr>
-  <tr>
-  <td>-J, [--skip-javascript], [--no-skip-javascript]</td>
-  <td># Skip JavaScript files</td>
-  </tr>
-  <tr>
-  <td>[--dev], [--no-dev]</td>
-      <td># Setup the application with Gemfile pointing to your Rails checkout</td>
-  </tr>
-  <tr>
-  <td>[--edge], [--no-edge]</td>
-      <td># Setup the application with Gemfile pointing to Rails repository</td>
-  </tr>
-  <tr>
-  <td>[--skip-turbolinks], [--no-skip-turbolinks]</td>
-      <td># Skip turbolinks gem</td>
-      </tr>
-  <tr>
-  <td>-T, [--skip-test-unit], [--no-skip-test-unit]</td>
-  <td># Skip Test::Unit files</td>
-  </tr>
-  <tr>
-  <td>[--rc=RC]</td>
-      <td># Path to file containing extra configuration options for rails command</td>
-  </tr>
-  <tr>
-  <td>[--no-rc], [--no-no-rc]</td>
-      <td># Skip loading of extra configuration options from .railsrc file</td>
-  </tr>
-  <tr>
-  <td colspan="2">Runtime options:</td>
-  </tr>
-  <tr>
-  <td>-f, [--force]</td>
-  <td># Overwrite files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td>-p, [--pretend], [--no-pretend]
-  </td>
-  <td># Run but do not make any changes
-  </td>
-  </tr>
-  <tr>
-  <td>
-  -q, [--quiet], [--no-quiet]</td>
-  <td># Suppress status output
-  </td>
-  </tr>
-  <tr>
-  <td>-s, [--skip], [--no-skip]</td>
-  <td># Skip files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td colspan="2">
-Rails options:
-</td>
-  </tr>
-  <tr>
-<td>-h, [--help], [--no-help]
-</td>
-<td># Show this help message and quit
-  </td>
-  </tr>
+<td>Gemfile,Gemfile.lock</td>
+<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
+</tr>
 <tr>
-  <td>-v, [--version], [--no-version]</td>
-  <td># Show Rails version number and quit</td>
-  </tr>
-  
-  <style type="text/css">
-tr>td:first-child {
-	color:blue;
-}
-  </style>
-</tr></table>
+  <td>lib/</td><td>Extended modules for your application.</td>
+</tr>
+<tr>
+  <td>log/</td><td>Application log files.</td>
+</tr>
+<tr>
+<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
+</tr>
+<tr>
+  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+</tr>
+<tr>
+  <td>README.rdoc</td>
+  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
+</tr>
+<tr>
+<td>Unit tests, fixtures, and other test apparatus.</td>
+<td>Testing Rails Applications.</td>
+</tr>
+<tr>
+<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
+</tr>
+<tr>
+<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
+</tr>
+</table>
 
   </div>
 
@@ -228,8 +160,8 @@ tr>td:first-child {
 */
 
 var disqus_config = function () {
-this.page.url = /2016/03/29/Options_for_Rails_command_line.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = /2016/03/29/Options_for_Rails_command_line //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = /2016/03/30/Directory_structure_in_rails.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = /2016/03/30/Directory_structure_in_rails //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

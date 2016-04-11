@@ -32,9 +32,9 @@ This means that this file has been generated in 22/5/2015 (year month day)  at 1
 Ex: If you create rails application via scaffold, you must make migration to create the database tables as :
 
 {% highlight ruby %}
-rails generate scaffold cars model:string year:integer
+rails generate scaffold cars brand:string year:integer
 or
-rails g scaffold cars model year:integer 
+rails g scaffold cars brand year:integer 
 {% endhighlight %}
 
 This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.

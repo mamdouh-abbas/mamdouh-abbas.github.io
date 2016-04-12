@@ -134,3 +134,7 @@ Now, you are ready to browse you application and make `CRUD` operations;
 >
 
 Now, browse to `localhost:3000`, you will see the welcome page for rails application, so browse to `localhost:3000/cars` .
+
+All these steps in the next tutorial video `You First Rails Application`
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/x3vgeGcrty8" frameborder="0" allowfullscreen></iframe>

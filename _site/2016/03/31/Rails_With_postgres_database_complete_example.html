@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Rails With Mysql database, complete example</title>
+  <title>Rails With Postgresql database, complete example</title>
 
   
-  <meta name="description" content="How to install, create mysql database and create rails application using it, step by step tutorial guide.">
+  <meta name="description" content="How to install, create postgres database and create rails application using it, step by step tutorial guide.">
   
 
-  <meta name="keywords" content="ruby rails mysql database">
+  <meta name="keywords" content="ruby rails postgres database">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/30/Rails_With_Mysql_database_complete_example.html">
+  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/31/Rails_With_postgres_database_complete_example.html">
   <link rel="alternate" type="application/rss+xml" title="Web 4 Sons" href="http://mamdouh-abbas.github.io/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -77,43 +77,44 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Rails With Mysql database, complete example</h2>
-    <p class="post-meta"><time datetime="2016-03-30T00:00:00+02:00" itemprop="datePublished">Mar 30, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Rails With Postgresql database, complete example</h2>
+    <p class="post-meta"><time datetime="2016-03-31T00:00:00+02:00" itemprop="datePublished">Mar 31, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  mysql  database 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  postgres  database 
 </code></pre>
 </div>
 
-<h3>1- Installing Mysql-server and Creating Database.</h3>
+<h3>1- Creating Postgresql Database.</h3>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span></code></pre></figure>
+<p>First, log into postgres-server</p>
 
-<p>Then log into mysql-server with root account:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">su</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">c</span> <span class="n">psql</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="nb">p</span></code></pre></figure>
-
-<p>Type root password and be ready to use mysql DSL.
+<p>Type password and be ready to use postgresql DSL.
 First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
 
 <p>Here, We will create one for development only, and you can create the others.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
 
-<p>You can see all mysql databases on system using:</p>
+<p>Type password and be ready to use postgres DSL.
+First, Create you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">show</span> <span class="n">databases</span><span class="p">;</span></code></pre></figure>
+<p>Here, We will create one for development only, and you can create the others.</p>
 
-<p>Also, You need to create user rather than root:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">user</span> <span class="s1">'osama'</span><span class="err">@</span><span class="s1">'localhost'</span> <span class="n">identified</span> <span class="n">by</span> <span class="s1">'123456789'</span><span class="p">;</span></code></pre></figure>
+<p>Also, You need to create user:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">user</span> <span class="n">osama</span> <span class="n">with</span> <span class="n">password</span> <span class="s1">'123456789'</span><span class="p">;</span></code></pre></figure>
 
 <p>Then, Grant all privileges to this user</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">grant</span> <span class="n">all</span> <span class="n">privileges</span> <span class="n">on</span> <span class="o">*</span> <span class="p">.</span> <span class="nf">*</span> <span class="n">to</span> <span class="s1">'osama'</span><span class="err">@</span><span class="s1">'localhost'</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">grant</span> <span class="n">all</span> <span class="n">privileges</span> <span class="n">on</span> <span class="n">database</span> <span class="n">rails_dev</span> <span class="n">to</span> <span class="n">osama</span><span class="p">;</span></code></pre></figure>
 
 <p>At this point, you have <code class="highlighter-rouge">database</code> name, <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">password</code>.</p>
 
@@ -121,33 +122,33 @@ First, you may need to determine that you will create more than one database, on
 
 <p><br /></p>
 
-<h3>2- Creating Rails Application With Mysql database.</h3>
+<h3>2- Creating Rails Application With Postgresql database.</h3>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">auto</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">mysql</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">auto</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">postgresql</span>
 <span class="n">cd</span> <span class="n">auto</span>
 <span class="n">subl</span> <span class="o">.</span></code></pre></figure>
 
-<p>The default database for rails is sqlite3, but we use <code class="highlighter-rouge">--database=mysql</code> to use mysql instead, so you will find ` gem ‘mysql2’.</p>
+<p>The default database for rails is sqlite3, but we use <code class="highlighter-rouge">--database=postgresql</code> to use postgres instead, so you will find ` gem ‘pg’.</p>
 
-<p>Note, If you change from sqlite3 to mysql, you need to make</p>
+<p>Note, If you change from sqlite3 to postgres, you need to make</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span></code></pre></figure>
 
-<p>to update <code class="highlighter-rouge">gemfile.lock</code> and install <code class="highlighter-rouge">mysql</code> gem if not installed.</p>
+<p>to update <code class="highlighter-rouge">gemfile.lock</code> and install <code class="highlighter-rouge">pg</code> gem if not installed.</p>
 
 <p>Open <code class="highlighter-rouge">config/database.yml</code> and fill</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="ss">default: </span><span class="o">&amp;</span><span class="n">default</span>
-  <span class="ss">adapter: </span><span class="n">mysql2</span>
-  <span class="ss">encoding: </span><span class="n">utf8</span>
+  <span class="ss">adapter: </span><span class="n">postgresql</span>
+  <span class="ss">encoding: </span><span class="n">unicode</span>
+  <span class="ss">port: </span><span class="mi">5432</span>
+  <span class="ss">username: </span><span class="n">osama</span>
+  <span class="ss">password: </span><span class="mi">123456789</span>
   <span class="ss">pool: </span><span class="mi">5</span>
-  <span class="ss">username: </span><span class="n">osama</span>       <span class="c1">#of mysql database created.</span>
-  <span class="ss">password: </span><span class="mi">123456789</span>   <span class="c1">#of mysql database created.</span>
-  <span class="ss">socket: </span><span class="sr">/var/</span><span class="n">run</span><span class="o">/</span><span class="n">mysqld</span><span class="o">/</span><span class="n">mysqld</span><span class="p">.</span><span class="nf">sock</span>
 
 <span class="ss">development:
   </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
-  <span class="ss">database: </span><span class="n">rails_dev</span>   <span class="c1">#of mysql database created.</span></code></pre></figure>
+  <span class="ss">database: </span><span class="n">rails_dev</span></code></pre></figure>
 
 <p>Now, Create you posts using <code class="highlighter-rouge">scaffold</code> :</p>
 
@@ -165,7 +166,7 @@ First, you may need to determine that you will create more than one database, on
 
 <p>All these steps in this tutorial video :</p>
 
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/YUfxiIscIyc" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/-ajUunAwezo" frameborder="0" allowfullscreen=""></iframe>
 
 
   </div>
@@ -179,8 +180,8 @@ First, you may need to determine that you will create more than one database, on
 */
 
 var disqus_config = function () {
-this.page.url = /2016/03/30/Rails_With_Mysql_database_complete_example.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = /2016/03/30/Rails_With_Mysql_database_complete_example //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = /2016/03/31/Rails_With_postgres_database_complete_example.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = /2016/03/31/Rails_With_postgres_database_complete_example //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

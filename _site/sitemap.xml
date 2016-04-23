@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://mamdouh-abbas.github.io/2016/04/22/Rails_Exception_Handler_complete_example.html</loc>
+<lastmod>2016-04-22T00:00:00+02:00</lastmod>
+</url>
+<url>
 <loc>http://mamdouh-abbas.github.io/2016/03/31/Rails_With_postgres_database_complete_example.html</loc>
 <lastmod>2016-03-31T00:00:00+02:00</lastmod>
 </url>
@@ -17,16 +21,16 @@
 <lastmod>2016-03-29T00:00:00+02:00</lastmod>
 </url>
 <url>
+<loc>http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</loc>
+<lastmod>2016-03-28T00:00:00+02:00</lastmod>
+</url>
+<url>
 <loc>http://mamdouh-abbas.github.io/2016/03/26/creating_new_rails_application.html</loc>
 <lastmod>2016-03-26T00:00:00+02:00</lastmod>
 </url>
 <url>
 <loc>http://mamdouh-abbas.github.io/2016/03/25/Options_for_Rails_command_line.html</loc>
 <lastmod>2016-03-25T00:00:00+02:00</lastmod>
-</url>
-<url>
-<loc>http://mamdouh-abbas.github.io/2016/03/24/what_is_ruby_on_rails.html</loc>
-<lastmod>2016-03-24T00:00:00+02:00</lastmod>
 </url>
 <url>
 <loc>http://mamdouh-abbas.github.io/2016/03/23/what_is_ruby.html</loc>
@@ -37,5 +41,9 @@
 </url>
 <url>
 <loc>http://mamdouh-abbas.github.io/</loc>
+</url>
+<url>
+<loc>http://mamdouh-abbas.github.io/google6b64a495f715b7ef.html</loc>
+<lastmod>2016-04-12T03:46:41+02:00</lastmod>
 </url>
 </urlset>

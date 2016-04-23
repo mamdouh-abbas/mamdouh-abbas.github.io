@@ -5,9 +5,142 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://mamdouh-abbas.github.io/</link>
     <atom:link href="http://mamdouh-abbas.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Apr 2016 02:45:23 +0200</pubDate>
-    <lastBuildDate>Tue, 12 Apr 2016 02:45:23 +0200</lastBuildDate>
+    <pubDate>Sun, 24 Apr 2016 01:34:17 +0200</pubDate>
+    <lastBuildDate>Sun, 24 Apr 2016 01:34:17 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Rails Exception Handler, complete example</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  exception  handler 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;1- Using Rails Exception Handler Gem.&lt;/h4&gt;
+
+&lt;p&gt;First, Add rails_exception_handler to Gemfile.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;rails_exception_handler&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 2&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then, Make &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4&gt;2- Generate an initializer.&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails_exception_handler&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Open config/initializers/rails_exception_handler.rb, and choose the environments you want to handle exceptions with.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;environments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:production&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:development&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Also, You can use another layout in the case of missing application layout using home layout in &lt;code class=&quot;highlighter-rouge&quot;&gt;views/layouts&lt;/code&gt; or any other layout as &lt;code class=&quot;highlighter-rouge&quot;&gt;error&lt;/code&gt; in our tutorial.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fallback_layout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;error&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can change the error message generated with exception as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;responses&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;:default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;h1&amp;gt;500&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;Internal server error&amp;lt;/p&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;h1&amp;gt;Ops, The page you write is not found&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;Page not found&amp;lt;/p&amp;gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Also, You can map the relation between the error type and the message related as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;responses&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;ActiveRecord::RecordNotFound&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;ActionController::RoutingError&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;AbstractController::ActionNotFound&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4&gt;3- Storing the exception&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;storage_strategies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:active_record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;active_record_store_in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;:database&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;development&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Production in the production environment&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;:record_table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;error_messages&#39;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# The table name will be created.&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note, We will create &lt;code class=&quot;highlighter-rouge&quot;&gt;error_messages&lt;/code&gt; table in the same database.&lt;/p&gt;
+
+&lt;p&gt;Then, Create a migration file for &lt;code class=&quot;highlighter-rouge&quot;&gt;error_message&lt;/code&gt; as :&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error_message&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then, Edit the generated file to be :&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ErrorMessages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Migration&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;change&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;create_table&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:error_messages&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:class_name&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:trace&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:params&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:target_url&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:referer_url&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user_agent&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user_info&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:app_name&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:doc_root&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timestamps&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then, Make migration:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4&gt;4- Delete Error Pages From Public Folder.&lt;/h4&gt;
+
+&lt;p&gt;This is &lt;code class=&quot;highlighter-rouge&quot;&gt;important&lt;/code&gt; step.&lt;/p&gt;
+
+&lt;p&gt;You must delete or rename &lt;code class=&quot;highlighter-rouge&quot;&gt;404&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;422&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;500&lt;/code&gt; error pages form public folder.&lt;/p&gt;
+
+&lt;h4&gt;5- Create a Model To Deal With `error_message` Table .&lt;/h4&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;app/model&lt;/code&gt; folder create &lt;code class=&quot;highlighter-rouge&quot;&gt;error_message.rb&lt;/code&gt; file and type:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ErrorMessage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;All these steps in this tutorial video :&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/wZoroa-I23I&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h4&gt;6- Dealing With `ErrorMessage` Model.&lt;/h4&gt;
+
+&lt;p&gt;As shown in this tutorial video :&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/fHPkjvPq_sY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h4&gt;7- Creating View For Exceptions.&lt;/h4&gt;
+
+&lt;p&gt;As shown in this tutorial video :&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/JCVsqGa0WZk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h4&gt;8- How to save User Information In `error_messages` table.&lt;/h4&gt;
+
+&lt;p&gt;As shown in this tutorial video :&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/VZ5adC3Yi3E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Fri, 22 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/22/Rails_Exception_Handler_complete_example.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/22/Rails_Exception_Handler_complete_example.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>exception</category>
+        
+        <category>handler</category>
+        
+        
+      </item>
     
       <item>
         <title>Rails With Postgresql database, complete example</title>
@@ -355,6 +488,40 @@ First, you may need to determine that you will create more than one database, on
       </item>
     
       <item>
+        <title>What is Ruby on Rails</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What is Rails?&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:50px; length:50px;&quot; src=&quot;/images/rails4.jpeg&quot; /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; philosophy includes two major guiding principles:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Don&#39;t Repeat Yourself:&lt;/code&gt; DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Convention Over Configuration:&lt;/code&gt; Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.&lt;/p&gt;
+
+&lt;p&gt;[&lt;a target=&quot;_blank&quot; href=&quot;http://guides.rubyonrails.org/getting_started.html&quot;&gt;source&lt;/a&gt;]&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Creating a new Rails application</title>
         <description>&lt;p&gt;TAGS:&lt;/p&gt;
 
@@ -491,6 +658,10 @@ First, you may need to determine that you will create more than one database, on
 &lt;/blockquote&gt;
 
 &lt;p&gt;Now, browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt;, you will see the welcome page for rails application, so browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000/cars&lt;/code&gt; .&lt;/p&gt;
+
+&lt;p&gt;All these steps in the next tutorial video &lt;code class=&quot;highlighter-rouge&quot;&gt;You First Rails Application&lt;/code&gt;&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/x3vgeGcrty8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Sat, 26 Mar 2016 00:00:00 +0200</pubDate>
         <link>http://mamdouh-abbas.github.io/2016/03/26/creating_new_rails_application.html</link>
@@ -655,40 +826,6 @@ tr&gt;td:first-child {
         <category>rails</category>
         
         <category>options</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>What is Ruby on Rails</title>
-        <description>&lt;p&gt;TAGS:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;What is Rails?&lt;/p&gt;
-
-&lt;p&gt;&lt;img style=&quot;width:50px; length:50px;&quot; src=&quot;/images/rails4.jpeg&quot; /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; philosophy includes two major guiding principles:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Don&#39;t Repeat Yourself:&lt;/code&gt; DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Convention Over Configuration:&lt;/code&gt; Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.&lt;/p&gt;
-
-&lt;p&gt;[&lt;a target=&quot;_blank&quot; href=&quot;http://guides.rubyonrails.org/getting_started.html&quot;&gt;source&lt;/a&gt;]&lt;/p&gt;
-</description>
-        <pubDate>Thu, 24 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/24/what_is_ruby_on_rails.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/24/what_is_ruby_on_rails.html</guid>
-        
-        <category>ruby</category>
-        
-        <category>rails</category>
         
         
       </item>

@@ -144,4 +144,5 @@ As shown in this tutorial video :
 As shown in this tutorial video :
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen></iframe>
-
+<br>
+<i style="color:red;">Great Note</i>, Every time you change any file in `config/initializers`, You must restart `server`.

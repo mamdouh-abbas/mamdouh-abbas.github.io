@@ -5,477 +5,126 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://mamdouh-abbas.github.io/</link>
     <atom:link href="http://mamdouh-abbas.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Apr 2016 12:51:41 +0200</pubDate>
-    <lastBuildDate>Sun, 24 Apr 2016 12:51:41 +0200</lastBuildDate>
+    <pubDate>Fri, 29 Apr 2016 03:38:37 +0200</pubDate>
+    <lastBuildDate>Fri, 29 Apr 2016 03:38:37 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
-        <title>Rails Exception Handler, complete example</title>
+        <title>Setup, Reset and Drop Database Via Rails Console</title>
         <description>&lt;p&gt;TAGS:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  exception  handler 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  setup  reset  drop 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4&gt;1- Using Rails Exception Handler Gem.&lt;/h4&gt;
+&lt;h3&gt;1- Setup, Reset and Drop Database Via Rails Console.&lt;/h3&gt;
 
-&lt;p&gt;First, Add rails_exception_handler to Gemfile.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;rails_exception_handler&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 2&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
 
-&lt;p&gt;Then, Make &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4&gt;2- Generate an initializer.&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails_exception_handler&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Open config/initializers/rails_exception_handler.rb, and choose the environments you want to handle exceptions with.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;environments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:production&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:development&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, You can use another layout in the case of missing application layout using home layout in &lt;code class=&quot;highlighter-rouge&quot;&gt;views/layouts&lt;/code&gt; or any other layout as &lt;code class=&quot;highlighter-rouge&quot;&gt;error&lt;/code&gt; in our tutorial.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fallback_layout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;error&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can change the error message generated with exception as:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;responses&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;:default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;h1&amp;gt;500&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;Internal server error&amp;lt;/p&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;h1&amp;gt;Ops, The page you write is not found&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;Page not found&amp;lt;/p&amp;gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, You can map the relation between the error type and the message related as:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;responses&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&#39;ActiveRecord::RecordNotFound&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&#39;ActionController::RoutingError&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;&#39;AbstractController::ActionNotFound&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:not_found&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4&gt;3- Storing the exception&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;storage_strategies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:active_record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;active_record_store_in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;:database&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;development&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Production in the production environment&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;:record_table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;error_messages&#39;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# The table name will be created.&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Note, We will create &lt;code class=&quot;highlighter-rouge&quot;&gt;error_messages&lt;/code&gt; table in the same database.&lt;/p&gt;
-
-&lt;p&gt;Then, Create a migration file for &lt;code class=&quot;highlighter-rouge&quot;&gt;error_message&lt;/code&gt; as :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error_message&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, Edit the generated file to be :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ErrorMessages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Migration&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;change&lt;/span&gt;
-     &lt;span class=&quot;n&quot;&gt;create_table&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:error_messages&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:class_name&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:trace&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:params&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:target_url&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:referer_url&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user_agent&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user_info&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:app_name&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:doc_root&lt;/span&gt;
-
-      &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;timestamps&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, Make migration:&lt;/p&gt;
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4&gt;4- Delete Error Pages From Public Folder.&lt;/h4&gt;
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
 
-&lt;p&gt;This is &lt;code class=&quot;highlighter-rouge&quot;&gt;important&lt;/code&gt; step.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;You must delete or rename &lt;code class=&quot;highlighter-rouge&quot;&gt;404&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;422&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;500&lt;/code&gt; error pages form public folder.&lt;/p&gt;
-
-&lt;h4&gt;5- Create a Model To Deal With `error_message` Table .&lt;/h4&gt;
-
-&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;app/model&lt;/code&gt; folder create &lt;code class=&quot;highlighter-rouge&quot;&gt;error_message.rb&lt;/code&gt; file and type:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ErrorMessage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;All these steps in this tutorial video :&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/wZoroa-I23I&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h4&gt;6- Dealing With `ErrorMessage` Model.&lt;/h4&gt;
-
-&lt;p&gt;As shown in this tutorial video :&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/fHPkjvPq_sY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h4&gt;7- Creating View For Exceptions.&lt;/h4&gt;
-
-&lt;p&gt;As shown in this tutorial video :&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/JCVsqGa0WZk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h4&gt;8- How to save User Information In `error_messages` table.&lt;/h4&gt;
-
-&lt;p&gt;As shown in this tutorial video :&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/VZ5adC3Yi3E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;i style=&quot;color:red;&quot;&gt;Great Note&lt;/i&gt;, Every time you change any file in &lt;code class=&quot;highlighter-rouge&quot;&gt;config/initializers&lt;/code&gt;, You must restart &lt;code class=&quot;highlighter-rouge&quot;&gt;server&lt;/code&gt;.&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/A4DvaZ_lR0U&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Fri, 22 Apr 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/04/22/Rails_Exception_Handler_complete_example.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/22/Rails_Exception_Handler_complete_example.html</guid>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/setup_reset_and_drop_database.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/setup_reset_and_drop_database.html</guid>
         
         <category>ruby</category>
         
         <category>rails</category>
         
-        <category>exception</category>
-        
-        <category>handler</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Rails With Postgresql database, complete example</title>
-        <description>&lt;p&gt;TAGS:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  postgres  database 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;1- Creating Postgresql Database.&lt;/h3&gt;
-
-&lt;p&gt;First, log into postgres-server&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;su&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postgres&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type password and be ready to use postgresql DSL.
-First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.&lt;/p&gt;
-
-&lt;p&gt;Here, We will create one for development only, and you can create the others.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;database&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails_dev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type password and be ready to use postgres DSL.
-First, Create you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.&lt;/p&gt;
-
-&lt;p&gt;Here, We will create one for development only, and you can create the others.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;database&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails_dev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, You need to create user:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;osama&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;123456789&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, Grant all privileges to this user&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;grant&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;privileges&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;database&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails_dev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;osama&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;At this point, you have &lt;code class=&quot;highlighter-rouge&quot;&gt;database&lt;/code&gt; name, &lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;password&lt;/code&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3&gt;2- Creating Rails Application With Postgresql database.&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;postgresql&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;subl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The default database for rails is sqlite3, but we use &lt;code class=&quot;highlighter-rouge&quot;&gt;--database=postgresql&lt;/code&gt; to use postgres instead, so you will find ` gem ‘pg’.&lt;/p&gt;
-
-&lt;p&gt;Note, If you change from sqlite3 to postgres, you need to make&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;to update &lt;code class=&quot;highlighter-rouge&quot;&gt;gemfile.lock&lt;/code&gt; and install &lt;code class=&quot;highlighter-rouge&quot;&gt;pg&lt;/code&gt; gem if not installed.&lt;/p&gt;
-
-&lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;config/database.yml&lt;/code&gt; and fill&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;ss&quot;&gt;default: &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;adapter: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;postgresql&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;encoding: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unicode&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;port: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5432&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;username: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;osama&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;password: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;123456789&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;pool: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-
-&lt;span class=&quot;ss&quot;&gt;development:
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;database: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rails_dev&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now, Create you posts using &lt;code class=&quot;highlighter-rouge&quot;&gt;scaffold&lt;/code&gt; :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And then, Make &lt;code class=&quot;highlighter-rouge&quot;&gt;migration&lt;/code&gt; to create the posts table in the database it self.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Last, Fire up you rails server:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now, ready to browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000/posts&lt;/code&gt; and process all &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt; operations.&lt;/p&gt;
-
-&lt;p&gt;All these steps in this tutorial video :&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/-ajUunAwezo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-</description>
-        <pubDate>Thu, 31 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/31/Rails_With_postgres_database_complete_example.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/31/Rails_With_postgres_database_complete_example.html</guid>
-        
-        <category>ruby</category>
-        
-        <category>rails</category>
-        
-        <category>postgres</category>
+        <category>migration</category>
         
         <category>database</category>
         
+        <category>setup</category>
+        
+        <category>reset</category>
+        
+        <category>drop</category>
+        
         
       </item>
     
       <item>
-        <title>Rails With Mysql database, complete example</title>
+        <title>Setting Environment For Rails Migration</title>
         <description>&lt;p&gt;TAGS:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  mysql  database 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  environment 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3&gt;1- Installing Mysql-server and Creating Database.&lt;/h3&gt;
+&lt;h3&gt;1- Setting Environment For Rails Migration.&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Then log into mysql-server with root account:&lt;/p&gt;
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type root password and be ready to use mysql DSL.
-First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.&lt;/p&gt;
-
-&lt;p&gt;Here, We will create one for development only, and you can create the others.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;database&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails_dev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can see all mysql databases on system using:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;databases&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, You need to create user rather than root:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;osama&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;localhost&#39;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;identified&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;123456789&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, Grant all privileges to this user&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;grant&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;privileges&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;osama&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;localhost&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;At this point, you have &lt;code class=&quot;highlighter-rouge&quot;&gt;database&lt;/code&gt; name, &lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;password&lt;/code&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3&gt;2- Creating Rails Application With Mysql database.&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;subl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The default database for rails is sqlite3, but we use &lt;code class=&quot;highlighter-rouge&quot;&gt;--database=mysql&lt;/code&gt; to use mysql instead, so you will find ` gem ‘mysql2’.&lt;/p&gt;
-
-&lt;p&gt;Note, If you change from sqlite3 to mysql, you need to make&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;to update &lt;code class=&quot;highlighter-rouge&quot;&gt;gemfile.lock&lt;/code&gt; and install &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql&lt;/code&gt; gem if not installed.&lt;/p&gt;
-
-&lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;config/database.yml&lt;/code&gt; and fill&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;ss&quot;&gt;default: &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;adapter: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql2&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;encoding: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;pool: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;username: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;osama&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;#of mysql database created.&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;password: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;123456789&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#of mysql database created.&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;socket: &lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/var/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysqld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysqld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sock&lt;/span&gt;
-
-&lt;span class=&quot;ss&quot;&gt;development:
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;database: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rails_dev&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#of mysql database created.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now, Create you posts using &lt;code class=&quot;highlighter-rouge&quot;&gt;scaffold&lt;/code&gt; :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And then, Make &lt;code class=&quot;highlighter-rouge&quot;&gt;migration&lt;/code&gt; to create the posts table in the database it self.&lt;/p&gt;
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Last, Fire up you rails server:&lt;/p&gt;
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now, ready to browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000/posts&lt;/code&gt; and process all &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt; operations.&lt;/p&gt;
-
-&lt;p&gt;All these steps in this tutorial video :&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/YUfxiIscIyc&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/PcGxPKmmbE8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/30/Rails_With_Mysql_database_complete_example.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/30/Rails_With_Mysql_database_complete_example.html</guid>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/setting_rails_environment_via_migration.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/setting_rails_environment_via_migration.html</guid>
         
         <category>ruby</category>
         
         <category>rails</category>
         
-        <category>mysql</category>
+        <category>migration</category>
         
         <category>database</category>
         
-        
-      </item>
-    
-      <item>
-        <title>Directory Structure In Rails</title>
-        <description>&lt;p&gt;TAGS:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;directory  structure  rails  ruby 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The root directory of &lt;code class=&quot;highlighter-rouge&quot;&gt;rails&lt;/code&gt; application has a number of auto-generated files and folders that make up the structure of a &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; application.&lt;/p&gt;
-&lt;table border=&quot;2&quot;&gt;
-  &lt;tr style=&quot;color:red;&quot;&gt;
-&lt;td&gt;File/&lt;/td&gt;&lt;td&gt;Folder Purpose&lt;/td&gt;
-&lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;app/&lt;/td&gt;
-    &lt;td&gt;Contains the controllers, models, views, helpers, mailers and assets for your application.
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;bin/&lt;/td&gt;
-  &lt;td&gt;Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-&lt;td&gt;config/&lt;/td&gt;
-&lt;td&gt;Configure your application&#39;s routes, database, and more. 
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;config.ru&lt;/td&gt;
-&lt;td&gt;Rack configuration for Rack based servers used to start the application.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;db/&lt;/td&gt;
- &lt;td&gt;Contains your current database schema, as well as the database migrations.
- &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Gemfile,Gemfile.lock&lt;/td&gt;
-&lt;td&gt;These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;lib/&lt;/td&gt;&lt;td&gt;Extended modules for your application.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;log/&lt;/td&gt;&lt;td&gt;Application log files.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;public/&lt;/td&gt;&lt;td&gt;The only folder seen by the world as-is. Contains static files and compiled assets.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;Rakefile&lt;/td&gt;&lt;td&gt;This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;README.rdoc&lt;/td&gt;
-  &lt;td&gt;This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Unit tests, fixtures, and other test apparatus.&lt;/td&gt;
-&lt;td&gt;Testing Rails Applications.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;tmp/&lt;/td&gt;&lt;td&gt;Temporary files (like cache, pid, and session files).&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;vendor/&lt;/td&gt;&lt;td&gt;A place for all third-party code. In a typical Rails application this includes vendored gems.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Wed, 30 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/30/Directory_structure_in_rails.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/30/Directory_structure_in_rails.html</guid>
-        
-        <category>directory</category>
-        
-        <category>structure</category>
-        
-        <category>rails</category>
-        
-        <category>ruby</category>
+        <category>environment</category>
         
         
       </item>
     
       <item>
-        <title>Migrating Database</title>
+        <title>Seeding Tables Using Migration In Rails</title>
         <description>&lt;p&gt;TAGS:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Migrating Database&lt;/code&gt;: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called &lt;code class=&quot;highlighter-rouge&quot;&gt;Migration&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;1- Seeding Tables Using Migration In Rails.&lt;/h3&gt;
 
-&lt;p&gt;Or converting ruby code to build database tables, columns, properties, changes, and so on.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This can be done using &lt;code class=&quot;highlighter-rouge&quot;&gt;rake&lt;/code&gt; or “ruby make” command.&lt;/p&gt;
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This &lt;code class=&quot;highlighter-rouge&quot;&gt;migration&lt;/code&gt; will do changes to database according to a file with a name of date-time stamp in &lt;code class=&quot;highlighter-rouge&quot;&gt;/db/migrate&lt;/code&gt; folder as:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;mi&quot;&gt;20150522235057&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_create_cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rb&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).&lt;/p&gt;
-
-&lt;p&gt;Ex: If you create rails application via scaffold, you must make migration to create the database tables as :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.&lt;/p&gt;
-
-&lt;p&gt;Then after making migration as:&lt;/p&gt;
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Note that you can undo this migration using&lt;/p&gt;
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0tE4oLlYv-k&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/QwU8XHriWCU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Tue, 29 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/29/migrating_database.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/29/migrating_database.html</guid>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/seeding_tables_in_migration.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/seeding_tables_in_migration.html</guid>
         
         <category>ruby</category>
         
@@ -489,380 +138,290 @@ First, you may need to determine that you will create more than one database, on
       </item>
     
       <item>
-        <title>What is Ruby on Rails</title>
+        <title>Removing Fields From Table via migration</title>
         <description>&lt;p&gt;TAGS:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  add 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;What is Rails?&lt;/p&gt;
+&lt;h3&gt;1- Removing Fields From Table Via Rails Migration.&lt;/h3&gt;
 
-&lt;p&gt;&lt;img style=&quot;width:50px; length:50px;&quot; src=&quot;/images/rails4.jpeg&quot; /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.&lt;/p&gt;
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt; philosophy includes two major guiding principles:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Don&#39;t Repeat Yourself:&lt;/code&gt; DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Convention Over Configuration:&lt;/code&gt; Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.&lt;/p&gt;
-
-&lt;p&gt;[&lt;a target=&quot;_blank&quot; href=&quot;http://guides.rubyonrails.org/getting_started.html&quot;&gt;source&lt;/a&gt;]&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/28/what_is_ruby_on_rails.html</guid>
-        
-        <category>ruby</category>
-        
-        <category>rails</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Creating a new Rails application</title>
-        <description>&lt;p&gt;TAGS:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  on  rails  rails  software 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;First, We assume that you installed &lt;code class=&quot;highlighter-rouge&quot;&gt;Ruby&lt;/code&gt;, you can know that using :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then, you need to install &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can use  –no-ri –no-rdoc , for no gems documenation&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ri&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rdoc&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, you can know its version using :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now, you are ready to &lt;code class=&quot;highlighter-rouge&quot;&gt;Rails&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;p&gt;Open a terminal&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;Go to the parent folder you want to build you application there.&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;Type the following line and press &lt;code class=&quot;highlighter-rouge&quot;&gt;Enter&lt;/code&gt;.&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autos&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;p&gt;This will generate a directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;autos&lt;/code&gt; which contains the &lt;a href=&quot;/2016/03/24/Directory_structure_in_rails&quot;&gt;rails application directory structure&lt;/a&gt;.&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;Change directory to &lt;code class=&quot;highlighter-rouge&quot;&gt;autos&lt;/code&gt;.&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autos&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;Fire up the &lt;code class=&quot;highlighter-rouge&quot;&gt;rails server&lt;/code&gt;.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;Then,browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt;.&lt;/li&gt;
-    &lt;li&gt;You will see this page:&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/rails_welcome.png&quot; alt=&quot;rails welcome page&quot; title=&quot;rails welcome page&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Note that you can stop rails server using&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;ctrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, Note that you don’t need to restart rails server every time you make changes to you application as long as you are in development environment.&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/MMUMMAUTq_Y&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now, let’s start our &lt;code class=&quot;highlighter-rouge&quot;&gt;autos&lt;/code&gt; application:&lt;/p&gt;
-
-&lt;p&gt;First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;or&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This single line will create:&lt;/p&gt;
-
-&lt;blockquote&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;car&lt;/code&gt; model&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; controller&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; views&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; routes&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; tests&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; migration file&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;p&gt;Then we need to create &lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; database table using :&lt;/p&gt;
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This line will create the &lt;code class=&quot;highlighter-rouge&quot;&gt;cars&lt;/code&gt; table and its database schema in &lt;code class=&quot;highlighter-rouge&quot;&gt;db/&lt;/code&gt; folder, this table has two columns, one is brand with data type string and the other is year with data type integer.&lt;/p&gt;
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
 
-&lt;p&gt;Now, you are ready to browse you application and make &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt; operations;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt; means :&lt;/p&gt;
-
-&lt;blockquote&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;Create&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;R&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;Read&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;U&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;Update&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;Delete&lt;/code&gt;&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;p&gt;Now, browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt;, you will see the welcome page for rails application, so browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000/cars&lt;/code&gt; .&lt;/p&gt;
-
-&lt;p&gt;All these steps in the next tutorial video &lt;code class=&quot;highlighter-rouge&quot;&gt;You First Rails Application&lt;/code&gt;&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/x3vgeGcrty8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/2cSW_dLK6Rs&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/VUWfJfCUWYM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Sat, 26 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/26/creating_new_rails_application.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/26/creating_new_rails_application.html</guid>
-        
-        <category>ruby</category>
-        
-        <category>on</category>
-        
-        <category>rails</category>
-        
-        <category>rails</category>
-        
-        <category>software</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Options for rails command line</title>
-        <description>&lt;p&gt;rails -h
-Usage:
-  rails new APP_PATH [options]&lt;/p&gt;
-
-&lt;p&gt;Options:&lt;/p&gt;
-&lt;table border=&quot;2&quot;&gt;
-&lt;tr&gt;
-	&lt;th&gt; Option
-	&lt;/th&gt;
-	&lt;th&gt; Details
-	&lt;/th&gt;
-&lt;tr&gt;
-&lt;td&gt;-r, [--ruby=PATH]&lt;/td&gt;
-  &lt;td&gt;# Path to the Ruby binary of your choice&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;-m, [--template=TEMPLATE]&lt;/td&gt;
-  &lt;td&gt;# Path to some application template (can be a filesystem path or URL)&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--skip-gemfile], [--no-skip-gemfile]&lt;/td&gt;
-      &lt;td&gt;# Don&#39;t create a Gemfile&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;
-  -B, [--skip-bundle], [--no-skip-bundle]
-  &lt;/td&gt;
-  &lt;td&gt;
-  # Don&#39;t run bundle install
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-G, [--skip-git], [--no-skip-git]&lt;/td&gt;
-  &lt;td&gt;# Skip .gitignore file&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--skip-keeps], [--no-skip-keeps]&lt;/td&gt;
-      &lt;td&gt;# Skip source control .keep files&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-O, [--skip-active-record], [--no-skip-active-record]&lt;/td&gt;
-  &lt;td&gt;# Skip Active Record files&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;-S, [--skip-sprockets], [--no-skip-sprockets]&lt;/td&gt;
-  &lt;td&gt;# Skip Sprockets files&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;[--skip-spring], [--no-skip-spring]&lt;/td&gt;
-      &lt;td&gt;# Don&#39;t install Spring application preloader&lt;/td&gt;
-      &lt;/tr&gt;
-&lt;tr&gt;
- &lt;td&gt;-d, [--database=DATABASE]&lt;/td&gt;
-  &lt;td&gt;# Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-j, [--javascript=JAVASCRIPT]&lt;/td&gt;
-  &lt;td&gt;# Preconfigure for selected JavaScript library# Default: jquery&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-J, [--skip-javascript], [--no-skip-javascript]&lt;/td&gt;
-  &lt;td&gt;# Skip JavaScript files&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--dev], [--no-dev]&lt;/td&gt;
-      &lt;td&gt;# Setup the application with Gemfile pointing to your Rails checkout&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--edge], [--no-edge]&lt;/td&gt;
-      &lt;td&gt;# Setup the application with Gemfile pointing to Rails repository&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--skip-turbolinks], [--no-skip-turbolinks]&lt;/td&gt;
-      &lt;td&gt;# Skip turbolinks gem&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-T, [--skip-test-unit], [--no-skip-test-unit]&lt;/td&gt;
-  &lt;td&gt;# Skip Test::Unit files&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--rc=RC]&lt;/td&gt;
-      &lt;td&gt;# Path to file containing extra configuration options for rails command&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;[--no-rc], [--no-no-rc]&lt;/td&gt;
-      &lt;td&gt;# Skip loading of extra configuration options from .railsrc file&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td colspan=&quot;2&quot;&gt;Runtime options:&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-f, [--force]&lt;/td&gt;
-  &lt;td&gt;# Overwrite files that already exist
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-p, [--pretend], [--no-pretend]
-  &lt;/td&gt;
-  &lt;td&gt;# Run but do not make any changes
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;
-  -q, [--quiet], [--no-quiet]&lt;/td&gt;
-  &lt;td&gt;# Suppress status output
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td&gt;-s, [--skip], [--no-skip]&lt;/td&gt;
-  &lt;td&gt;# Skip files that already exist
-  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;td colspan=&quot;2&quot;&gt;
-Rails options:
-&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-&lt;td&gt;-h, [--help], [--no-help]
-&lt;/td&gt;
-&lt;td&gt;# Show this help message and quit
-  &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;-v, [--version], [--no-version]&lt;/td&gt;
-  &lt;td&gt;# Show Rails version number and quit&lt;/td&gt;
-  &lt;/tr&gt;
-  
-  &lt;style type=&quot;text/css&quot;&gt;
-tr&gt;td:first-child {
-	color:blue;
-}
-  &lt;/style&gt;
-&lt;/tr&gt;&lt;/table&gt;
-</description>
-        <pubDate>Fri, 25 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/25/Options_for_Rails_command_line.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/25/Options_for_Rails_command_line.html</guid>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/removing_fields_from_tables_via_migration.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/removing_fields_from_tables_via_migration.html</guid>
         
         <category>ruby</category>
         
         <category>rails</category>
         
-        <category>options</category>
+        <category>migration</category>
+        
+        <category>database</category>
+        
+        <category>add</category>
         
         
       </item>
     
       <item>
-        <title>What is Ruby programming language</title>
+        <title>Migrating Specific VERSION Or STEP In Rails Migration</title>
         <description>&lt;p&gt;TAGS:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  version  step 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img style=&quot;width:50px; length:50px;&quot; src=&quot;/images/ruby.png&quot; /&gt;
-   &lt;code class=&quot;highlighter-rouge&quot;&gt;Ruby:&lt;/code&gt; is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro “Matz” Matsumoto in Japan. According to its creator, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, and Lisp.
-   &lt;img style=&quot;width:200px; length:300px; float:right; border:5px blue solid;&quot; src=&quot;/images/Yukihiro_Matsumoto.png&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;1- Migrating Specific VERSION Or STEP In Rails Migration.&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ruby&lt;/code&gt; was conceived on February 24, 1993. In a 1999 post to the ruby-talk mailing list, Ruby author &lt;code class=&quot;highlighter-rouge&quot;&gt;Yukihiro Matsumoto&lt;/code&gt; describes some of his early ideas about the language.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The name &lt;code class=&quot;highlighter-rouge&quot;&gt;Ruby&lt;/code&gt; originated during an online chat session between Matsumoto and Keiju Ishitsuka on February 24, 1993, before any code had been written for the language. Initially two names were proposed: “Coral” and “Ruby”. Matsumoto chose the latter in a later e-mail to Ishitsuka. Matsumoto later noted a factor in choosing the name “Ruby” – it was the birthstone of one of his colleagues.&lt;/p&gt;
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
 
-&lt;p&gt;The first public release of Ruby 0.95 was announced on Japanese domestic newsgroups on December 21, 1995. Subsequently three more versions of Ruby were released in two days. The release coincided with the launch of the Japanese-language ruby-list mailing list, which was the first mailing list for the new language.&lt;/p&gt;
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Matsumoto&lt;/code&gt; has said that Ruby is designed for programmer productivity and fun, following the principles of good user interface design. At a Google Tech Talk in 2008 Matsumoto further stated, “I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language.”[56] He stresses that systems design needs to emphasize human, rather than computer.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Often people, especially computer engineers, focus on the machines. They think, “By doing this, the machine will run fast. By doing this, the machine will run more effectively.&lt;/p&gt;
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
 
-&lt;p&gt;By doing this, the machine will something something something.” They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;[source: &lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Ruby_programming_language&quot;&gt;wikipedia&lt;/a&gt;]&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jCC8nyBoC5E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/A4DvaZ_lR0U&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 </description>
-        <pubDate>Wed, 23 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://mamdouh-abbas.github.io/2016/03/23/what_is_ruby.html</link>
-        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/03/23/what_is_ruby.html</guid>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/migrating_specific_version_or_step.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/migrating_specific_version_or_step.html</guid>
         
         <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>migration</category>
+        
+        <category>database</category>
+        
+        <category>version</category>
+        
+        <category>step</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Joining Two Tables Via Rails Migration</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  join 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;1- Joining Two Tables Via Rails Migration.&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
+
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/DDQrRj_WQCc&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/joining_two_tables_via_migration.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/joining_two_tables_via_migration.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>migration</category>
+        
+        <category>database</category>
+        
+        <category>join</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Editing Migration Manually In Rails Migration</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;1- Editing Migration Manually In Rails Migration.&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
+
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TdIQmThzN84&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/editing_migration_manually.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/editing_migration_manually.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>migration</category>
+        
+        <category>database</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Drop Tables Using Rails Migration</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  drop 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;1- Drop Tables Using Rails Migration.&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
+
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/fq0fDJ_Tuko&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/drop_tables_using_migration.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/drop_tables_using_migration.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>migration</category>
+        
+        <category>database</category>
+        
+        <category>drop</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Creating Migration File Via Rails Scaffold</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;1- Creating Migration File Via Rails Scaffold.&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scaffold&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
+
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/daFA4WPhaT4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/creating_migrating_file_using_scaffold.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/creating_migrating_file_using_scaffold.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>migration</category>
+        
+        <category>database</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Creating Migration File Via Generating Rails Model</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;1- reating Migration File Via Generating Rails Model.&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brief&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.&lt;/p&gt;
+
+&lt;p&gt;Then, Apply changes to database using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that you can undo this migration using:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ck3LhvLtLZI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/UpsRsGvMRYA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://mamdouh-abbas.github.io/2016/04/28/creating_migrating_file_using_generating-_model.html</link>
+        <guid isPermaLink="true">http://mamdouh-abbas.github.io/2016/04/28/creating_migrating_file_using_generating-_model.html</guid>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>migration</category>
+        
+        <category>database</category>
         
         
       </item>

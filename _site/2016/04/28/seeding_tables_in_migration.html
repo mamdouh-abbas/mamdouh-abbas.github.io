@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Directory Structure In Rails</title>
+  <title>Seeding Tables Using Migration In Rails</title>
 
   
-  <meta name="description" content="Explaining the directory structure in Rails application">
+  <meta name="description" content="Seeding Tables Using Migration In Rails.">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="directory structure rails ruby">
+  <meta name="keywords" content="ruby rails migrate database seed rollback">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/03/30/Directory_structure_in_rails.html">
+  <link rel="canonical" href="http://mamdouh-abbas.github.io/2016/04/28/seeding_tables_in_migration.html">
   <link rel="alternate" type="application/rss+xml" title="Web 4 Sons" href="http://mamdouh-abbas.github.io/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -80,77 +80,34 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Directory Structure In Rails</h2>
-    <p class="post-meta"><time datetime="2016-03-30T00:00:00+02:00" itemprop="datePublished">Mar 30, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Seeding Tables Using Migration In Rails</h2>
+    <p class="post-meta"><time datetime="2016-04-28T00:00:00+02:00" itemprop="datePublished">Apr 28, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
 </code></pre>
 </div>
 
-<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
-<table border="2">
-  <tr style="color:red;">
-<td>File/</td><td>Folder Purpose</td>
-</tr>
-  <tr>
-    <td>app/</td>
-    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
-    </td>
-  </tr>
-  <tr>
-  <td>bin/</td>
-  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
-  </td>
-  </tr>
-  <tr>
-<td>config/</td>
-<td>Configure your application's routes, database, and more. 
-</td>
-</tr>
-<tr>
-<td>config.ru</td>
-<td>Rack configuration for Rack based servers used to start the application.</td>
-</tr>
-<tr>
-<td>db/</td>
- <td>Contains your current database schema, as well as the database migrations.
- </td>
-</tr>
-<tr>
-<td>Gemfile,Gemfile.lock</td>
-<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
-</tr>
-<tr>
-  <td>lib/</td><td>Extended modules for your application.</td>
-</tr>
-<tr>
-  <td>log/</td><td>Application log files.</td>
-</tr>
-<tr>
-<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
-</tr>
-<tr>
-  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
-</tr>
-<tr>
-  <td>README.rdoc</td>
-  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
-</tr>
-<tr>
-<td>Unit tests, fixtures, and other test apparatus.</td>
-<td>Testing Rails Applications.</td>
-</tr>
-<tr>
-<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
-</tr>
-<tr>
-<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
-</tr>
-</table>
+<h3>1- Seeding Tables Using Migration In Rails.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/0tE4oLlYv-k" frameborder="0" allowfullscreen=""></iframe>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/QwU8XHriWCU" frameborder="0" allowfullscreen=""></iframe>
 
   </div>
 
@@ -163,8 +120,8 @@
 */
 
 var disqus_config = function () {
-this.page.url = /2016/03/30/Directory_structure_in_rails.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = /2016/03/30/Directory_structure_in_rails //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = /2016/04/28/seeding_tables_in_migration.html //PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = /2016/04/28/seeding_tables_in_migration //PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

@@ -63,6 +63,10 @@
         
           
         
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -92,389 +96,65 @@
   </div>
 <!-- This loops through the paginated posts -->
 
-<span class="date">2016-04-22 00:00:00 +0200</span>
-  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example.html">Rails Exception Handler, complete example</a></h3>
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, Reset and Drop Database Via Rails Console</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  setup  reset  drop 
 </code></pre>
 </div>
 
-<h4>1- Using Rails Exception Handler Gem.</h4>
+<h3>1- Setup, Reset and Drop Database Via Rails Console.</h3>
 
-<p>First, Add rails_exception_handler to Gemfile.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">'rails_exception_handler'</span><span class="p">,</span> <span class="s2">"~&gt; 2"</span></code></pre></figure>
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
 
-<p>Then, Make <code class="highlighter-rouge">bundle install</code>.</p>
-
-<h4>2- Generate an initializer.</h4>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">rails_exception_handler</span><span class="ss">:install</span></code></pre></figure>
-
-<p>Open config/initializers/rails_exception_handler.rb, and choose the environments you want to handle exceptions with.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">environments</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:production</span><span class="p">,</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span><span class="p">]</span></code></pre></figure>
-
-<p>Also, You can use another layout in the case of missing application layout using home layout in <code class="highlighter-rouge">views/layouts</code> or any other layout as <code class="highlighter-rouge">error</code> in our tutorial.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">fallback_layout</span> <span class="o">=</span> <span class="s1">'error'</span></code></pre></figure>
-
-<p>You can change the error message generated with exception as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">responses</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;500&lt;/h1&gt;&lt;p&gt;Internal server error&lt;/p&gt;"</span><span class="p">,</span>
-  <span class="ss">:not_found</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;Ops, The page you write is not found&lt;/h1&gt;&lt;p&gt;Page not found&lt;/p&gt;"</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Also, You can map the relation between the error type and the message related as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">responses</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'ActiveRecord::RecordNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
-    <span class="s1">'ActionController::RoutingError'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
-    <span class="s1">'AbstractController::ActionNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span>
-  <span class="p">}</span></code></pre></figure>
-
-<h4>3- Storing the exception</h4>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">storage_strategies</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:active_record</span><span class="p">]</span>
- <span class="n">config</span><span class="p">.</span><span class="nf">active_record_store_in</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">'development'</span><span class="p">,</span> <span class="c1"># Production in the production environment</span>
-  <span class="ss">:record_table</span> <span class="o">=&gt;</span> <span class="s1">'error_messages'</span> <span class="c1"># The table name will be created.</span>
- <span class="p">}</span></code></pre></figure>
-
-<p>Note, We will create <code class="highlighter-rouge">error_messages</code> table in the same database.</p>
-
-<p>Then, Create a migration file for <code class="highlighter-rouge">error_message</code> as :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="n">error_message</span></code></pre></figure>
-
-<p>Then, Edit the generated file to be :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ErrorMessages</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
-  <span class="k">def</span> <span class="nf">change</span>
-     <span class="n">create_table</span> <span class="ss">:error_messages</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:class_name</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:message</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:trace</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:params</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:target_url</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:referer_url</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:user_agent</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:user_info</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:app_name</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:doc_root</span>
-
-      <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Then, Make migration:</p>
+<p>Then, Apply changes to database using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<h4>4- Delete Error Pages From Public Folder.</h4>
+<p>Note that you can undo this migration using:</p>
 
-<p>This is <code class="highlighter-rouge">important</code> step.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
-<p>You must delete or rename <code class="highlighter-rouge">404</code>,<code class="highlighter-rouge">422</code>,<code class="highlighter-rouge">500</code> error pages form public folder.</p>
-
-<h4>5- Create a Model To Deal With `error_message` Table .</h4>
-
-<p>In <code class="highlighter-rouge">app/model</code> folder create <code class="highlighter-rouge">error_message.rb</code> file and type:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ErrorMessage</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>All these steps in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/wZoroa-I23I" frameborder="0" allowfullscreen=""></iframe>
-
-<h4>6- Dealing With `ErrorMessage` Model.</h4>
-
-<p>As shown in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/fHPkjvPq_sY" frameborder="0" allowfullscreen=""></iframe>
-
-<h4>7- Creating View For Exceptions.</h4>
-
-<p>As shown in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/JCVsqGa0WZk" frameborder="0" allowfullscreen=""></iframe>
-
-<h4>8- How to save User Information In `error_messages` table.</h4>
-
-<p>As shown in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen=""></iframe>
-<p><br />
-<i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/A4DvaZ_lR0U" frameborder="0" allowfullscreen=""></iframe>
 
   </div> -->
 
-<span class="date">2016-03-31 00:00:00 +0200</span>
-  <h3><a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">Rails With Postgresql database, complete example</a></h3>
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting Environment For Rails Migration</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  postgres  database 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  environment 
 </code></pre>
 </div>
 
-<h3>1- Creating Postgresql Database.</h3>
+<h3>1- Setting Environment For Rails Migration.</h3>
 
-<p>First, log into postgres-server</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">su</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">c</span> <span class="n">psql</span></code></pre></figure>
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
 
-<p>Type password and be ready to use postgresql DSL.
-First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
-
-<p>Here, We will create one for development only, and you can create the others.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
-
-<p>Type password and be ready to use postgres DSL.
-First, Create you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
-
-<p>Here, We will create one for development only, and you can create the others.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
-
-<p>Also, You need to create user:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">user</span> <span class="n">osama</span> <span class="n">with</span> <span class="n">password</span> <span class="s1">'123456789'</span><span class="p">;</span></code></pre></figure>
-
-<p>Then, Grant all privileges to this user</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">grant</span> <span class="n">all</span> <span class="n">privileges</span> <span class="n">on</span> <span class="n">database</span> <span class="n">rails_dev</span> <span class="n">to</span> <span class="n">osama</span><span class="p">;</span></code></pre></figure>
-
-<p>At this point, you have <code class="highlighter-rouge">database</code> name, <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">password</code>.</p>
-
-<hr />
-
-<p><br /></p>
-
-<h3>2- Creating Rails Application With Postgresql database.</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">auto</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">postgresql</span>
-<span class="n">cd</span> <span class="n">auto</span>
-<span class="n">subl</span> <span class="o">.</span></code></pre></figure>
-
-<p>The default database for rails is sqlite3, but we use <code class="highlighter-rouge">--database=postgresql</code> to use postgres instead, so you will find ` gem ‘pg’.</p>
-
-<p>Note, If you change from sqlite3 to postgres, you need to make</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span></code></pre></figure>
-
-<p>to update <code class="highlighter-rouge">gemfile.lock</code> and install <code class="highlighter-rouge">pg</code> gem if not installed.</p>
-
-<p>Open <code class="highlighter-rouge">config/database.yml</code> and fill</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="ss">default: </span><span class="o">&amp;</span><span class="n">default</span>
-  <span class="ss">adapter: </span><span class="n">postgresql</span>
-  <span class="ss">encoding: </span><span class="n">unicode</span>
-  <span class="ss">port: </span><span class="mi">5432</span>
-  <span class="ss">username: </span><span class="n">osama</span>
-  <span class="ss">password: </span><span class="mi">123456789</span>
-  <span class="ss">pool: </span><span class="mi">5</span>
-
-<span class="ss">development:
-  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
-  <span class="ss">database: </span><span class="n">rails_dev</span></code></pre></figure>
-
-<p>Now, Create you posts using <code class="highlighter-rouge">scaffold</code> :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">post</span> <span class="nb">name</span> <span class="n">comment</span><span class="ss">:text</span></code></pre></figure>
-
-<p>And then, Make <code class="highlighter-rouge">migration</code> to create the posts table in the database it self.</p>
+<p>Then, Apply changes to database using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>Last, Fire up you rails server:</p>
+<p>Note that you can undo this migration using:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">s</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
-<p>Now, ready to browse to <code class="highlighter-rouge">localhost:3000/posts</code> and process all <code class="highlighter-rouge">CRUD</code> operations.</p>
-
-<p>All these steps in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/-ajUunAwezo" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/PcGxPKmmbE8" frameborder="0" allowfullscreen=""></iframe>
 
 
   </div> -->
 
-<span class="date">2016-03-30 00:00:00 +0200</span>
-  <h3><a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">Rails With Mysql database, complete example</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  mysql  database 
-</code></pre>
-</div>
-
-<h3>1- Installing Mysql-server and Creating Database.</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span></code></pre></figure>
-
-<p>Then log into mysql-server with root account:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="nb">p</span></code></pre></figure>
-
-<p>Type root password and be ready to use mysql DSL.
-First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
-
-<p>Here, We will create one for development only, and you can create the others.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
-
-<p>You can see all mysql databases on system using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">show</span> <span class="n">databases</span><span class="p">;</span></code></pre></figure>
-
-<p>Also, You need to create user rather than root:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">user</span> <span class="s1">'osama'</span><span class="err">@</span><span class="s1">'localhost'</span> <span class="n">identified</span> <span class="n">by</span> <span class="s1">'123456789'</span><span class="p">;</span></code></pre></figure>
-
-<p>Then, Grant all privileges to this user</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">grant</span> <span class="n">all</span> <span class="n">privileges</span> <span class="n">on</span> <span class="o">*</span> <span class="p">.</span> <span class="nf">*</span> <span class="n">to</span> <span class="s1">'osama'</span><span class="err">@</span><span class="s1">'localhost'</span><span class="p">;</span></code></pre></figure>
-
-<p>At this point, you have <code class="highlighter-rouge">database</code> name, <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">password</code>.</p>
-
-<hr />
-
-<p><br /></p>
-
-<h3>2- Creating Rails Application With Mysql database.</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">auto</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">mysql</span>
-<span class="n">cd</span> <span class="n">auto</span>
-<span class="n">subl</span> <span class="o">.</span></code></pre></figure>
-
-<p>The default database for rails is sqlite3, but we use <code class="highlighter-rouge">--database=mysql</code> to use mysql instead, so you will find ` gem ‘mysql2’.</p>
-
-<p>Note, If you change from sqlite3 to mysql, you need to make</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span></code></pre></figure>
-
-<p>to update <code class="highlighter-rouge">gemfile.lock</code> and install <code class="highlighter-rouge">mysql</code> gem if not installed.</p>
-
-<p>Open <code class="highlighter-rouge">config/database.yml</code> and fill</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="ss">default: </span><span class="o">&amp;</span><span class="n">default</span>
-  <span class="ss">adapter: </span><span class="n">mysql2</span>
-  <span class="ss">encoding: </span><span class="n">utf8</span>
-  <span class="ss">pool: </span><span class="mi">5</span>
-  <span class="ss">username: </span><span class="n">osama</span>       <span class="c1">#of mysql database created.</span>
-  <span class="ss">password: </span><span class="mi">123456789</span>   <span class="c1">#of mysql database created.</span>
-  <span class="ss">socket: </span><span class="sr">/var/</span><span class="n">run</span><span class="o">/</span><span class="n">mysqld</span><span class="o">/</span><span class="n">mysqld</span><span class="p">.</span><span class="nf">sock</span>
-
-<span class="ss">development:
-  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
-  <span class="ss">database: </span><span class="n">rails_dev</span>   <span class="c1">#of mysql database created.</span></code></pre></figure>
-
-<p>Now, Create you posts using <code class="highlighter-rouge">scaffold</code> :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">post</span> <span class="nb">name</span> <span class="n">comment</span><span class="ss">:text</span></code></pre></figure>
-
-<p>And then, Make <code class="highlighter-rouge">migration</code> to create the posts table in the database it self.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>Last, Fire up you rails server:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">s</span></code></pre></figure>
-
-<p>Now, ready to browse to <code class="highlighter-rouge">localhost:3000/posts</code> and process all <code class="highlighter-rouge">CRUD</code> operations.</p>
-
-<p>All these steps in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/YUfxiIscIyc" frameborder="0" allowfullscreen=""></iframe>
-
-
-  </div> -->
-
-<span class="date">2016-03-30 00:00:00 +0200</span>
-  <h3><a href="/2016/03/30/Directory_structure_in_rails.html">Directory Structure In Rails</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
-</code></pre>
-</div>
-
-<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
-<table border="2">
-  <tr style="color:red;">
-<td>File/</td><td>Folder Purpose</td>
-</tr>
-  <tr>
-    <td>app/</td>
-    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
-    </td>
-  </tr>
-  <tr>
-  <td>bin/</td>
-  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
-  </td>
-  </tr>
-  <tr>
-<td>config/</td>
-<td>Configure your application's routes, database, and more. 
-</td>
-</tr>
-<tr>
-<td>config.ru</td>
-<td>Rack configuration for Rack based servers used to start the application.</td>
-</tr>
-<tr>
-<td>db/</td>
- <td>Contains your current database schema, as well as the database migrations.
- </td>
-</tr>
-<tr>
-<td>Gemfile,Gemfile.lock</td>
-<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
-</tr>
-<tr>
-  <td>lib/</td><td>Extended modules for your application.</td>
-</tr>
-<tr>
-  <td>log/</td><td>Application log files.</td>
-</tr>
-<tr>
-<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
-</tr>
-<tr>
-  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
-</tr>
-<tr>
-  <td>README.rdoc</td>
-  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
-</tr>
-<tr>
-<td>Unit tests, fixtures, and other test apparatus.</td>
-<td>Testing Rails Applications.</td>
-</tr>
-<tr>
-<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
-</tr>
-<tr>
-<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
-</tr>
-</table>
-
-  </div> -->
-
-<span class="date">2016-03-29 00:00:00 +0200</span>
-  <h3><a href="/2016/03/29/migrating_database.html">Migrating Database</a></h3>
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
@@ -483,386 +163,254 @@ First, you may need to determine that you will create more than one database, on
 </code></pre>
 </div>
 
-<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
+<h3>1- Seeding Tables Using Migration In Rails.</h3>
 
-<p>Or converting ruby code to build database tables, columns, properties, changes, and so on.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
 
-<p>This can be done using <code class="highlighter-rouge">rake</code> or “ruby make” command.</p>
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamp in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_cars</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
-
-<p>This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).</p>
-
-<p>Ex: If you create rails application via scaffold, you must make migration to create the database tables as :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">brand</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
-<span class="n">or</span>
-<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">brand</span> <span class="n">year</span><span class="ss">:integer</span> </code></pre></figure>
-
-<p>This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.</p>
-
-<p>Then after making migration as:</p>
+<p>Then, Apply changes to database using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>Note that you can undo this migration using</p>
+<p>Note that you can undo this migration using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/0tE4oLlYv-k" frameborder="0" allowfullscreen=""></iframe>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/QwU8XHriWCU" frameborder="0" allowfullscreen=""></iframe>
 
   </div> -->
 
-<span class="date">2016-03-28 00:00:00 +0200</span>
-  <h3><a href="/2016/03/28/what_is_ruby_on_rails.html">What is Ruby on Rails</a></h3>
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing Fields From Table via migration</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  add 
 </code></pre>
 </div>
 
-<p>What is Rails?</p>
+<h3>1- Removing Fields From Table Via Rails Migration.</h3>
 
-<p><img style="width:50px; length:50px;" src="/images/rails4.jpeg" />
-<code class="highlighter-rouge">Rails</code> is a web application development framework written in the Ruby language. It is designed to make programming web applications easier by making assumptions about what every developer needs to get started. It allows you to write less code while accomplishing more than many other languages and frameworks. Experienced Rails developers also report that it makes web application development more fun.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">Rails</code> is opinionated software. It makes the assumption that there is the “best” way to do things, and it’s designed to encourage that way - and in some cases to discourage alternatives. If you learn “The Rails Way” you’ll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.</p>
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
 
-<p>The <code class="highlighter-rouge">Rails</code> philosophy includes two major guiding principles:</p>
-
-<p><code class="highlighter-rouge">Don't Repeat Yourself:</code> DRY is a principle of software development which states that “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” By not writing the same information over and over again, our code is more maintainable, more extensible, and less buggy.</p>
-
-<p><code class="highlighter-rouge">Convention Over Configuration:</code> Rails has opinions about the best way to do many things in a web application, and defaults to this set of conventions, rather than require that you specify every minutiae through endless configuration files.</p>
-
-<p>[<a target="_blank" href="http://guides.rubyonrails.org/getting_started.html">source</a>]</p>
-
-  </div> -->
-
-<span class="date">2016-03-26 00:00:00 +0200</span>
-  <h3><a href="/2016/03/26/creating_new_rails_application.html">Creating a new Rails application</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  on  rails  rails  software 
-</code></pre>
-</div>
-
-<p>First, We assume that you installed <code class="highlighter-rouge">Ruby</code>, you can know that using :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">v</span></code></pre></figure>
-
-<p>Then, you need to install <code class="highlighter-rouge">Rails</code>:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">rails</span></code></pre></figure>
-
-<p>You can use  –no-ri –no-rdoc , for no gems documenation</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">rails</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ri</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">rdoc</span></code></pre></figure>
-
-<p>Also, you can know its version using :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="o">-</span><span class="n">v</span></code></pre></figure>
-
-<p>Now, you are ready to <code class="highlighter-rouge">Rails</code></p>
-
-<blockquote>
-  <ul>
-    <li>
-      <p>Open a terminal</p>
-    </li>
-    <li>
-      <p>Go to the parent folder you want to build you application there.</p>
-    </li>
-    <li>
-      <p>Type the following line and press <code class="highlighter-rouge">Enter</code>.</p>
-    </li>
-  </ul>
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">autos</span></code></pre></figure>
-
-<blockquote>
-
-  <ul>
-    <li>
-      <p>This will generate a directory called <code class="highlighter-rouge">autos</code> which contains the <a href="/2016/03/24/Directory_structure_in_rails">rails application directory structure</a>.</p>
-    </li>
-    <li>
-      <p>Change directory to <code class="highlighter-rouge">autos</code>.</p>
-    </li>
-  </ul>
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">cd</span> <span class="n">autos</span></code></pre></figure>
-
-<blockquote>
-
-  <ul>
-    <li>Fire up the <code class="highlighter-rouge">rails server</code>.</li>
-  </ul>
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">server</span> 
-<span class="n">or</span> 
-<span class="n">rails</span> <span class="n">s</span></code></pre></figure>
-
-<blockquote>
-
-  <ul>
-    <li>Then,browse to <code class="highlighter-rouge">localhost:3000</code>.</li>
-    <li>You will see this page:</li>
-  </ul>
-</blockquote>
-
-<p><img src="/images/rails_welcome.png" alt="rails welcome page" title="rails welcome page" /></p>
-
-<p>Note that you can stop rails server using</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ctrl</span> <span class="o">+</span> <span class="n">c</span></code></pre></figure>
-
-<p>Also, Note that you don’t need to restart rails server every time you make changes to you application as long as you are in development environment.</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/MMUMMAUTq_Y" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br />
-<br /></p>
-
-<p>Now, let’s start our <code class="highlighter-rouge">autos</code> application:</p>
-
-<p>First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">brand</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
-<span class="n">or</span>
-<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">brand</span> <span class="n">year</span><span class="ss">:integer</span></code></pre></figure>
-
-<p>This single line will create:</p>
-
-<blockquote>
-
-  <p><code class="highlighter-rouge">car</code> model</p>
-
-  <p><code class="highlighter-rouge">cars</code> controller</p>
-
-  <p><code class="highlighter-rouge">cars</code> views</p>
-
-  <p><code class="highlighter-rouge">cars</code> routes</p>
-
-  <p><code class="highlighter-rouge">cars</code> tests</p>
-
-  <p><code class="highlighter-rouge">cars</code> migration file</p>
-
-</blockquote>
-
-<p>Then we need to create <code class="highlighter-rouge">cars</code> database table using :</p>
+<p>Then, Apply changes to database using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>This line will create the <code class="highlighter-rouge">cars</code> table and its database schema in <code class="highlighter-rouge">db/</code> folder, this table has two columns, one is brand with data type string and the other is year with data type integer.</p>
+<p>Note that you can undo this migration using:</p>
 
-<p>Now, you are ready to browse you application and make <code class="highlighter-rouge">CRUD</code> operations;</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">CRUD</code> means :</p>
-
-<blockquote>
-
-  <p><code class="highlighter-rouge">C</code> for <code class="highlighter-rouge">Create</code></p>
-
-  <p><code class="highlighter-rouge">R</code> for <code class="highlighter-rouge">Read</code></p>
-
-  <p><code class="highlighter-rouge">U</code> for <code class="highlighter-rouge">Update</code></p>
-
-  <p><code class="highlighter-rouge">D</code> for <code class="highlighter-rouge">Delete</code></p>
-
-</blockquote>
-
-<p>Now, browse to <code class="highlighter-rouge">localhost:3000</code>, you will see the welcome page for rails application, so browse to <code class="highlighter-rouge">localhost:3000/cars</code> .</p>
-
-<p>All these steps in the next tutorial video <code class="highlighter-rouge">You First Rails Application</code></p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/x3vgeGcrty8" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/2cSW_dLK6Rs" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/VUWfJfCUWYM" frameborder="0" allowfullscreen=""></iframe>
 
   </div> -->
 
-<span class="date">2016-03-25 00:00:00 +0200</span>
-  <h3><a href="/2016/03/25/Options_for_Rails_command_line.html">Options for rails command line</a></h3>
-  
-  <!-- <div class="content">
-    <p>rails -h
-Usage:
-  rails new APP_PATH [options]</p>
-
-<p>Options:</p>
-<table border="2">
-<tr>
-	<th> Option
-	</th>
-	<th> Details
-	</th>
-<tr>
-<td>-r, [--ruby=PATH]</td>
-  <td># Path to the Ruby binary of your choice</td>
-  </tr>
-  <tr><td>-m, [--template=TEMPLATE]</td>
-  <td># Path to some application template (can be a filesystem path or URL)</td>
-  </tr>
-  <tr>
-  <td>[--skip-gemfile], [--no-skip-gemfile]</td>
-      <td># Don't create a Gemfile</td>
-  </tr>
-  <tr>
-  <td>
-  -B, [--skip-bundle], [--no-skip-bundle]
-  </td>
-  <td>
-  # Don't run bundle install
-  </td>
-  </tr>
-  <tr>
-  <td>-G, [--skip-git], [--no-skip-git]</td>
-  <td># Skip .gitignore file</td>
-  </tr>
-  <tr>
-  <td>[--skip-keeps], [--no-skip-keeps]</td>
-      <td># Skip source control .keep files</td>
-  </tr>
-  <tr>
-  <td>-O, [--skip-active-record], [--no-skip-active-record]</td>
-  <td># Skip Active Record files</td>
-</tr>
-<tr>
-  <td>-S, [--skip-sprockets], [--no-skip-sprockets]</td>
-  <td># Skip Sprockets files</td>
-  </tr>
-<tr>
-  <td>[--skip-spring], [--no-skip-spring]</td>
-      <td># Don't install Spring application preloader</td>
-      </tr>
-<tr>
- <td>-d, [--database=DATABASE]</td>
-  <td># Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
-  </td>
-  </tr>
-  <tr>
-  <td>-j, [--javascript=JAVASCRIPT]</td>
-  <td># Preconfigure for selected JavaScript library# Default: jquery</td>
-  </tr>
-  <tr>
-  <td>-J, [--skip-javascript], [--no-skip-javascript]</td>
-  <td># Skip JavaScript files</td>
-  </tr>
-  <tr>
-  <td>[--dev], [--no-dev]</td>
-      <td># Setup the application with Gemfile pointing to your Rails checkout</td>
-  </tr>
-  <tr>
-  <td>[--edge], [--no-edge]</td>
-      <td># Setup the application with Gemfile pointing to Rails repository</td>
-  </tr>
-  <tr>
-  <td>[--skip-turbolinks], [--no-skip-turbolinks]</td>
-      <td># Skip turbolinks gem</td>
-      </tr>
-  <tr>
-  <td>-T, [--skip-test-unit], [--no-skip-test-unit]</td>
-  <td># Skip Test::Unit files</td>
-  </tr>
-  <tr>
-  <td>[--rc=RC]</td>
-      <td># Path to file containing extra configuration options for rails command</td>
-  </tr>
-  <tr>
-  <td>[--no-rc], [--no-no-rc]</td>
-      <td># Skip loading of extra configuration options from .railsrc file</td>
-  </tr>
-  <tr>
-  <td colspan="2">Runtime options:</td>
-  </tr>
-  <tr>
-  <td>-f, [--force]</td>
-  <td># Overwrite files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td>-p, [--pretend], [--no-pretend]
-  </td>
-  <td># Run but do not make any changes
-  </td>
-  </tr>
-  <tr>
-  <td>
-  -q, [--quiet], [--no-quiet]</td>
-  <td># Suppress status output
-  </td>
-  </tr>
-  <tr>
-  <td>-s, [--skip], [--no-skip]</td>
-  <td># Skip files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td colspan="2">
-Rails options:
-</td>
-  </tr>
-  <tr>
-<td>-h, [--help], [--no-help]
-</td>
-<td># Show this help message and quit
-  </td>
-  </tr>
-<tr>
-  <td>-v, [--version], [--no-version]</td>
-  <td># Show Rails version number and quit</td>
-  </tr>
-  
-  <style type="text/css">
-tr>td:first-child {
-	color:blue;
-}
-  </style>
-</tr></table>
-
-  </div> -->
-
-<span class="date">2016-03-23 00:00:00 +0200</span>
-  <h3><a href="/2016/03/23/what_is_ruby.html">What is Ruby programming language</a></h3>
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/migrating_specific_version_or_step.html">Migrating Specific VERSION Or STEP In Rails Migration</a></h3>
   
   <!-- <div class="content">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  version  step 
 </code></pre>
 </div>
 
-<p><img style="width:50px; length:50px;" src="/images/ruby.png" />
-   <code class="highlighter-rouge">Ruby:</code> is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro “Matz” Matsumoto in Japan. According to its creator, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, and Lisp.
-   <img style="width:200px; length:300px; float:right; border:5px blue solid;" src="/images/Yukihiro_Matsumoto.png" /></p>
+<h3>1- Migrating Specific VERSION Or STEP In Rails Migration.</h3>
 
-<p><code class="highlighter-rouge">Ruby</code> was conceived on February 24, 1993. In a 1999 post to the ruby-talk mailing list, Ruby author <code class="highlighter-rouge">Yukihiro Matsumoto</code> describes some of his early ideas about the language.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
 
-<p>The name <code class="highlighter-rouge">Ruby</code> originated during an online chat session between Matsumoto and Keiju Ishitsuka on February 24, 1993, before any code had been written for the language. Initially two names were proposed: “Coral” and “Ruby”. Matsumoto chose the latter in a later e-mail to Ishitsuka. Matsumoto later noted a factor in choosing the name “Ruby” – it was the birthstone of one of his colleagues.</p>
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
 
-<p>The first public release of Ruby 0.95 was announced on Japanese domestic newsgroups on December 21, 1995. Subsequently three more versions of Ruby were released in two days. The release coincided with the launch of the Japanese-language ruby-list mailing list, which was the first mailing list for the new language.</p>
+<p>Then, Apply changes to database using:</p>
 
-<p><code class="highlighter-rouge">Matsumoto</code> has said that Ruby is designed for programmer productivity and fun, following the principles of good user interface design. At a Google Tech Talk in 2008 Matsumoto further stated, “I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language.”[56] He stresses that systems design needs to emphasize human, rather than computer.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>Often people, especially computer engineers, focus on the machines. They think, “By doing this, the machine will run fast. By doing this, the machine will run more effectively.</p>
+<p>Note that you can undo this migration using:</p>
 
-<p>By doing this, the machine will something something something.” They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
-<p>[source: <a target="_blank" href="https://en.wikipedia.org/wiki/Ruby_programming_language">wikipedia</a>]</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jCC8nyBoC5E" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/A4DvaZ_lR0U" frameborder="0" allowfullscreen=""></iframe>
 
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  join 
+</code></pre>
+</div>
+
+<h3>1- Joining Two Tables Via Rails Migration.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/DDQrRj_WQCc" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/editing_migration_manually.html">Editing Migration Manually In Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+</code></pre>
+</div>
+
+<h3>1- Editing Migration Manually In Rails Migration.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/TdIQmThzN84" frameborder="0" allowfullscreen=""></iframe>
+
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/drop_tables_using_migration.html">Drop Tables Using Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  drop 
+</code></pre>
+</div>
+
+<h3>1- Drop Tables Using Rails Migration.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/fq0fDJ_Tuko" frameborder="0" allowfullscreen=""></iframe>
+
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating Migration File Via Rails Scaffold</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+</code></pre>
+</div>
+
+<h3>1- Creating Migration File Via Rails Scaffold.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/daFA4WPhaT4" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creating Migration File Via Generating Rails Model</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+</code></pre>
+</div>
+
+<h3>1- reating Migration File Via Generating Rails Model.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/ck3LhvLtLZI" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/UpsRsGvMRYA" frameborder="0" allowfullscreen=""></iframe>
 
   </div> -->
 
 
 <!-- Paginations links -->
+
+<div class="pagination">
+  
+    <span>&laquo; Prev</span>
+  
+
+  
+    
+      <em>1</em>
+    
+  
+    
+      <a href="/page2">2</a>
+    
+  
+    
+      <a href="/page3">3</a>
+    
+  
+
+  
+    <a href="/page2">Next &raquo;</a>
+  
+</div>
 
 
 <!-- <div class="home">
@@ -872,10 +420,130 @@ tr>td:first-child {
   <ul class="post-list">
     
       <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/setup_reset_and_drop_database.html">Setup, Reset and Drop Database Via Rails Console</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/setting_rails_environment_via_migration.html">Setting Environment For Rails Migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing Fields From Table via migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/migrating_specific_version_or_step.html">Migrating Specific VERSION Or STEP In Rails Migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/editing_migration_manually.html">Editing Migration Manually In Rails Migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/drop_tables_using_migration.html">Drop Tables Using Rails Migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating Migration File Via Rails Scaffold</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creating Migration File Via Generating Rails Model</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating Migration File Via Generating Rails Migration</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/adding_fields_to_table_via_migration.html">Adding Fields to Table via migration</a>
+        </h2>
+      </li>
+    
+      <li>
         <span class="post-meta">Apr 22, 2016</span>
 
         <h2>
-          <a class="post-link" href="/2016/04/22/Rails_Exception_Handler_complete_example.html">Rails Exception Handler, complete example</a>
+          <a class="post-link" href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Rails Exception Handler, complete example part 4</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 22, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Rails Exception Handler, complete example part 3</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 22, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Rails Exception Handler, complete example part 2</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 22, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler, complete example part 1</a>
         </h2>
       </li>
     

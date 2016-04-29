@@ -63,6 +63,10 @@
         
           
         
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -87,6 +91,8 @@
 </code></pre>
 </div>
 
+<h3>1- Creating Migrating File Using Scaffold.</h3>
+
 <p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
 
 <p>Or converting ruby code to build database tables, columns, properties, changes, and so on.</p>
@@ -95,28 +101,29 @@
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamp in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
+<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamps in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_cars</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_books</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
 
 <p>This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).</p>
 
 <p>Ex: If you create rails application via scaffold, you must make migration to create the database tables as :</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">brand</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
-<span class="n">or</span>
-<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">cars</span> <span class="n">brand</span> <span class="n">year</span><span class="ss">:integer</span> </code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
 
-<p>This will generate a new file in db/migrate/(date-time stamp)_create_cars.rb.</p>
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
 
-<p>Then after making migration as:</p>
+<p>Then, Apply changes to database using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>Note that you can undo this migration using</p>
+<p>Note that you can undo this migration using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
+<p>As shown in this tutorial video :</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/daFA4WPhaT4" frameborder="0" allowfullscreen=""></iframe>
 
   </div>
 

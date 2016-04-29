@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Seeding Tables Using Migration In Rails"
+tags: ruby rails migration database 
+keywords: ruby rails migrate database seed rollback
+description: Seeding Tables Using Migration In Rails.
+published: true
+---
+
+   TAGS:
+   
+   {% for tag in page.tags %} {{ tag }} {% endfor %}
+
+<h3>1- Seeding Tables Using Migration In Rails.</h3>
+
+{% highlight ruby %}
+rails generate model book title brief:text
+{% endhighlight %}
+
+This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.
+
+Then, Apply changes to database using:
+
+{% highlight ruby %}
+rake db:migrate
+{% endhighlight %}
+
+Note that you can undo this migration using:
+
+{% highlight ruby %}
+rake db:rollback
+{% endhighlight %}
+
+
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/0tE4oLlYv-k" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/QwU8XHriWCU" frameborder="0" allowfullscreen></iframe>

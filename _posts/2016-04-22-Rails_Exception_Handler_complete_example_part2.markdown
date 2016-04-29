@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rails Exception Handler, complete example"
+title: "Rails Exception Handler, complete example part 2" 
 keywords: ruby rails exception error handler
 tags: ruby rails exception handler
 description: How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.
@@ -61,88 +61,10 @@ config.responses = {
   }
 {% endhighlight %}
 
-<h4>3- Storing the exception</h4>
-
-{% highlight ruby %}
-config.storage_strategies = [:active_record]
- config.active_record_store_in = {
-  :database => 'development', # Production in the production environment
-  :record_table => 'error_messages' # The table name will be created.
- }
-{% endhighlight %}
-
-Note, We will create `error_messages` table in the same database.
-
-Then, Create a migration file for `error_message` as :
-
-{% highlight ruby %}
-rails g migration error_message
-{% endhighlight %}
-
-Then, Edit the generated file to be :
-
-{% highlight ruby %}
-class ErrorMessages < ActiveRecord::Migration
-  def change
-     create_table :error_messages do |t|
-      t.text :class_name
-      t.text :message
-      t.text :trace
-      t.text :params
-      t.text :target_url
-      t.text :referer_url
-      t.text :user_agent
-      t.string :user_info
-      t.string :app_name
-      t.string :doc_root
-
-      t.timestamps
-    end
-  end
-end
-{% endhighlight %}
-
-Then, Make migration: 
-
-{% highlight ruby %}
-rake db:migrate
-{% endhighlight %}
-
-<h4>4- Delete Error Pages From Public Folder.</h4>
-
-This is `important` step.
-
-You must delete or rename `404`,`422`,`500` error pages form public folder.
-
-<h4>5- Create a Model To Deal With `error_message` Table .</h4>
-
-In `app/model` folder create `error_message.rb` file and type:
-
-{% highlight ruby %}
-class ErrorMessage < ActiveRecord::Base
-end
-{% endhighlight %}
-
-All these steps in this tutorial video :
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/wZoroa-I23I" frameborder="0" allowfullscreen></iframe>
-
 <h4>6- Dealing With `ErrorMessage` Model.</h4>
 
 As shown in this tutorial video :
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/fHPkjvPq_sY" frameborder="0" allowfullscreen></iframe>
 
-<h4>7- Creating View For Exceptions.</h4>
-
-As shown in this tutorial video :
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/JCVsqGa0WZk" frameborder="0" allowfullscreen></iframe>
-
-<h4>8- How to save User Information In `error_messages` table.</h4>
-
-As shown in this tutorial video :
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen></iframe>
-<br>
 <i style="color:red;">Great Note</i>, Every time you change any file in `config/initializers`, You must restart `server`.

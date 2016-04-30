@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Rails Exception Handler, complete example part 1</title>
+  <title>Rails Exception Handler, Exception Handler Gem</title>
 
   
   <meta name="description" content="How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.">
@@ -80,7 +80,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, complete example part 1</h2>
+    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, Exception Handler Gem</h2>
     <p class="post-meta"><time datetime="2016-04-22T00:00:00+02:00" itemprop="datePublished">Apr 22, 2016</time></p>
   </header>
 
@@ -178,9 +178,85 @@
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ErrorMessage</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
 <span class="k">end</span></code></pre></figure>
 
+<h4>6-Storing Exceptions In Database.</h4>
+
+<p>First, You must decide if you will store exceptions into the save application database or in another database.</p>
+
+<p>If you decided to store exceptoins in another database, then you have to create state that in <code class="highlighter-rouge">/config/database.yml</code>.</p>
+
+<p>But, We will use our database in this tutorial, and <code class="highlighter-rouge">database.yml</code> as it is and the <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code> will be:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RailsExceptionHandler</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">environments</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:production</span><span class="p">]</span>                <span class="c1"># Defaults to [:production]</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">fallback_layout</span> <span class="o">=</span> <span class="s1">'error'</span>                                         <span class="c1"># Defaults to 'application'</span>
+  <span class="c1"># config.after_initialize do</span>
+  <span class="c1">#   # This block will be called after the initialization is done.</span>
+  <span class="c1">#   # Usefull for interaction with authentication mechanisms, which should</span>
+  <span class="c1">#   # only happen when the exception handler is enabled.</span>
+  <span class="c1"># end</span>
+  <span class="c1"># config.filters = [                                                      # No filters are  enabled by default</span>
+  <span class="c1">#   :all_404s,</span>
+  <span class="c1">#   :no_referer_404s,</span>
+  <span class="c1">#   :anon_404s,</span>
+  <span class="c1">#   {:user_agent_regxp =&gt; /\b(ApptusBot|TurnitinBot|DotBot|SiteBot)\b/i},</span>
+  <span class="c1">#   {:target_url_regxp =&gt; /\.php/i},</span>
+  <span class="c1">#   {:referer_url_regxp =&gt; /problematicreferer/i}</span>
+  <span class="c1"># ]</span>
+  <span class="c1">#</span>
+  <span class="c1"># !!! IMPORTANT !!!</span>
+  <span class="c1"># You must remove public/500.html and public/404.html for these to have any effect</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">responses</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;500&lt;/h1&gt;&lt;p&gt;Internal server error&lt;/p&gt;"</span><span class="p">,</span>
+    <span class="ss">:not_found</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;Ops, The page you write is not found&lt;/h1&gt;&lt;p&gt;Page not found&lt;/p&gt;"</span>
+  <span class="p">}</span>
+
+  <span class="c1"># All errors are mapped to the :default response unless overridden here</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">response_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'ActiveRecord::RecordNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
+    <span class="s1">'ActionController::RoutingError'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
+    <span class="s1">'AbstractController::ActionNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span>
+  <span class="p">}</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">storage_strategies</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:active_record</span><span class="p">]</span> <span class="c1"># Available options: [:active_record, :rails_log, :remote_url =&gt; {:target =&gt; 'http://example.com'}]</span>
+
+  <span class="c1"># Change database/table for the active_record storage strategy</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">active_record_store_in</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">'development'</span><span class="p">,</span> <span class="c1"># your database is development in this example but must be `production` in production environment</span>
+   <span class="c1">#and you must state the name if you will use another database.</span>
+   <span class="ss">:record_table</span> <span class="o">=&gt;</span> <span class="s1">'error_messages'</span> <span class="c1">#the name of the table</span>
+  <span class="p">}</span>
+
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">store_request_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="p">,</span><span class="n">request</span><span class="o">|</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:target_url</span><span class="p">]</span> <span class="o">=</span>    <span class="n">request</span><span class="p">.</span><span class="nf">url</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:referer_url</span><span class="p">]</span> <span class="o">=</span>   <span class="n">request</span><span class="p">.</span><span class="nf">referer</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:params</span><span class="p">]</span> <span class="o">=</span>        <span class="n">request</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">inspect</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:user_agent</span><span class="p">]</span> <span class="o">=</span>    <span class="n">request</span><span class="p">.</span><span class="nf">user_agent</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">store_exception_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="p">,</span><span class="n">exception</span><span class="o">|</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:class_name</span><span class="p">]</span> <span class="o">=</span>   <span class="n">exception</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">to_s</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:message</span><span class="p">]</span> <span class="o">=</span>      <span class="n">exception</span><span class="p">.</span><span class="nf">to_s</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:trace</span><span class="p">]</span> <span class="o">=</span>        <span class="n">exception</span><span class="p">.</span><span class="nf">backtrace</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">store_environment_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="p">,</span><span class="n">env</span><span class="o">|</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:doc_root</span><span class="p">]</span> <span class="o">=</span>      <span class="n">env</span><span class="p">[</span><span class="s1">'DOCUMENT_ROOT'</span><span class="p">]</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">store_global_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="o">|</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:app_name</span><span class="p">]</span> <span class="o">=</span>     <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">parent_name</span>
+    <span class="n">storage</span><span class="p">[</span><span class="ss">:created_at</span><span class="p">]</span> <span class="o">=</span>   <span class="no">Time</span><span class="p">.</span><span class="nf">now</span>
+  <span class="k">end</span>
+  <span class="c1">#config.store_user_info = {:method =&gt; :current_user, :field =&gt; :email} # Helper method for easier access to current_user</span>
+<span class="k">end</span></code></pre></figure>
+
 <p>All these steps in this tutorial video :</p>
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/wZoroa-I23I" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br />
+<a target="_blank" href="https://github.com/mamdouh-abbas/exception_handler" title="source on github">Source on github.com</a></p>
 
 <p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
 

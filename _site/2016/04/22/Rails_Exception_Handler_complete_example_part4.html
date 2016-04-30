@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Rails Exception Handler, complete example part 4</title>
+  <title>Rails Exception Handler, Saving User Informations</title>
 
   
   <meta name="description" content="How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.">
@@ -80,7 +80,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, complete example part 4</h2>
+    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, Saving User Informations</h2>
     <p class="post-meta"><time datetime="2016-04-22T00:00:00+02:00" itemprop="datePublished">Apr 22, 2016</time></p>
   </header>
 
@@ -91,20 +91,22 @@
 </code></pre>
 </div>
 
-<h4>1- Using Rails Exception Handler Gem.</h4>
+<h4>How to save User Informations In `error_messages` table.</h4>
 
-<p>First, Add rails_exception_handler to Gemfile.</p>
+<p>First, You must have one of the authentication methods such as devise.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">'rails_exception_handler'</span><span class="p">,</span> <span class="s2">"~&gt; 2"</span></code></pre></figure>
+<p>Then, Uncomment the following line in <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code> and edit it to be:</p>
 
-<p>Then, Make <code class="highlighter-rouge">bundle install</code>.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">config</span><span class="p">.</span><span class="nf">store_user_info</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:current_user</span><span class="p">,</span> <span class="ss">:field</span> <span class="o">=&gt;</span> <span class="ss">:email</span><span class="p">}</span> <span class="c1"># Helper method for easier access to current_user</span></code></pre></figure>
 
-<h4>8- How to save User Information In `error_messages` table.</h4>
+<p>Where you will store the user <code class="highlighter-rouge">email</code> as user information into <code class="highlighter-rouge">ErrorMessage</code> table and we suppose that you use <code class="highlighter-rouge">current_user</code> as used in <code class="highlighter-rouge">devise</code>.</p>
 
 <p>As shown in this tutorial video :</p>
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+
+<p><br />
+<a target="_blank" href="https://github.com/mamdouh-abbas/exception_handler" title="source on github">Source on github.com</a></p>
 
 <p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
 

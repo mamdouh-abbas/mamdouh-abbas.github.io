@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rails Exception Handler, complete example part 2" 
+title: "Rails Exception Handler, Dealing With Missing Layout" 
 keywords: ruby rails exception error handler
 tags: ruby rails exception handler
 description: How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.
@@ -13,58 +13,25 @@ TAGS:
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
- <h4>1- Using Rails Exception Handler Gem.</h4>
+<h4>Dealing with Missing Layout.</h4>
 
- First, Add rails_exception_handler to Gemfile.
+We know that the default error pages in the `public` folder has no layout, But in `rails exception handler` it uses layout, so What we can do if layout is missed.
 
-{% highlight ruby %}
-gem 'rails_exception_handler', "~> 2"
+For this reason, rails exception handler provide
+
+ {% highlight ruby %}
+#config.fallback_layout = 'home'
 {% endhighlight %}
 
-Then, Make `bundle install`.
+ in `/config/initializers/rails_exception_handler.rb`/
 
-<h4>2- Generate an initializer.</h4>
-
-{% highlight ruby %}
-rails g rails_exception_handler:install
-{% endhighlight %}
-
-Open config/initializers/rails_exception_handler.rb, and choose the environments you want to handle exceptions with.
-
-{% highlight ruby %}
-config.environments = [:production, :test, :development]
-{% endhighlight %}
-
-
-Also, You can use another layout in the case of missing application layout using home layout in `views/layouts` or any other layout as `error` in our tutorial. 
-
-{% highlight ruby %}
-config.fallback_layout = 'error'
-{% endhighlight %}
-
-You can change the error message generated with exception as:
-
-{% highlight ruby %}
-config.responses = {
-  :default => "<h1>500</h1><p>Internal server error</p>",
-  :not_found => "<h1>Ops, The page you write is not found</h1><p>Page not found</p>"
-}
-{% endhighlight %}
-
-Also, You can map the relation between the error type and the message related as:
-
-{% highlight ruby %}
-config.responses = {
-    'ActiveRecord::RecordNotFound' => :not_found,
-    'ActionController::RoutingError' => :not_found,
-    'AbstractController::ActionNotFound' => :not_found
-  }
-{% endhighlight %}
-
-<h4>6- Dealing With `ErrorMessage` Model.</h4>
+ Uncomment it and change `home` layout to be another one as `error` in our tutorial.
 
 As shown in this tutorial video :
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/fHPkjvPq_sY" frameborder="0" allowfullscreen></iframe>
+
+<br>
+<a target="_blank" href="https://github.com/mamdouh-abbas/exception_handler" title="source on github">Source on github.com</a>
 
 <i style="color:red;">Great Note</i>, Every time you change any file in `config/initializers`, You must restart `server`.

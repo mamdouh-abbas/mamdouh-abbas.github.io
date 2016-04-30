@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Rails Exception Handler, complete example part 3</title>
+  <title>Rails Exception Handler, Creating Exceptions Page</title>
 
   
   <meta name="description" content="How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.">
@@ -80,7 +80,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, complete example part 3</h2>
+    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, Creating Exceptions Page</h2>
     <p class="post-meta"><time datetime="2016-04-22T00:00:00+02:00" itemprop="datePublished">Apr 22, 2016</time></p>
   </header>
 
@@ -91,11 +91,50 @@
 </code></pre>
 </div>
 
-<h4>7- Creating View For Exceptions.</h4>
+<h4>Creating View For Exceptions.</h4>
 
-<p>As shown in this tutorial video :</p>
+<p>First, Assign all exceptions from the <code class="highlighter-rouge">ErrorMessage</code> model to an instance variable <code class="highlighter-rouge">@errors</code> in the posts controller to be accessed in <code class="highlighter-rouge">errors</code> page in views as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">errors</span>
+    <span class="vi">@errors</span><span class="o">=</span><span class="no">ErrorMessage</span><span class="p">.</span><span class="nf">all</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then, Make a route before <code class="highlighter-rouge">posts</code> to avoid <code class="highlighter-rouge">id</code> exception as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">get</span> <span class="s2">"posts/errors"</span>
+<span class="n">root</span> <span class="ss">to: </span><span class="s2">"posts#index"</span>
+<span class="n">resources</span> <span class="ss">:posts</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Errors</span><span class="o">&lt;</span><span class="sr">/h1&gt;
+&lt;table border="2"&gt;
+  &lt;tr&gt;
+  &lt;% @errors.attribute_names.each do |key,value| %&gt;
+    &lt;th&gt;
+      &lt;%= key %&gt;
+    &lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/tr&gt;
+  &lt;% @errors.each do |error| %&gt;
+  &lt;tr&gt;
+  &lt;% error.attributes.each do |key,value| %&gt;
+    &lt;td&gt;
+
+      &lt;%= value  %&gt;
+
+    &lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/tr&gt;
+    &lt;% end %&gt;
+&lt;/</span><span class="n">table</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>You can use any <code class="highlighter-rouge">paging</code> gem to handle large exceptions.</p>
+
+<p>Now, Take a look to this tutorial video :</p>
 
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/JCVsqGa0WZk" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br />
+<a target="_blank" href="https://github.com/mamdouh-abbas/exception_handler" title="source on github">Source on github.com</a></p>
 
 <p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
 

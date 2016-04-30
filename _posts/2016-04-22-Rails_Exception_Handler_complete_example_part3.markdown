@@ -23,10 +23,6 @@ TAGS:
 
 <h4>Creating View For Exceptions.</h4>
 
-<a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">page one</a>
-   <a href=""></a>
-   <a href=""></a> 
-
 First, Assign all exceptions from the `ErrorMessage` model to an instance variable `@errors` in the posts controller to be accessed in `errors` page in views as:
 
 {% highlight ruby %}

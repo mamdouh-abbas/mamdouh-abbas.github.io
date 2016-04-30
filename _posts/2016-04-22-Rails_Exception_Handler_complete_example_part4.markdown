@@ -24,11 +24,6 @@ TAGS:
 
 <h4>How to save User Informations In `error_messages` table.</h4>
 
-<a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">page one</a>
-   <a href=""></a>
-   <a href=""></a>
-
-
 First, You must have one of the authentication methods such as devise.
 
 Then, Uncomment the following line in `/config/initializers/rails_exception_handler.rb` and edit it to be:

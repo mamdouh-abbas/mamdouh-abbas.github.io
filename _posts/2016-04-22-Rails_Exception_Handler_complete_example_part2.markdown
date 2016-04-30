@@ -19,13 +19,8 @@ TAGS:
    <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
    <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
  </ul>
- 
+
 <h4>Dealing with Missing Layout.</h4>
-
-<a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">page one</a>
-  <a href=""></a>
-   <a href=""></a>
-
 
 We know that the default error pages in the `public` folder has no layout, But in `rails exception handler` it uses layout, so What we can do if layout is missed.
 

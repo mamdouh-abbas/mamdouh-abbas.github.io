@@ -39,6 +39,8 @@ root to: "posts#index"
 resources :posts
 {% endhighlight %}
 
+Then, Create `views/errors.html.erb` and paste the next code and save.
+
 {% highlight ruby %}
 <h1>Errors</h1>
 <table border="2">

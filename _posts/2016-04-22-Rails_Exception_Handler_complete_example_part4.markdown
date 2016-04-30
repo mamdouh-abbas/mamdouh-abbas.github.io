@@ -13,7 +13,21 @@ TAGS:
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
+   Series:
+
+ <ul>
+ 	<li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
+   
+ </ul>
+
 <h4>How to save User Informations In `error_messages` table.</h4>
+
+<a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">page one</a>
+   <a href=""></a>
+   <a href=""></a>
+
 
 First, You must have one of the authentication methods such as devise.
 

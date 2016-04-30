@@ -13,6 +13,14 @@ TAGS:
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
+   Series:
+
+<ul>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
+ </ul>
+
  <h4>1- Using Rails Exception Handler Gem.</h4>
 
  First, Add rails_exception_handler to Gemfile.

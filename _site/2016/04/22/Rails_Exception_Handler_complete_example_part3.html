@@ -101,10 +101,6 @@
 
 <h4>Creating View For Exceptions.</h4>
 
-<p><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">page one</a>
-   <a href=""></a>
-   <a href=""></a></p>
-
 <p>First, Assign all exceptions from the <code class="highlighter-rouge">ErrorMessage</code> model to an instance variable <code class="highlighter-rouge">@errors</code> in the posts controller to be accessed in <code class="highlighter-rouge">errors</code> page in views as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">errors</span>
@@ -116,6 +112,8 @@
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">get</span> <span class="s2">"posts/errors"</span>
 <span class="n">root</span> <span class="ss">to: </span><span class="s2">"posts#index"</span>
 <span class="n">resources</span> <span class="ss">:posts</span></code></pre></figure>
+
+<p>Then, Create <code class="highlighter-rouge">views/errors.html.erb</code> and paste the next code and save.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Errors</span><span class="o">&lt;</span><span class="sr">/h1&gt;
 &lt;table border="2"&gt;

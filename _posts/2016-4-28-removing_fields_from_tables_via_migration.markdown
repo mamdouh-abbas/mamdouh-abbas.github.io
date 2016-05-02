@@ -11,7 +11,7 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
-<h3>1- Removing Fields From Table Via Rails Migration.</h3>
+<h3>Removing Fields From Table Via Rails Migration.</h3>
 
 {% highlight ruby %}
 rails generate model book title brief:text

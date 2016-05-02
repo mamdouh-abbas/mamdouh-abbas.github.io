@@ -4,7 +4,7 @@ title:  "Removing Fields From Table via migration"
 tags: ruby rails migration database add
 keywords: ruby rails migrate database
 description: Removing Fields From Table Via Rails Migration .
-published: true
+published: false
 ---
 
    TAGS:

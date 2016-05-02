@@ -6,7 +6,7 @@ keywords: ruby rails migrate database join
 description: Joining Two Tables Via Rails Migration.
 published: true
 ---
-
+   
    TAGS:
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}

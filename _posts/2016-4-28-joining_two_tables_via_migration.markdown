@@ -4,7 +4,7 @@ title:  "Joining Two Tables Via Rails Migration"
 tags: ruby rails migration database join 
 keywords: ruby rails migrate database join
 description: Joining Two Tables Via Rails Migration.
-published: false
+published: true
 ---
 
    TAGS:

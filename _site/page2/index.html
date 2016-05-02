@@ -96,6 +96,46 @@
 <!-- This loops through the paginated posts -->
 
 <span class="date">2016-04-22 00:00:00 +0200</span>
+  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Rails Exception Handler, Saving User Informations</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
+</code></pre>
+</div>
+
+<p>Series:</p>
+
+<ul>
+ 	<li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
+   
+ </ul>
+
+<h4>How to save User Informations In `error_messages` table.</h4>
+
+<p>First, You must have one of the authentication methods such as devise.</p>
+
+<p>Then, Uncomment the following line in <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code> and edit it to be:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">config</span><span class="p">.</span><span class="nf">store_user_info</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:current_user</span><span class="p">,</span> <span class="ss">:field</span> <span class="o">=&gt;</span> <span class="ss">:email</span><span class="p">}</span> <span class="c1"># Helper method for easier access to current_user</span></code></pre></figure>
+
+<p>Where you will store the user <code class="highlighter-rouge">email</code> as user information into <code class="highlighter-rouge">ErrorMessage</code> table and we suppose that you use <code class="highlighter-rouge">current_user</code> as used in <code class="highlighter-rouge">devise</code>.</p>
+
+<p>As shown in this tutorial video :</p>
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br />
+<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
+
+<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
+
+  </div> -->
+
+<span class="date">2016-04-22 00:00:00 +0200</span>
   <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Rails Exception Handler, Creating Exceptions Page</a></h3>
   
   <!-- <div class="content">
@@ -871,147 +911,6 @@ First, you may need to determine that you will create more than one database, on
 
   </div> -->
 
-<span class="date">2016-03-25 00:00:00 +0200</span>
-  <h3><a href="/2016/03/25/Options_for_Rails_command_line.html">Options for rails command line</a></h3>
-  
-  <!-- <div class="content">
-    <p>rails -h
-Usage:
-  rails new APP_PATH [options]</p>
-
-<p>Options:</p>
-<table border="2">
-<tr>
-	<th> Option
-	</th>
-	<th> Details
-	</th>
-<tr>
-<td>-r, [--ruby=PATH]</td>
-  <td># Path to the Ruby binary of your choice</td>
-  </tr>
-  <tr><td>-m, [--template=TEMPLATE]</td>
-  <td># Path to some application template (can be a filesystem path or URL)</td>
-  </tr>
-  <tr>
-  <td>[--skip-gemfile], [--no-skip-gemfile]</td>
-      <td># Don't create a Gemfile</td>
-  </tr>
-  <tr>
-  <td>
-  -B, [--skip-bundle], [--no-skip-bundle]
-  </td>
-  <td>
-  # Don't run bundle install
-  </td>
-  </tr>
-  <tr>
-  <td>-G, [--skip-git], [--no-skip-git]</td>
-  <td># Skip .gitignore file</td>
-  </tr>
-  <tr>
-  <td>[--skip-keeps], [--no-skip-keeps]</td>
-      <td># Skip source control .keep files</td>
-  </tr>
-  <tr>
-  <td>-O, [--skip-active-record], [--no-skip-active-record]</td>
-  <td># Skip Active Record files</td>
-</tr>
-<tr>
-  <td>-S, [--skip-sprockets], [--no-skip-sprockets]</td>
-  <td># Skip Sprockets files</td>
-  </tr>
-<tr>
-  <td>[--skip-spring], [--no-skip-spring]</td>
-      <td># Don't install Spring application preloader</td>
-      </tr>
-<tr>
- <td>-d, [--database=DATABASE]</td>
-  <td># Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)                                 # Default: sqlite3
-  </td>
-  </tr>
-  <tr>
-  <td>-j, [--javascript=JAVASCRIPT]</td>
-  <td># Preconfigure for selected JavaScript library# Default: jquery</td>
-  </tr>
-  <tr>
-  <td>-J, [--skip-javascript], [--no-skip-javascript]</td>
-  <td># Skip JavaScript files</td>
-  </tr>
-  <tr>
-  <td>[--dev], [--no-dev]</td>
-      <td># Setup the application with Gemfile pointing to your Rails checkout</td>
-  </tr>
-  <tr>
-  <td>[--edge], [--no-edge]</td>
-      <td># Setup the application with Gemfile pointing to Rails repository</td>
-  </tr>
-  <tr>
-  <td>[--skip-turbolinks], [--no-skip-turbolinks]</td>
-      <td># Skip turbolinks gem</td>
-      </tr>
-  <tr>
-  <td>-T, [--skip-test-unit], [--no-skip-test-unit]</td>
-  <td># Skip Test::Unit files</td>
-  </tr>
-  <tr>
-  <td>[--rc=RC]</td>
-      <td># Path to file containing extra configuration options for rails command</td>
-  </tr>
-  <tr>
-  <td>[--no-rc], [--no-no-rc]</td>
-      <td># Skip loading of extra configuration options from .railsrc file</td>
-  </tr>
-  <tr>
-  <td colspan="2">Runtime options:</td>
-  </tr>
-  <tr>
-  <td>-f, [--force]</td>
-  <td># Overwrite files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td>-p, [--pretend], [--no-pretend]
-  </td>
-  <td># Run but do not make any changes
-  </td>
-  </tr>
-  <tr>
-  <td>
-  -q, [--quiet], [--no-quiet]</td>
-  <td># Suppress status output
-  </td>
-  </tr>
-  <tr>
-  <td>-s, [--skip], [--no-skip]</td>
-  <td># Skip files that already exist
-  </td>
-  </tr>
-  <tr>
-  <td colspan="2">
-Rails options:
-</td>
-  </tr>
-  <tr>
-<td>-h, [--help], [--no-help]
-</td>
-<td># Show this help message and quit
-  </td>
-  </tr>
-<tr>
-  <td>-v, [--version], [--no-version]</td>
-  <td># Show Rails version number and quit</td>
-  </tr>
-  
-  <style type="text/css">
-tr>td:first-child {
-	color:blue;
-}
-  </style>
-</tr></table>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -1067,6 +966,14 @@ tr>td:first-child {
 
         <h2>
           <a class="post-link" href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a>
         </h2>
       </li>
     
@@ -1233,7 +1140,7 @@ tr>td:first-child {
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>Web 2 Sons</li>
-          <li><a href="mailto:mamdouhabbassalama@gmail.com">mamdouhabbassalama@gmail.com</a></li>
+          <li><a href="mailto:mamdouhabbassalama@gmail.com">Email Me</a></li>
         </ul>
       </div>
 

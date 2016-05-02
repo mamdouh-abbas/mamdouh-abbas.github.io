@@ -247,6 +247,66 @@ Then paste this seeding code:</p>
   </div> -->
 
 <span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  join 
+</code></pre>
+</div>
+
+<h3>Joining Two Tables Via Rails Migration.</h3>
+
+<p>First, We suppose that you have two tables at least.</p>
+
+<p>In our example, we have <code class="highlighter-rouge">books</code> and <code class="highlighter-rouge">authors</code> tables, so we can join them using migration by adding <code class="highlighter-rouge">references</code> column which is author’s <code class="highlighter-rouge">id</code> of the <code class="highlighter-rouge">book</code>.</p>
+
+<p>Or in other word, each record in <code class="highlighter-rouge">books</code> has its author’s <code class="highlighter-rouge">id</code> as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddAuthorRefToBooks</span> <span class="n">author</span><span class="ss">:references</span></code></pre></figure>
+
+<p>This will generate a migration file to add this column as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddAuthorRefToBooks</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_reference</span> <span class="ss">:books</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">index: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">foreign_key: </span><span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<p>Now, You need to manually join these table via <code class="highlighter-rouge">model</code> by :</p>
+
+<blockquote>
+
+  <p>Adding <code class="highlighter-rouge">has_many :books</code> in the <code class="highlighter-rouge">author</code> model</p>
+
+  <p>Adding <code class="highlighter-rouge">belongs_to :author</code> in the <code class="highlighter-rouge">book</code> model</p>
+
+</blockquote>
+
+<p>In <code class="highlighter-rouge">models/author.rb</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_many</span> <span class="ss">:books</span></code></pre></figure>
+
+<p>In <code class="highlighter-rouge">models/book.rb</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">belongs_to</span> <span class="ss">:author</span></code></pre></figure>
+
+<p>Now, Take a look to this tutorial video:</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/DDQrRj_WQCc" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
   <h3><a href="/2016/04/28/editing_migration_manually.html">Editing Migration File Manually In Rails</a></h3>
   
   <!-- <div class="content">
@@ -509,46 +569,6 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 
   </div> -->
 
-<span class="date">2016-04-22 00:00:00 +0200</span>
-  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Rails Exception Handler, Saving User Informations</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
-</code></pre>
-</div>
-
-<p>Series:</p>
-
-<ul>
- 	<li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
-   
- </ul>
-
-<h4>How to save User Informations In `error_messages` table.</h4>
-
-<p>First, You must have one of the authentication methods such as devise.</p>
-
-<p>Then, Uncomment the following line in <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code> and edit it to be:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">config</span><span class="p">.</span><span class="nf">store_user_info</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:current_user</span><span class="p">,</span> <span class="ss">:field</span> <span class="o">=&gt;</span> <span class="ss">:email</span><span class="p">}</span> <span class="c1"># Helper method for easier access to current_user</span></code></pre></figure>
-
-<p>Where you will store the user <code class="highlighter-rouge">email</code> as user information into <code class="highlighter-rouge">ErrorMessage</code> table and we suppose that you use <code class="highlighter-rouge">current_user</code> as used in <code class="highlighter-rouge">devise</code>.</p>
-
-<p>As shown in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br />
-<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
-
-<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -604,6 +624,14 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 
         <h2>
           <a class="post-link" href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a>
         </h2>
       </li>
     
@@ -770,7 +798,7 @@ and <code class="highlighter-rouge">datatype = float</code></p>
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>Web 2 Sons</li>
-          <li><a href="mailto:mamdouhabbassalama@gmail.com">mamdouhabbassalama@gmail.com</a></li>
+          <li><a href="mailto:mamdouhabbassalama@gmail.com">Email Me</a></li>
         </ul>
       </div>
 

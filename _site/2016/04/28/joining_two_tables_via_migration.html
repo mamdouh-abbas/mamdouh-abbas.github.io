@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Rails Exception Handler, Dealing With Missing Layout</title>
+  <title>Joining Two Tables Via Rails Migration</title>
 
   
-  <meta name="description" content="How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.">
+  <meta name="description" content="Joining Two Tables Via Rails Migration.">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="ruby rails exception error handler">
+  <meta name="keywords" content="ruby rails migrate database join">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">
+  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/28/joining_two_tables_via_migration.html">
   <link rel="alternate" type="application/rss+xml" title="Web 2 Sons" href="http://www.web2sons.xyz/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -79,45 +79,64 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Rails Exception Handler, Dealing With Missing Layout</h2>
-    <p class="post-meta"><time datetime="2016-04-22T00:00:00+02:00" itemprop="datePublished">Apr 22, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Joining Two Tables Via Rails Migration</h2>
+    <p class="post-meta"><time datetime="2016-04-28T00:00:00+02:00" itemprop="datePublished">Apr 28, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  join 
 </code></pre>
 </div>
 
-<p>Series:</p>
+<h3>Joining Two Tables Via Rails Migration.</h3>
 
-<ul>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
- </ul>
+<p>First, We suppose that you have two tables at least.</p>
 
-<h4>Dealing with Missing Layout.</h4>
+<p>In our example, we have <code class="highlighter-rouge">books</code> and <code class="highlighter-rouge">authors</code> tables, so we can join them using migration by adding <code class="highlighter-rouge">references</code> column which is author’s <code class="highlighter-rouge">id</code> of the <code class="highlighter-rouge">book</code>.</p>
 
-<p>We know that the default error pages in the <code class="highlighter-rouge">public</code> folder has no layout, But in <code class="highlighter-rouge">rails exception handler</code> it uses layout, so What we can do if layout is missed.</p>
+<p>Or in other word, each record in <code class="highlighter-rouge">books</code> has its author’s <code class="highlighter-rouge">id</code> as:</p>
 
-<p>For this reason, rails exception handler provide</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddAuthorRefToBooks</span> <span class="n">author</span><span class="ss">:references</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#config.fallback_layout = 'home'</span></code></pre></figure>
+<p>This will generate a migration file to add this column as:</p>
 
-<p>in <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code>/</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddAuthorRefToBooks</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_reference</span> <span class="ss">:books</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">index: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">foreign_key: </span><span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
 
-<p>Uncomment it and change <code class="highlighter-rouge">home</code> layout to be another one as <code class="highlighter-rouge">error</code> in our tutorial.</p>
+<p>Then, Apply changes to database using:</p>
 
-<p>As shown in this tutorial video :</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/fHPkjvPq_sY" frameborder="0" allowfullscreen=""></iframe>
+<p>Note that you can undo this migration using:</p>
 
-<p><br />
-<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
-<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
+<p>Now, You need to manually join these table via <code class="highlighter-rouge">model</code> by :</p>
+
+<blockquote>
+
+  <p>Adding <code class="highlighter-rouge">has_many :books</code> in the <code class="highlighter-rouge">author</code> model</p>
+
+  <p>Adding <code class="highlighter-rouge">belongs_to :author</code> in the <code class="highlighter-rouge">book</code> model</p>
+
+</blockquote>
+
+<p>In <code class="highlighter-rouge">models/author.rb</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_many</span> <span class="ss">:books</span></code></pre></figure>
+
+<p>In <code class="highlighter-rouge">models/book.rb</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">belongs_to</span> <span class="ss">:author</span></code></pre></figure>
+
+<p>Now, Take a look to this tutorial video:</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/DDQrRj_WQCc" frameborder="0" allowfullscreen=""></iframe>
 
   </div>
 
@@ -125,8 +144,8 @@
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-        this.page.url = /2016/04/22/Rails_Exception_Handler_complete_example_part2.html;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = /2016/04/22/Rails_Exception_Handler_complete_example_part2; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = /2016/04/28/joining_two_tables_via_migration.html;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = /2016/04/28/joining_two_tables_via_migration; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');

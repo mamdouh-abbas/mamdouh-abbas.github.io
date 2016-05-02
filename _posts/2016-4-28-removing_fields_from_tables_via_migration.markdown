@@ -13,6 +13,19 @@ published: true
 
 <h3>Removing Fields From Table Via Rails Migration.</h3>
 
+<a href="/2016/4/28/adding_fields_to_table_via_migration.html">link</a>
+<a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">link</a>
+<a href="/2016/04/28/creating_migrating_file_using_generating _model.html">link</a>
+<a href="/2016/04/28/creating_migrating_file_using_scaffold.html">link</a>
+<a href="/2016/04/28/drop_tables_using_migration.html">link</a>
+<a href="/2016/04/28/editing_migration_manually.html">link</a>
+<a href="/2016/04/28/seeding_tables_in_migration.html">link</a>
+<a href="/2016/04/28/joining_two_tables_via_migration.html">link</a>
+<a href="/2016/04/28/migrating_specific_version_or_step.html">link</a>
+<a href="/2016/04/28/removing_fields_from_tables_via_migration.html">link</a>
+<a href="/2016/04/28/setting_rails_environment_via_migration.html">link</a>
+<a href="/2016/04/28/setup_reset_and_drop_database.html">link</a>
+
 {% highlight ruby %}
 rails generate model book title brief:text
 {% endhighlight %}

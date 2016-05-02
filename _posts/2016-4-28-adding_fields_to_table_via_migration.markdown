@@ -65,5 +65,6 @@ rails d AddPriceToBooks price:float
 
 The last line will delete the migration file generted by the first line.
 
+Take a look to this tutorial video:
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/RHJXsNd5vFo" frameborder="0" allowfullscreen></iframe>

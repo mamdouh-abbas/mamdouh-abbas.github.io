@@ -4,14 +4,14 @@ title:  "Migrating Specific VERSION Or STEP In Rails Migration"
 tags: ruby rails migration database version step 
 keywords: ruby rails migrate database version step
 description: Migrating Specific VERSION Or STEP In Rails Migration Migration In Rails Application.
-published: true
+published: false
 ---
 
    TAGS:
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
-<h3>1- Migrating Specific VERSION Or STEP In Rails Migration.</h3>
+<h3>Migrating Specific VERSION Or STEP In Rails Migration.</h3>
 
 {% highlight ruby %}
 rails generate model book title brief:text

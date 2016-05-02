@@ -4,14 +4,14 @@ title:  "Joining Two Tables Via Rails Migration"
 tags: ruby rails migration database join 
 keywords: ruby rails migrate database join
 description: Joining Two Tables Via Rails Migration.
-published: true
+published: false
 ---
 
    TAGS:
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
-<h3>1- Joining Two Tables Via Rails Migration.</h3>
+<h3>Joining Two Tables Via Rails Migration.</h3>
 
 {% highlight ruby %}
 rails generate model book title brief:text

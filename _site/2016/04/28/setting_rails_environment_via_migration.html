@@ -91,19 +91,45 @@
 </code></pre>
 </div>
 
-<h3>1- Setting Environment For Rails Migration.</h3>
+<h3>Setting Environment For Rails Migration.</h3>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+<p>You can set the <code class="highlighter-rouge">environment</code> for rails migration <code class="highlighter-rouge">RAILS_ENV</code> using one of two ways:</p>
 
-<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+<p>First, Using <code class="highlighter-rouge">rake</code> command line as:</p>
 
-<p>Then, Apply changes to database using:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
+<span class="c1">#or</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">development</span>
+<span class="c1">#or</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+<p>Second, Using system variables in command line</p>
 
-<p>Note that you can undo this migration using:</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
+<span class="c1">#or</span>
+<span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">development</span>
+<span class="c1">#or</span>
+<span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+<p>Or editing <code class="highlighter-rouge">~/.bashrc</code> file to add <code class="highlighter-rouge">RAILS_ENV</code> as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc
+#or
+echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf">bashrc</span>
+<span class="c1">#or</span>
+<span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
+
+<p>And then, refresh your system variables using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
+
+<p>You can assure that you have system variable <code class="highlighter-rouge">RAILS_ENV</code> and its value using :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="vg">$RAILS_ENV</span></code></pre></figure>
+
+<p><i style="color:red;">Note, The database for that environment must be created before its migration.</i></p>
+
+<p>Now, Take a look to this tutorial video:</p>
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/PcGxPKmmbE8" frameborder="0" allowfullscreen=""></iframe>
 

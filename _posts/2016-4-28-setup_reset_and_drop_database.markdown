@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Setup, Reset and Drop Database Via Rails Console"
+title:  "Setup, Reset And Drop Database"
 tags: ruby rails migration database setup reset drop 
 keywords: ruby rails migrate database setup reset drop
-description: Setup, Reset and Drop Database Via  Console in Rails Application.
+description: Setup, Reset And Drop Database In Rails Application.
 published: true
 ---
 
@@ -11,24 +11,29 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
-<h3>1- Setup, Reset and Drop Database Via Rails Console.</h3>
+<h3>Setup, Reset and Drop Database Via Rails Console.</h3>
+
+Setting up the database using `rake db:setup` will create the database and migrate the migration files.
 
 {% highlight ruby %}
-rails generate model book title brief:text
+rake db:setup
 {% endhighlight %}
 
-This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.
-
-Then, Apply changes to database using:
+Also, Resetting the database using
 
 {% highlight ruby %}
-rake db:migrate
+rake db:reset
 {% endhighlight %}
 
-Note that you can undo this migration using:
+will re-migrate the migration files.
+
+But, Drop the database using 
 
 {% highlight ruby %}
-rake db:rollback
+rake db:drop
 {% endhighlight %}
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/A4DvaZ_lR0U" frameborder="0" allowfullscreen></iframe>
+will delete the the database itself.
+
+Note, `rake db:reset` equals `rake db:drop db:setup`.
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/eQirPQNBy9Q" frameborder="0" allowfullscreen></iframe>

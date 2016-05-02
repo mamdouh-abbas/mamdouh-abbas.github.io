@@ -12,7 +12,7 @@ description: Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Expr
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.web2sons.xyz" # the base hostname & protocol for your site
 twitter_username: mamdouh_farh
-github_username:  mamdouh-abbas
+github_username:  mamdouh-abbas-farh
 gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 10
 

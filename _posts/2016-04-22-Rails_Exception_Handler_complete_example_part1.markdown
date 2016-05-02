@@ -212,6 +212,6 @@ All these steps in this tutorial video :
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/wZoroa-I23I" frameborder="0" allowfullscreen></iframe>
 
 <br>
-<a target="_blank" href="https://github.com/mamdouh-abbas/exception_handler" title="source on github">Source on github.com</a>
+<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a>
 
 <i style="color:red;">Great Note</i>, Every time you change any file in `config/initializers`, You must restart `server`.

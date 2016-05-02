@@ -10,7 +10,7 @@ title: Web 2 Sons
 email: mamdouhabbassalama@gmail.com
 description: Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://mamdouh-abbas.github.io" # the base hostname & protocol for your site
+url: "http://www.web2sons.xyz" # the base hostname & protocol for your site
 twitter_username: mamdouh_farh
 github_username:  mamdouh-abbas
 gems: [jekyll-paginate,jekyll-sitemap]

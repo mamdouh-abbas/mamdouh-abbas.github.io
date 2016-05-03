@@ -15,7 +15,7 @@ published: true
 
 <h4>How To Add A Column Type Array To Postgres Database Table Via Model And Migration</h4>
 
-In our example, We suppose that you watched our tutorial about <a href="/2016/03/30/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a>.  
+In our example, We suppose that you watched our tutorial about <a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a>.  
 
 <h4>Creating Migration</h4>
 

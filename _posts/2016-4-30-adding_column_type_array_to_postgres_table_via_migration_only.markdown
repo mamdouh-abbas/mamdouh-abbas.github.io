@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Adding A Column Type Array To Postgres Database Table"
+title:  "Adding A Column Type Array To Postgres Database Table Via Migration Only"
 tags: Postgres Column Array Rails
 keywords: Postgres Column Array Rails
-description: How To Add A Column Type Array To Postgres Database Table
+description: How To Add A Column Type Array To Postgres Database Table Via Migration Only
 published: true
 ---
 
@@ -13,7 +13,7 @@ published: true
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
-<h4>How To Add A Column Type Array To Postgres Database Table</h4>
+<h4>How To Add A Column Type Array To Postgres Database Table Via Migration Only</h4>
 
 In our example, We suppose that you watched our tutorial about <a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a>.
 

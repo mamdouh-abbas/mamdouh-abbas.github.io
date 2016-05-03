@@ -95,6 +95,52 @@
   </div>
 <!-- This loops through the paginated posts -->
 
+<span class="date">2016-03-29 00:00:00 +0200</span>
+  <h3><a href="/2016/03/29/migrating_database.html">Migrating Database</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+</code></pre>
+</div>
+
+<h3>1- Creating Migrating File Using Scaffold.</h3>
+
+<p><code class="highlighter-rouge">Migrating Database</code>: After any changes on database in rails application using ruby code, you must assure that changes have been applied to the database it self, this is called <code class="highlighter-rouge">Migration</code>.</p>
+
+<p>Or converting ruby code to build database tables, columns, properties, changes, and so on.</p>
+
+<p>This can be done using <code class="highlighter-rouge">rake</code> or “ruby make” command.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>This <code class="highlighter-rouge">migration</code> will do changes to database according to a file with a name of date-time stamps in <code class="highlighter-rouge">/db/migrate</code> folder as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">20150522235057</span><span class="n">_create_books</span><span class="p">.</span><span class="nf">rb</span></code></pre></figure>
+
+<p>This means that this file has been generated in 22/5/2015 (year month day)  at 11:50:57pm (hour minute seconds).</p>
+
+<p>Ex: If you create rails application via scaffold, you must make migration to create the database tables as :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<p>As shown in this tutorial video :</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/daFA4WPhaT4" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
 <span class="date">2016-03-28 00:00:00 +0200</span>
   <h3><a href="/2016/03/28/what_is_ruby_on_rails.html">What is Ruby on Rails</a></h3>
   
@@ -479,6 +525,14 @@ tr>td:first-child {
 
         <h2>
           <a class="post-link" href="/2016/04/30/escaping_double_curly_braces_in_markdown.html">Escaping Double Curly Braces In Markdown</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 30, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/30/adding_column_type_array_to_postgres_table.html">Adding A Column Type Array To Postgres Database Table</a>
         </h2>
       </li>
     

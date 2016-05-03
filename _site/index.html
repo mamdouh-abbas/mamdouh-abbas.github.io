@@ -137,6 +137,74 @@ this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</
 
   </div> -->
 
+<span class="date">2016-04-30 00:00:00 +0200</span>
+  <h3><a href="/2016/04/30/adding_column_type_array_to_postgres_table.html">Adding A Column Type Array To Postgres Database Table</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Jekyll  Markdown  Escape  Disqus 
+</code></pre>
+</div>
+
+<h4>How To Add A Column Type Array To Postgres Database Table</h4>
+
+<p>In our example, We suppose that you watched our tutorial about <a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a>.</p>
+
+<h4>Creating Migration</h4>
+
+<p>First, We need to create a migration file to do our mission, Creating a column named reader type text as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddReaderToPosts</span> <span class="n">reader</span><span class="ss">:text</span></code></pre></figure>
+
+<p>This will create a migration file like:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddReaderToPosts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:posts</span><span class="p">,</span> <span class="ss">:reader</span><span class="p">,</span> <span class="ss">:text</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Edit it to be like:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddReaderToPosts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:posts</span><span class="p">,</span> <span class="ss">:reader</span><span class="p">,</span> <span class="ss">:text</span><span class="p">,</span><span class="ss">array: </span><span class="kp">true</span><span class="p">,</span> <span class="n">default</span><span class="ss">:[]</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then make migrate as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Now, You have a <code class="highlighter-rouge">reader</code> column which is an array, it can take many values as any array[`up to tons of tons …].</p>
+
+<p>And you can access the arry values in rails console as follow:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span><span class="o">=</span><span class="no">Post</span><span class="p">.</span><span class="nf">first</span>
+<span class="c1"># push "Mamdouh"</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span> <span class="o">&lt;&lt;</span> <span class="s2">"Mamdouh"</span>
+<span class="c1"># push "Ali"</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span> <span class="o">&lt;&lt;</span> <span class="s2">"Ali"</span>
+<span class="c1"># push "Soso"</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span> <span class="o">&lt;&lt;</span> <span class="s2">"Soso"</span>
+<span class="c1"># puts reader array values</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span>
+<span class="c1"># traverse the reader array</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+<span class="nb">puts</span> <span class="n">x</span>
+<span class="k">end</span>
+<span class="c1"># get count</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span><span class="p">.</span><span class="nf">count</span>
+<span class="c1"># clear all values</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span><span class="p">.</span><span class="nf">clear</span></code></pre></figure>
+
+<p>Now, Take a look to this tutorial video.</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/qetZv-ZxFL8" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
 <span class="date">2016-04-29 00:00:00 +0200</span>
   <h3><a href="/2016/04/29/adding_disqus_comments_to_jekyll.html">Adding Disqus Comments To Jekyll Blog</a></h3>
   
@@ -546,39 +614,6 @@ Then paste this seeding code:</p>
 
   </div> -->
 
-<span class="date">2016-04-28 00:00:00 +0200</span>
-  <h3><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creating Migration File Via Generating Rails Model</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
-</code></pre>
-</div>
-
-<h3>Creating Migration File Via Generating Rails Model.</h3>
-
-<p>Generating model will create a migration file to create its table as</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
-
-<p>This will generate a new file in db/migrate/(date-time stamp)_create_books.rb.</p>
-
-<p>Then, Apply changes to database using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>Note that you can undo this migration using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
-
-<p>Take a look to this tutorial video:</p>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/ck3LhvLtLZI" frameborder="0" allowfullscreen=""></iframe>
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/UpsRsGvMRYA" frameborder="0" allowfullscreen=""></iframe>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -618,6 +653,14 @@ Then paste this seeding code:</p>
 
         <h2>
           <a class="post-link" href="/2016/04/30/escaping_double_curly_braces_in_markdown.html">Escaping Double Curly Braces In Markdown</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 30, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/30/adding_column_type_array_to_postgres_table.html">Adding A Column Type Array To Postgres Database Table</a>
         </h2>
       </li>
     

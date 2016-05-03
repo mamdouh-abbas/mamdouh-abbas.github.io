@@ -15,7 +15,7 @@ published: true
 
 <h4>How To Add A Column Type Array To Mysql Database Table</h4>
 
-In our example, We suppose that you watched our tutorial about <a href="/2016/03/31/Rails_With_Mysql_database_complete_example.html">rails application with mysql database</a>.
+In our example, We suppose that you watched our tutorial about <a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">rails application with mysql database</a>.
 
 <h4>Creating Migration</h4>
 

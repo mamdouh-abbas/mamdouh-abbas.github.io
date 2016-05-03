@@ -13,7 +13,7 @@ published: true
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
-<h3>How To Add Disqus Comments To Jekyll Blog</h3>
+<h4>How To Add Disqus Comments To Jekyll Blog</h4>
 
 >
 > Click the `setting ring` in the top right corner.
@@ -38,8 +38,6 @@ published: true
 >
 > Then `copy` the next code.
 >
-
-
 
 {% highlight html %}
 
@@ -78,3 +76,7 @@ published: true
 >
 > Also don't forget replacing `your_unique_disqus_id` with you actual one.
 >
+
+Now, Take a look to this tutorial video.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/uXiJmo2-XDg" frameborder="0" allowfullscreen></iframe>

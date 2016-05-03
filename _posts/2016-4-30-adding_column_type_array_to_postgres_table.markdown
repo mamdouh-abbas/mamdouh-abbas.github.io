@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Adding A Column Type Array To Postgres Database Table"
-tags: Jekyll Markdown Escape Disqus
-keywords: Jekyll Markdown Escape Disqus
+tags: Postgres Column Array Rails
+keywords: Postgres Column Array Rails
 description: How To Add A Column Type Array To Postgres Database Table
 published: true
 ---

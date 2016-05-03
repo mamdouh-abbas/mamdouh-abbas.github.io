@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Adding A Column Type Array To Mysql Database Table"
-tags: Jekyll Markdown Escape Disqus
-keywords: Jekyll Markdown Escape Disqus
-description: How To Add A Column Type Array To Postgres Database Table
+title:  "Adding A Column Type Array To Mysql Database Table In Rails"
+tags: Rails Array Column Mysql
+keywords: Rails Array Column Mysql
+description: How To Add A Column Type Array To Mysql In Rails Application
 published: true
 ---
 

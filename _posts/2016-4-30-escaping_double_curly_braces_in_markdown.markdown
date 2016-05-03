@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Escaping Double Curly Braces In Markdown"
-tags: Jekyll Markdown Escape Disqus
-keywords: Jekyll Markdown Escape Disqus
+tags: Escape Markdown Jekyll
+keywords: Escape Markdown Jekyll
 description: How To Escape Double Curly Braces In Markdown
 published: true
 ---
@@ -13,7 +13,7 @@ published: true
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
-<h4>How To Escape Double Curly Braces In Markdown</h4>
+<h4>How To Escape Double Curly Braces In Markdown In Jekyll</h4>
 
 If you need to add the next two lines of code using `markdown`
 

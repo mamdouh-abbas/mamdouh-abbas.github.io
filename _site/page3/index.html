@@ -95,6 +95,152 @@
   </div>
 <!-- This loops through the paginated posts -->
 
+<span class="date">2016-03-26 00:00:00 +0200</span>
+  <h3><a href="/2016/03/26/creating_new_rails_application.html">Creating a new Rails application</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  on  rails  rails  software 
+</code></pre>
+</div>
+
+<p>First, We assume that you installed <code class="highlighter-rouge">Ruby</code>, you can know that using :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ruby</span> <span class="o">-</span><span class="n">v</span></code></pre></figure>
+
+<p>Then, you need to install <code class="highlighter-rouge">Rails</code>:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">rails</span></code></pre></figure>
+
+<p>You can use  –no-ri –no-rdoc , for no gems documenation</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">rails</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">ri</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">rdoc</span></code></pre></figure>
+
+<p>Also, you can know its version using :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="o">-</span><span class="n">v</span></code></pre></figure>
+
+<p>Now, you are ready to <code class="highlighter-rouge">Rails</code></p>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>Open a terminal</p>
+    </li>
+    <li>
+      <p>Go to the parent folder you want to build you application there.</p>
+    </li>
+    <li>
+      <p>Type the following line and press <code class="highlighter-rouge">Enter</code>.</p>
+    </li>
+  </ul>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">autos</span></code></pre></figure>
+
+<blockquote>
+
+  <ul>
+    <li>
+      <p>This will generate a directory called <code class="highlighter-rouge">autos</code> which contains the <a href="/2016/03/24/Directory_structure_in_rails">rails application directory structure</a>.</p>
+    </li>
+    <li>
+      <p>Change directory to <code class="highlighter-rouge">autos</code>.</p>
+    </li>
+  </ul>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">cd</span> <span class="n">autos</span></code></pre></figure>
+
+<blockquote>
+
+  <ul>
+    <li>Fire up the <code class="highlighter-rouge">rails server</code>.</li>
+  </ul>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">server</span> 
+<span class="n">or</span> 
+<span class="n">rails</span> <span class="n">s</span></code></pre></figure>
+
+<blockquote>
+
+  <ul>
+    <li>Then,browse to <code class="highlighter-rouge">localhost:3000</code>.</li>
+    <li>You will see this page:</li>
+  </ul>
+</blockquote>
+
+<p><img src="/images/rails_welcome.png" alt="rails welcome page" title="rails welcome page" /></p>
+
+<p>Note that you can stop rails server using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ctrl</span> <span class="o">+</span> <span class="n">c</span></code></pre></figure>
+
+<p>Also, Note that you don’t need to restart rails server every time you make changes to you application as long as you are in development environment.</p>
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/MMUMMAUTq_Y" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br />
+<br /></p>
+
+<p>Now, let’s start our <code class="highlighter-rouge">autos</code> application:</p>
+
+<p>First, we will use scaffolding to create cars controller, model, views, routes, test and database migration file in one line.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">brand</span><span class="ss">:string</span> <span class="n">year</span><span class="ss">:integer</span>
+<span class="n">or</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">car</span> <span class="n">brand</span> <span class="n">year</span><span class="ss">:integer</span></code></pre></figure>
+
+<p>This single line will create:</p>
+
+<blockquote>
+
+  <p><code class="highlighter-rouge">car</code> model</p>
+
+  <p><code class="highlighter-rouge">cars</code> controller</p>
+
+  <p><code class="highlighter-rouge">cars</code> views</p>
+
+  <p><code class="highlighter-rouge">cars</code> routes</p>
+
+  <p><code class="highlighter-rouge">cars</code> tests</p>
+
+  <p><code class="highlighter-rouge">cars</code> migration file</p>
+
+</blockquote>
+
+<p>Then we need to create <code class="highlighter-rouge">cars</code> database table using :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>This line will create the <code class="highlighter-rouge">cars</code> table and its database schema in <code class="highlighter-rouge">db/</code> folder, this table has two columns, one is brand with data type string and the other is year with data type integer.</p>
+
+<p>Now, you are ready to browse you application and make <code class="highlighter-rouge">CRUD</code> operations;</p>
+
+<p><code class="highlighter-rouge">CRUD</code> means :</p>
+
+<blockquote>
+
+  <p><code class="highlighter-rouge">C</code> for <code class="highlighter-rouge">Create</code></p>
+
+  <p><code class="highlighter-rouge">R</code> for <code class="highlighter-rouge">Read</code></p>
+
+  <p><code class="highlighter-rouge">U</code> for <code class="highlighter-rouge">Update</code></p>
+
+  <p><code class="highlighter-rouge">D</code> for <code class="highlighter-rouge">Delete</code></p>
+
+</blockquote>
+
+<p>Now, browse to <code class="highlighter-rouge">localhost:3000</code>, you will see the welcome page for rails application, so browse to <code class="highlighter-rouge">localhost:3000/cars</code> .</p>
+
+<p>All these steps in the next tutorial video <code class="highlighter-rouge">You First Rails Application</code></p>
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/x3vgeGcrty8" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
 <span class="date">2016-03-25 00:00:00 +0200</span>
   <h3><a href="/2016/03/25/Options_for_Rails_command_line.html">Options for rails command line</a></h3>
   
@@ -300,6 +446,14 @@ tr>td:first-child {
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">Apr 29, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/29/adding_disqus_comments_to_jekyll.html">Adding Disqus Comments To Jekyll Blog</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">Apr 28, 2016</span>

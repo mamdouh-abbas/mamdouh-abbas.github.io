@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Adding Column Or More To An Existed Table In Rails</title>
+  <title>Adding Disqus Comments To Jekyll Blog</title>
 
   
-  <meta name="description" content="Adding Column Or More To An Existed Table In Rails Application.">
+  <meta name="description" content="How To Add Disqus Comments To Jekyll Blog">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="ruby rails migrate database">
+  <meta name="keywords" content="jekyll blog comment disqus">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/28/adding_fields_to_table_via_migration.html">
+  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/29/adding_disqus_comments_to_jekyll.html">
   <link rel="alternate" type="application/rss+xml" title="Web 2 Sons" href="http://www.web2sons.xyz/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -79,62 +79,81 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Adding Column Or More To An Existed Table In Rails</h2>
-    <p class="post-meta"><time datetime="2016-04-28T00:00:00+02:00" itemprop="datePublished">Apr 28, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Adding Disqus Comments To Jekyll Blog</h2>
+    <p class="post-meta"><time datetime="2016-04-29T00:00:00+02:00" itemprop="datePublished">Apr 29, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  add 
+<div class="highlighter-rouge"><pre class="highlight"><code>Jekyll  Blog  Comment  Disqus 
 </code></pre>
 </div>
 
-<h3>Adding Column Or More To An Existed Table.</h3>
+<h3>How To Add Disqus Comments To Jekyll Blog</h3>
 
-<p>The general form of <code class="highlighter-rouge">adding</code> field to table is:</p>
+<blockquote>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddColumnnameToTablename</span> <span class="n">columnname</span><span class="ss">:datatype</span></code></pre></figure>
+  <p>Click the <code class="highlighter-rouge">setting ring</code> in the top right corner.</p>
 
-<p>Example, Adding <code class="highlighter-rouge">price</code> column to <code class="highlighter-rouge">books</code> table:</p>
+  <p>Click <code class="highlighter-rouge">Add Disqus To Site</code>.</p>
 
-<p>Then, <code class="highlighter-rouge">Columnname = Price</code>
-and <code class="highlighter-rouge">Tablename = Books</code>
-and <code class="highlighter-rouge">datatype = float</code></p>
+  <p>Then, Click <code class="highlighter-rouge">Start Using Engage</code>.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddPriceToBooks</span> <span class="n">price</span><span class="ss">:float</span></code></pre></figure>
+  <p>Enter the <code class="highlighter-rouge">site name</code>.</p>
 
-<p>Then,</p>
+  <p>Enter your disqus <code class="highlighter-rouge">unique url</code>.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+  <p>Choose the <code class="highlighter-rouge">category</code>.</p>
 
-<p>If you need to add <code class="highlighter-rouge">many</code> columns to table you can use:</p>
+  <p>Click <code class="highlighter-rouge">Next</code>.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddDetailsToBooks</span> <span class="n">pages</span><span class="ss">:integer</span> <span class="n">year</span><span class="ss">:integer</span></code></pre></figure>
+  <p>Click <code class="highlighter-rouge">My site is just a personal site</code>.</p>
 
-<p>Then,</p>
+  <p>You can <code class="highlighter-rouge">Skip</code> next two step.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+  <p>Then, Choose <code class="highlighter-rouge">Universal Code</code>.</p>
 
-<p>Note that you can undo this migration back step by step using:</p>
+  <p>Then <code class="highlighter-rouge">copy</code> the next code.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+</blockquote>
 
-<p>This will delete the <code class="highlighter-rouge">price</code> column from the <code class="highlighter-rouge">books</code> table in the database itself.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">disqus_config</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"{{site.url}}{{page.url}}"</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"{{ page.id }}"</span><span class="p">;</span>
+    <span class="p">};</span>
 
-<p><i style="color:red;">Note, Any <code class="highlighter-rouge">rake db:rollback</code> may delete stored data in the <code class="highlighter-rouge">targeted</code> columns and can’t be restored again.</i></p>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// Replace your_unique_disqus_id with your true one.</span>
+        <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+        
+        <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'//your_unique_disqus_id.disqus.com/embed.js'</span><span class="p">;</span>
+        
+        <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-timestamp'</span><span class="p">,</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+        <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">head</span> <span class="o">||</span> <span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+    <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://disqus.com/?ref_noscript"</span> <span class="na">rel=</span><span class="s">"nofollow"</span><span class="nt">&gt;</span>comments powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;</span></code></pre></figure>
 
-<p>Also, You can delete the migration file generated by converting <code class="highlighter-rouge">g</code>(for generate) to <code class="highlighter-rouge">d</code> (for destroy) in migration command as:</p>
+<blockquote>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="no">AddPriceToBooks</span> <span class="n">price</span><span class="ss">:float</span>
-<span class="c1">#to be</span>
-<span class="n">rails</span> <span class="n">d</span> <span class="no">AddPriceToBooks</span> <span class="n">price</span><span class="ss">:float</span></code></pre></figure>
+  <p>And <code class="highlighter-rouge">paste</code> it in the <code class="highlighter-rouge">bottom</code> of the <code class="highlighter-rouge">_layouts/post.html</code>.</p>
 
-<p>The last line will delete the migration file generted by the first line.</p>
+  <p>Don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
 
-<p>Take a look to this tutorial video:</p>
+  <p>Then <code class="highlighter-rouge">copy</code> the next code.</p>
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/RHJXsNd5vFo" frameborder="0" allowfullscreen=""></iframe>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"dsq-count-scr"</span> <span class="na">src=</span><span class="s">"//your_unique_disqus_id.disqus.com/count.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span> </code></pre></figure>
+
+<blockquote>
+  <p>And <code class="highlighter-rouge">paste</code> it in the <code class="highlighter-rouge">bottom</code> of the <code class="highlighter-rouge">_layouts/default.html</code> before <code class="highlighter-rouge">&lt;/body&gt;</code>.</p>
+
+  <p>Also don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
+
+</blockquote>
 
   </div>
 
@@ -142,8 +161,8 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 <div id="disqus_thread"></div>
 <script>    
     var disqus_config = function () {
-      this.page.url = "http://www.web2sons.xyz/2016/04/28/adding_fields_to_table_via_migration.html";
-      this.page.identifier = "/2016/04/28/adding_fields_to_table_via_migration";
+      this.page.url = "http://www.web2sons.xyz/2016/04/29/adding_disqus_comments_to_jekyll.html";
+      this.page.identifier = "/2016/04/29/adding_disqus_comments_to_jekyll";
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');

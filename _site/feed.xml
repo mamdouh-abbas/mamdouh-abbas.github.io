@@ -5,9 +5,97 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://www.web2sons.xyz/</link>
     <atom:link href="http://www.web2sons.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 May 2016 23:42:22 +0200</pubDate>
-    <lastBuildDate>Mon, 02 May 2016 23:42:22 +0200</lastBuildDate>
+    <pubDate>Tue, 03 May 2016 02:12:29 +0200</pubDate>
+    <lastBuildDate>Tue, 03 May 2016 02:12:29 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Adding Disqus Comments To Jekyll Blog</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Jekyll  Blog  Comment  Disqus 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;How To Add Disqus Comments To Jekyll Blog&lt;/h3&gt;
+
+&lt;blockquote&gt;
+
+  &lt;p&gt;Click the &lt;code class=&quot;highlighter-rouge&quot;&gt;setting ring&lt;/code&gt; in the top right corner.&lt;/p&gt;
+
+  &lt;p&gt;Click &lt;code class=&quot;highlighter-rouge&quot;&gt;Add Disqus To Site&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Then, Click &lt;code class=&quot;highlighter-rouge&quot;&gt;Start Using Engage&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Enter the &lt;code class=&quot;highlighter-rouge&quot;&gt;site name&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Enter your disqus &lt;code class=&quot;highlighter-rouge&quot;&gt;unique url&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Choose the &lt;code class=&quot;highlighter-rouge&quot;&gt;category&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Click &lt;code class=&quot;highlighter-rouge&quot;&gt;Next&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Click &lt;code class=&quot;highlighter-rouge&quot;&gt;My site is just a personal site&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;You can &lt;code class=&quot;highlighter-rouge&quot;&gt;Skip&lt;/code&gt; next two step.&lt;/p&gt;
+
+  &lt;p&gt;Then, Choose &lt;code class=&quot;highlighter-rouge&quot;&gt;Universal Code&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Then &lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt; the next code.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;disqus_thread&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disqus_config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{{site.url}}{{page.url}}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{{ page.id }}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Replace your_unique_disqus_id with your true one.&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;script&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;//your_unique_disqus_id.disqus.com/embed.js&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;data-timestamp&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;noscript&amp;gt;&lt;/span&gt;Please enable JavaScript to view the &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://disqus.com/?ref_noscript&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nofollow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;comments powered by Disqus.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/noscript&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+
+  &lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;paste&lt;/code&gt; it in the &lt;code class=&quot;highlighter-rouge&quot;&gt;bottom&lt;/code&gt; of the &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts/post.html&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Don’t forget replacing &lt;code class=&quot;highlighter-rouge&quot;&gt;your_unique_disqus_id&lt;/code&gt; with you actual one.&lt;/p&gt;
+
+  &lt;p&gt;Then &lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt; the next code.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dsq-count-scr&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//your_unique_disqus_id.disqus.com/count.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;paste&lt;/code&gt; it in the &lt;code class=&quot;highlighter-rouge&quot;&gt;bottom&lt;/code&gt; of the &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts/default.html&lt;/code&gt; before &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Also don’t forget replacing &lt;code class=&quot;highlighter-rouge&quot;&gt;your_unique_disqus_id&lt;/code&gt; with you actual one.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Fri, 29 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/04/29/adding_disqus_comments_to_jekyll.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/04/29/adding_disqus_comments_to_jekyll.html</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>Blog</category>
+        
+        <category>Comment</category>
+        
+        <category>Disqus</category>
+        
+        
+      </item>
     
       <item>
         <title>Setup, Reset And Drop Database</title>
@@ -532,77 +620,6 @@ Then paste this seeding code:&lt;/p&gt;
         <category>migration</category>
         
         <category>database</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Adding Column Or More To An Existed Table In Rails</title>
-        <description>&lt;p&gt;TAGS:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  add 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Adding Column Or More To An Existed Table.&lt;/h3&gt;
-
-&lt;p&gt;The general form of &lt;code class=&quot;highlighter-rouge&quot;&gt;adding&lt;/code&gt; field to table is:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddColumnnameToTablename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnname&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:datatype&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Example, Adding &lt;code class=&quot;highlighter-rouge&quot;&gt;price&lt;/code&gt; column to &lt;code class=&quot;highlighter-rouge&quot;&gt;books&lt;/code&gt; table:&lt;/p&gt;
-
-&lt;p&gt;Then, &lt;code class=&quot;highlighter-rouge&quot;&gt;Columnname = Price&lt;/code&gt;
-and &lt;code class=&quot;highlighter-rouge&quot;&gt;Tablename = Books&lt;/code&gt;
-and &lt;code class=&quot;highlighter-rouge&quot;&gt;datatype = float&lt;/code&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddPriceToBooks&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:float&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then,&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you need to add &lt;code class=&quot;highlighter-rouge&quot;&gt;many&lt;/code&gt; columns to table you can use:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddDetailsToBooks&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:integer&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Then,&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Note that you can undo this migration back step by step using:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:rollback&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will delete the &lt;code class=&quot;highlighter-rouge&quot;&gt;price&lt;/code&gt; column from the &lt;code class=&quot;highlighter-rouge&quot;&gt;books&lt;/code&gt; table in the database itself.&lt;/p&gt;
-
-&lt;p&gt;&lt;i style=&quot;color:red;&quot;&gt;Note, Any &lt;code class=&quot;highlighter-rouge&quot;&gt;rake db:rollback&lt;/code&gt; may delete stored data in the &lt;code class=&quot;highlighter-rouge&quot;&gt;targeted&lt;/code&gt; columns and can’t be restored again.&lt;/i&gt;&lt;/p&gt;
-
-&lt;p&gt;Also, You can delete the migration file generated by converting &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt;(for generate) to &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; (for destroy) in migration command as:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddPriceToBooks&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:float&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#to be&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddPriceToBooks&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:float&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The last line will delete the migration file generted by the first line.&lt;/p&gt;
-
-&lt;p&gt;Take a look to this tutorial video:&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/RHJXsNd5vFo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
-        <link>http://www.web2sons.xyz/2016/04/28/adding_fields_to_table_via_migration.html</link>
-        <guid isPermaLink="true">http://www.web2sons.xyz/2016/04/28/adding_fields_to_table_via_migration.html</guid>
-        
-        <category>ruby</category>
-        
-        <category>rails</category>
-        
-        <category>migration</category>
-        
-        <category>database</category>
-        
-        <category>add</category>
         
         
       </item>

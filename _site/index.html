@@ -95,6 +95,48 @@
   </div>
 <!-- This loops through the paginated posts -->
 
+<span class="date">2016-04-30 00:00:00 +0200</span>
+  <h3><a href="/2016/04/30/escaping_double_curly_braces_in_markdown.html">Escaping Double Curly Braces In Markdown</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Jekyll  Markdown  Escape  Disqus 
+</code></pre>
+</div>
+
+<h4>How To Escape Double Curly Braces In Markdown</h4>
+
+<p>If you need to add the next two lines of code using <code class="highlighter-rouge">markdown</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">this.page.url = "{{site.url}}{{page.url}}";
+this.page.identifier = "{{ page.id }}";</code></pre></figure>
+
+<p>The output will be:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">this.page.url = "http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html";
+this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</code></pre></figure>
+
+<p>But how to <code class="highlighter-rouge">escape</code> the action of <code class="highlighter-rouge">double curly braces</code>, This can be done by putting your desired code between <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">raw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code> and <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">endraw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code>.</p>
+
+<p>So, Putting <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">raw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code>”{{site.url}}{{page.url}}”<code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">endraw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code></p>
+
+<p>The output will be:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">disqus_config</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"{{site.url}}{{page.url}}"</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"{{ page.id }}"</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p>Now, Take a look to this tutorial video.</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/TJzVxOKF_Xo" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
 <span class="date">2016-04-29 00:00:00 +0200</span>
   <h3><a href="/2016/04/29/adding_disqus_comments_to_jekyll.html">Adding Disqus Comments To Jekyll Blog</a></h3>
   
@@ -105,7 +147,7 @@
 </code></pre>
 </div>
 
-<h3>How To Add Disqus Comments To Jekyll Blog</h3>
+<h4>How To Add Disqus Comments To Jekyll Blog</h4>
 
 <blockquote>
 
@@ -169,6 +211,10 @@
   <p>Also don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
 
 </blockquote>
+
+<p>Now, Take a look to this tutorial video.</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/uXiJmo2-XDg" frameborder="0" allowfullscreen=""></iframe>
 
   </div> -->
 
@@ -533,61 +579,6 @@ Then paste this seeding code:</p>
 
   </div> -->
 
-<span class="date">2016-04-28 00:00:00 +0200</span>
-  <h3><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating Migration File Via Generating Rails Migration</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
-</code></pre>
-</div>
-
-<h3>Creating Migration File Via Generating Rails Migration.</h3>
-
-<p>The general form is <code class="highlighter-rouge">rails g migration</code> and then you can create <code class="highlighter-rouge">books</code> table and state columns names and its datatypes as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">CreateBook</span> <span class="n">title</span><span class="ss">:string</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
-
-<p>This will create migration file in <code class="highlighter-rouge">db/migrate</code> folder to create <code class="highlighter-rouge">books</code> table.</p>
-
-<p>Note, The generated file doesn’t create <code class="highlighter-rouge">timestamps</code> fields <code class="highlighter-rouge">created_at</code> and <code class="highlighter-rouge">updated_at</code> so, you can add:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span> <span class="ss">null: </span><span class="kp">false</span></code></pre></figure>
-
-<p>Also, You can edit this file and add or remove columns before making <code class="highlighter-rouge">rake db:migrate</code></p>
-
-<p>And, You can state all table’s columns manually in the migration file not in <code class="highlighter-rouge">rails g migration</code> command line.</p>
-
-<p>Then, Apply changes to database using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>Now, You must create <code class="highlighter-rouge">book.rb</code> model manually in <code class="highlighter-rouge">app/models</code> to deal with <code class="highlighter-rouge">books</code> table as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Book</span><span class="o">&lt;</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Note that you can undo this migration using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
-
-<p><i style="color:red;">Note, Any <code class="highlighter-rouge">rake db:rollback</code> may delete stored data in the <code class="highlighter-rouge">targeted</code> columns and can’t be restored again.</i></p>
-
-<p>Also, You can delete the migration file generated by converting <code class="highlighter-rouge">g</code>(for generate) to <code class="highlighter-rouge">d</code> (for destroy) in migration command as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="no">CreateBook</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span>
-<span class="c1">#to be</span>
-<span class="n">rails</span> <span class="n">d</span> <span class="no">CreateBook</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
-
-<p>The last line will delete the migration file generted by the first line.</p>
-
-<p>Now take a look to this tutorial video:</p>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/TdIQmThzN84" frameborder="0" allowfullscreen=""></iframe>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -621,6 +612,14 @@ Then paste this seeding code:</p>
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">Apr 30, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/30/escaping_double_curly_braces_in_markdown.html">Escaping Double Curly Braces In Markdown</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">Apr 29, 2016</span>

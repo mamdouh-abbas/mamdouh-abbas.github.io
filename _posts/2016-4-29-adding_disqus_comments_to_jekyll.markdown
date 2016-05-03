@@ -40,7 +40,6 @@ published: true
 >
 
 {% highlight html %}
-
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {

@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Adding Disqus Comments To Jekyll Blog</title>
+  <title>Escaping Double Curly Braces In Markdown</title>
 
   
-  <meta name="description" content="How To Add Disqus Comments To Jekyll Blog">
+  <meta name="description" content="How To Escape Double Curly Braces In Markdown">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="jekyll blog comment disqus">
+  <meta name="keywords" content="Jekyll Markdown Escape Disqus">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/29/adding_disqus_comments_to_jekyll.html">
+  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html">
   <link rel="alternate" type="application/rss+xml" title="Web 2 Sons" href="http://www.web2sons.xyz/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -79,44 +79,34 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Adding Disqus Comments To Jekyll Blog</h2>
-    <p class="post-meta"><time datetime="2016-04-29T00:00:00+02:00" itemprop="datePublished">Apr 29, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Escaping Double Curly Braces In Markdown</h2>
+    <p class="post-meta"><time datetime="2016-04-30T00:00:00+02:00" itemprop="datePublished">Apr 30, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Jekyll  Blog  Comment  Disqus 
+<div class="highlighter-rouge"><pre class="highlight"><code>Jekyll  Markdown  Escape  Disqus 
 </code></pre>
 </div>
 
-<h4>How To Add Disqus Comments To Jekyll Blog</h4>
+<h4>How To Escape Double Curly Braces In Markdown</h4>
 
-<blockquote>
+<p>If you need to add the next two lines of code using <code class="highlighter-rouge">markdown</code></p>
 
-  <p>Click the <code class="highlighter-rouge">setting ring</code> in the top right corner.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">this.page.url = "{{site.url}}{{page.url}}";
+this.page.identifier = "{{ page.id }}";</code></pre></figure>
 
-  <p>Click <code class="highlighter-rouge">Add Disqus To Site</code>.</p>
+<p>The output will be:</p>
 
-  <p>Then, Click <code class="highlighter-rouge">Start Using Engage</code>.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">this.page.url = "http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html";
+this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</code></pre></figure>
 
-  <p>Enter the <code class="highlighter-rouge">site name</code>.</p>
+<p>But how to <code class="highlighter-rouge">escape</code> the action of <code class="highlighter-rouge">double curly braces</code>, This can be done by putting your desired code between <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">raw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code> and <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">endraw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code>.</p>
 
-  <p>Enter your disqus <code class="highlighter-rouge">unique url</code>.</p>
+<p>So, Putting <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">raw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code>”{{site.url}}{{page.url}}”<code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">endraw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code></p>
 
-  <p>Choose the <code class="highlighter-rouge">category</code>.</p>
-
-  <p>Click <code class="highlighter-rouge">Next</code>.</p>
-
-  <p>Click <code class="highlighter-rouge">My site is just a personal site</code>.</p>
-
-  <p>You can <code class="highlighter-rouge">Skip</code> next two step.</p>
-
-  <p>Then, Choose <code class="highlighter-rouge">Universal Code</code>.</p>
-
-  <p>Then <code class="highlighter-rouge">copy</code> the next code.</p>
-
-</blockquote>
+<p>The output will be:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
@@ -124,40 +114,11 @@
       <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"{{site.url}}{{page.url}}"</span><span class="p">;</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"{{ page.id }}"</span><span class="p">;</span>
     <span class="p">};</span>
-
-    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// Replace your_unique_disqus_id with your true one.</span>
-        <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
-        
-        <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'//your_unique_disqus_id.disqus.com/embed.js'</span><span class="p">;</span>
-        
-        <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-timestamp'</span><span class="p">,</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
-        <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">head</span> <span class="o">||</span> <span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-    <span class="p">})();</span>
-<span class="nt">&lt;/script&gt;</span>
-<span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://disqus.com/?ref_noscript"</span> <span class="na">rel=</span><span class="s">"nofollow"</span><span class="nt">&gt;</span>comments powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;</span></code></pre></figure>
-
-<blockquote>
-
-  <p>And <code class="highlighter-rouge">paste</code> it in the <code class="highlighter-rouge">bottom</code> of the <code class="highlighter-rouge">_layouts/post.html</code>.</p>
-
-  <p>Don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
-
-  <p>Then <code class="highlighter-rouge">copy</code> the next code.</p>
-
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"dsq-count-scr"</span> <span class="na">src=</span><span class="s">"//your_unique_disqus_id.disqus.com/count.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span> </code></pre></figure>
-
-<blockquote>
-  <p>And <code class="highlighter-rouge">paste</code> it in the <code class="highlighter-rouge">bottom</code> of the <code class="highlighter-rouge">_layouts/default.html</code> before <code class="highlighter-rouge">&lt;/body&gt;</code>.</p>
-
-  <p>Also don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
-
-</blockquote>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p>Now, Take a look to this tutorial video.</p>
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/uXiJmo2-XDg" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/TJzVxOKF_Xo" frameborder="0" allowfullscreen=""></iframe>
 
   </div>
 
@@ -165,8 +126,8 @@
 <div id="disqus_thread"></div>
 <script>    
     var disqus_config = function () {
-      this.page.url = "http://www.web2sons.xyz/2016/04/29/adding_disqus_comments_to_jekyll.html";
-      this.page.identifier = "/2016/04/29/adding_disqus_comments_to_jekyll";
+      this.page.url = "http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html";
+      this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');

@@ -95,6 +95,264 @@
   </div>
 <!-- This loops through the paginated posts -->
 
+<span class="date">2016-03-31 00:00:00 +0200</span>
+  <h3><a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">Rails With Postgresql database, complete example</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  postgres  database 
+</code></pre>
+</div>
+
+<h3>1- Creating Postgresql Database.</h3>
+
+<p>First, log into postgres-server</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">su</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">c</span> <span class="n">psql</span></code></pre></figure>
+
+<p>Type password and be ready to use postgresql DSL.
+First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
+
+<p>Here, We will create one for development only, and you can create the others.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
+
+<p>Type password and be ready to use postgres DSL.
+First, Create you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
+
+<p>Here, We will create one for development only, and you can create the others.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
+
+<p>Also, You need to create user:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">user</span> <span class="n">osama</span> <span class="n">with</span> <span class="n">password</span> <span class="s1">'123456789'</span><span class="p">;</span></code></pre></figure>
+
+<p>Then, Grant all privileges to this user</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">grant</span> <span class="n">all</span> <span class="n">privileges</span> <span class="n">on</span> <span class="n">database</span> <span class="n">rails_dev</span> <span class="n">to</span> <span class="n">osama</span><span class="p">;</span></code></pre></figure>
+
+<p>At this point, you have <code class="highlighter-rouge">database</code> name, <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">password</code>.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h3>2- Creating Rails Application With Postgresql database.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">auto</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">postgresql</span>
+<span class="n">cd</span> <span class="n">auto</span>
+<span class="n">subl</span> <span class="o">.</span></code></pre></figure>
+
+<p>The default database for rails is sqlite3, but we use <code class="highlighter-rouge">--database=postgresql</code> to use postgres instead, so you will find ` gem ‘pg’.</p>
+
+<p>Note, If you change from sqlite3 to postgres, you need to make</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span></code></pre></figure>
+
+<p>to update <code class="highlighter-rouge">gemfile.lock</code> and install <code class="highlighter-rouge">pg</code> gem if not installed.</p>
+
+<p>Open <code class="highlighter-rouge">config/database.yml</code> and fill</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="ss">default: </span><span class="o">&amp;</span><span class="n">default</span>
+  <span class="ss">adapter: </span><span class="n">postgresql</span>
+  <span class="ss">encoding: </span><span class="n">unicode</span>
+  <span class="ss">port: </span><span class="mi">5432</span>
+  <span class="ss">username: </span><span class="n">osama</span>
+  <span class="ss">password: </span><span class="mi">123456789</span>
+  <span class="ss">pool: </span><span class="mi">5</span>
+
+<span class="ss">development:
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
+  <span class="ss">database: </span><span class="n">rails_dev</span></code></pre></figure>
+
+<p>Now, Create you posts using <code class="highlighter-rouge">scaffold</code> :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">post</span> <span class="nb">name</span> <span class="n">comment</span><span class="ss">:text</span></code></pre></figure>
+
+<p>And then, Make <code class="highlighter-rouge">migration</code> to create the posts table in the database it self.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Last, Fire up you rails server:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">s</span></code></pre></figure>
+
+<p>Now, ready to browse to <code class="highlighter-rouge">localhost:3000/posts</code> and process all <code class="highlighter-rouge">CRUD</code> operations.</p>
+
+<p>All these steps in this tutorial video :</p>
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/-ajUunAwezo" frameborder="0" allowfullscreen=""></iframe>
+
+
+  </div> -->
+
+<span class="date">2016-03-30 00:00:00 +0200</span>
+  <h3><a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">Rails With Mysql database, complete example</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  mysql  database 
+</code></pre>
+</div>
+
+<h3>1- Installing Mysql-server and Creating Database.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span></code></pre></figure>
+
+<p>Then log into mysql-server with root account:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="nb">p</span></code></pre></figure>
+
+<p>Type root password and be ready to use mysql DSL.
+First, you may need to determine that you will create more than one database, one for development environment, and one for test, and the third for production environment.</p>
+
+<p>Here, We will create one for development only, and you can create the others.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">database</span> <span class="n">rails_dev</span><span class="p">;</span></code></pre></figure>
+
+<p>You can see all mysql databases on system using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">show</span> <span class="n">databases</span><span class="p">;</span></code></pre></figure>
+
+<p>Also, You need to create user rather than root:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">create</span> <span class="n">user</span> <span class="s1">'osama'</span><span class="err">@</span><span class="s1">'localhost'</span> <span class="n">identified</span> <span class="n">by</span> <span class="s1">'123456789'</span><span class="p">;</span></code></pre></figure>
+
+<p>Then, Grant all privileges to this user</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">grant</span> <span class="n">all</span> <span class="n">privileges</span> <span class="n">on</span> <span class="o">*</span> <span class="p">.</span> <span class="nf">*</span> <span class="n">to</span> <span class="s1">'osama'</span><span class="err">@</span><span class="s1">'localhost'</span><span class="p">;</span></code></pre></figure>
+
+<p>At this point, you have <code class="highlighter-rouge">database</code> name, <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">password</code>.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h3>2- Creating Rails Application With Mysql database.</h3>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="kp">new</span> <span class="n">auto</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">mysql</span>
+<span class="n">cd</span> <span class="n">auto</span>
+<span class="n">subl</span> <span class="o">.</span></code></pre></figure>
+
+<p>The default database for rails is sqlite3, but we use <code class="highlighter-rouge">--database=mysql</code> to use mysql instead, so you will find ` gem ‘mysql2’.</p>
+
+<p>Note, If you change from sqlite3 to mysql, you need to make</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bundle</span> <span class="n">install</span></code></pre></figure>
+
+<p>to update <code class="highlighter-rouge">gemfile.lock</code> and install <code class="highlighter-rouge">mysql</code> gem if not installed.</p>
+
+<p>Open <code class="highlighter-rouge">config/database.yml</code> and fill</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="ss">default: </span><span class="o">&amp;</span><span class="n">default</span>
+  <span class="ss">adapter: </span><span class="n">mysql2</span>
+  <span class="ss">encoding: </span><span class="n">utf8</span>
+  <span class="ss">pool: </span><span class="mi">5</span>
+  <span class="ss">username: </span><span class="n">osama</span>       <span class="c1">#of mysql database created.</span>
+  <span class="ss">password: </span><span class="mi">123456789</span>   <span class="c1">#of mysql database created.</span>
+  <span class="ss">socket: </span><span class="sr">/var/</span><span class="n">run</span><span class="o">/</span><span class="n">mysqld</span><span class="o">/</span><span class="n">mysqld</span><span class="p">.</span><span class="nf">sock</span>
+
+<span class="ss">development:
+  </span><span class="o">&lt;&lt;</span><span class="p">:</span> <span class="o">*</span><span class="n">default</span>
+  <span class="ss">database: </span><span class="n">rails_dev</span>   <span class="c1">#of mysql database created.</span></code></pre></figure>
+
+<p>Now, Create you posts using <code class="highlighter-rouge">scaffold</code> :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">post</span> <span class="nb">name</span> <span class="n">comment</span><span class="ss">:text</span></code></pre></figure>
+
+<p>And then, Make <code class="highlighter-rouge">migration</code> to create the posts table in the database it self.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Last, Fire up you rails server:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">s</span></code></pre></figure>
+
+<p>Now, ready to browse to <code class="highlighter-rouge">localhost:3000/posts</code> and process all <code class="highlighter-rouge">CRUD</code> operations.</p>
+
+<p>All these steps in this tutorial video :</p>
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/YUfxiIscIyc" frameborder="0" allowfullscreen=""></iframe>
+
+
+  </div> -->
+
+<span class="date">2016-03-30 00:00:00 +0200</span>
+  <h3><a href="/2016/03/30/Directory_structure_in_rails.html">Directory Structure In Rails</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>directory  structure  rails  ruby 
+</code></pre>
+</div>
+
+<p>The root directory of <code class="highlighter-rouge">rails</code> application has a number of auto-generated files and folders that make up the structure of a <code class="highlighter-rouge">Rails</code> application.</p>
+<table border="2">
+  <tr style="color:red;">
+<td>File/</td><td>Folder Purpose</td>
+</tr>
+  <tr>
+    <td>app/</td>
+    <td>Contains the controllers, models, views, helpers, mailers and assets for your application.
+    </td>
+  </tr>
+  <tr>
+  <td>bin/</td>
+  <td>Contains the rails script that starts your app and can contain other scripts you use to setup, deploy or run your application.
+  </td>
+  </tr>
+  <tr>
+<td>config/</td>
+<td>Configure your application's routes, database, and more. 
+</td>
+</tr>
+<tr>
+<td>config.ru</td>
+<td>Rack configuration for Rack based servers used to start the application.</td>
+</tr>
+<tr>
+<td>db/</td>
+ <td>Contains your current database schema, as well as the database migrations.
+ </td>
+</tr>
+<tr>
+<td>Gemfile,Gemfile.lock</td>
+<td>These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem.</td>
+</tr>
+<tr>
+  <td>lib/</td><td>Extended modules for your application.</td>
+</tr>
+<tr>
+  <td>log/</td><td>Application log files.</td>
+</tr>
+<tr>
+<td>public/</td><td>The only folder seen by the world as-is. Contains static files and compiled assets.</td>
+</tr>
+<tr>
+  <td>Rakefile</td><td>This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+</tr>
+<tr>
+  <td>README.rdoc</td>
+  <td>This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
+</tr>
+<tr>
+<td>Unit tests, fixtures, and other test apparatus.</td>
+<td>Testing Rails Applications.</td>
+</tr>
+<tr>
+<td>tmp/</td><td>Temporary files (like cache, pid, and session files).</td>
+</tr>
+<tr>
+<td>vendor/</td><td>A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
+</tr>
+</table>
+
+  </div> -->
+
 <span class="date">2016-03-29 00:00:00 +0200</span>
   <h3><a href="/2016/03/29/migrating_database.html">Migrating Database</a></h3>
   
@@ -521,6 +779,22 @@ tr>td:first-child {
   <ul class="post-list">
     
       <li>
+        <span class="post-meta">May 2, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/02/accessing_and_traversing_array_fields_in_views_in_rails.html">Accessing And Traversing Array Fields In Vews In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 1, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/01/adding_column_type_array_to_mysql_table.html">Adding A Column Type Array To Mysql Database Table In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
         <span class="post-meta">Apr 30, 2016</span>
 
         <h2>
@@ -532,7 +806,15 @@ tr>td:first-child {
         <span class="post-meta">Apr 30, 2016</span>
 
         <h2>
-          <a class="post-link" href="/2016/04/30/adding_column_type_array_to_postgres_table.html">Adding A Column Type Array To Postgres Database Table</a>
+          <a class="post-link" href="/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html">Adding A Column Type Array To Postgres Database Table Via Model And Migration In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 30, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html">Adding A Column Type Array To Postgres Database Table Via Migration Only</a>
         </h2>
       </li>
     

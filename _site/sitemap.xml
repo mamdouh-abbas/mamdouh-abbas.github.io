@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://www.web2sons.xyz/2016/05/02/accessing_and_traversing_array_fields_in_views_in_rails.html</loc>
+<lastmod>2016-05-02T00:00:00+02:00</lastmod>
+</url>
+<url>
+<loc>http://www.web2sons.xyz/2016/05/01/adding_column_type_array_to_mysql_table.html</loc>
+<lastmod>2016-05-01T00:00:00+02:00</lastmod>
+</url>
+<url>
 <loc>http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html</loc>
 <lastmod>2016-04-30T00:00:00+02:00</lastmod>
 </url>
 <url>
-<loc>http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table.html</loc>
+<loc>http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html</loc>
+<lastmod>2016-04-30T00:00:00+02:00</lastmod>
+</url>
+<url>
+<loc>http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html</loc>
 <lastmod>2016-04-30T00:00:00+02:00</lastmod>
 </url>
 <url>
@@ -111,6 +123,10 @@
 </url>
 <url>
 <loc>http://www.web2sons.xyz/page3/</loc>
+</url>
+<url>
+<loc>http://www.web2sons.xyz/404.html</loc>
+<lastmod>2016-05-04T03:40:26+02:00</lastmod>
 </url>
 <url>
 <loc>http://www.web2sons.xyz/google6b64a495f715b7ef.html</loc>

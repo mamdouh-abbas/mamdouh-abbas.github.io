@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Escaping Double Curly Braces In Markdown</title>
+  <title>Adding A Column Type Array To Mysql Database Table In Rails</title>
 
   
-  <meta name="description" content="How To Escape Double Curly Braces In Markdown">
+  <meta name="description" content="How To Add A Column Type Array To Mysql Table In Rails Application">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="Escape Markdown Jekyll">
+  <meta name="keywords" content="Rails Array Column Mysql">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html">
+  <link rel="canonical" href="http://www.web2sons.xyz/2016/05/01/adding_column_type_array_to_mysql_table.html">
   <link rel="alternate" type="application/rss+xml" title="Web 2 Sons" href="http://www.web2sons.xyz/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -79,46 +79,70 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Escaping Double Curly Braces In Markdown</h2>
-    <p class="post-meta"><time datetime="2016-04-30T00:00:00+02:00" itemprop="datePublished">Apr 30, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Adding A Column Type Array To Mysql Database Table In Rails</h2>
+    <p class="post-meta"><time datetime="2016-05-01T00:00:00+02:00" itemprop="datePublished">May 1, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Escape  Markdown  Jekyll 
+<div class="highlighter-rouge"><pre class="highlight"><code>Rails  Array  Column  Mysql 
 </code></pre>
 </div>
 
-<h4>How To Escape Double Curly Braces In Markdown In Jekyll</h4>
+<h4>How To Add A Column Type Array To Mysql Database Table</h4>
 
-<p>If you need to add the next two lines of code using <code class="highlighter-rouge">markdown</code></p>
+<p>In our example, We suppose that you watched our tutorial about <a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">rails application with mysql database</a>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">this.page.url = "{{site.url}}{{page.url}}";
-this.page.identifier = "{{ page.id }}";</code></pre></figure>
+<h4>Creating Migration</h4>
 
-<p>The output will be:</p>
+<p>First, We need to create a migration file to do our mission, Creating a column named reader type text as:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">this.page.url = "http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html";
-this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddReaderToPosts</span> <span class="n">reader</span><span class="ss">:string</span></code></pre></figure>
 
-<p>But how to <code class="highlighter-rouge">escape</code> the action of <code class="highlighter-rouge">double curly braces</code>, This can be done by putting your desired code between <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">raw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code> and <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">endraw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code>.</p>
+<p>This will create a migration file like:</p>
 
-<p>So, Putting <code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">raw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code>”{{site.url}}{{page.url}}”<code class="highlighter-rouge"><span class="p">{</span></code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">endraw</code><code class="highlighter-rouge">%</code><code class="highlighter-rouge">}</code></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddReaderToPosts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:posts</span><span class="p">,</span> <span class="ss">:reader</span><span class="p">,</span> <span class="ss">:string</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
 
-<p>The output will be:</p>
+<p>Edit <code class="highlighter-rouge">app/models/post.rb</code> to be like:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">disqus_config</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"{{site.url}}{{page.url}}"</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"{{ page.id }}"</span><span class="p">;</span>
-    <span class="p">};</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+	<span class="n">serialize</span> <span class="ss">:reader</span><span class="p">,</span> <span class="no">Array</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then make migrate as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Now, You have a <code class="highlighter-rouge">reader</code> column which is an array, it can take many values as any array[`up to tons of tons …].</p>
+
+<p>And you can access the arry values in rails console as follow:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">a</span><span class="o">=</span><span class="no">Post</span><span class="p">.</span><span class="nf">first</span>
+<span class="c1"># push "Mamdouh"</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span> <span class="o">&lt;&lt;</span> <span class="s2">"Mamdouh"</span>
+<span class="c1"># push "Ali"</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span> <span class="o">&lt;&lt;</span> <span class="s2">"Ali"</span>
+<span class="c1"># push "Soso"</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span> <span class="o">&lt;&lt;</span> <span class="s2">"Soso"</span>
+<span class="c1"># puts reader array values</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span>
+<span class="c1"># traverse the reader array</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+<span class="nb">puts</span> <span class="n">x</span>
+<span class="k">end</span>
+<span class="c1"># get count</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span><span class="p">.</span><span class="nf">count</span>
+<span class="c1"># clear all values</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">reader</span><span class="p">.</span><span class="nf">clear</span></code></pre></figure>
 
 <p>Now, Take a look to this tutorial video.</p>
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/TJzVxOKF_Xo" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/3ndJSW2tatk" frameborder="0" allowfullscreen=""></iframe>
 
   </div>
 
@@ -126,8 +150,8 @@ this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</
 <div id="disqus_thread"></div>
 <script>    
     var disqus_config = function () {
-      this.page.url = "http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html";
-      this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";
+      this.page.url = "http://www.web2sons.xyz/2016/05/01/adding_column_type_array_to_mysql_table.html";
+      this.page.identifier = "/2016/05/01/adding_column_type_array_to_mysql_table";
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');

@@ -15,11 +15,10 @@ layout: default
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchbox enableHistory="true" autoCompleteMaxCompletions="5" autoCompleteMatchType='any'>
-<gcse:searchresults refinementStyle="link">
+<gcse:search></gcse:search>
   </div>
   </div>
-<!-- This loops through the paginated posts -->
+  <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
 <span class="date">{{ post.date }}</span>
   <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>

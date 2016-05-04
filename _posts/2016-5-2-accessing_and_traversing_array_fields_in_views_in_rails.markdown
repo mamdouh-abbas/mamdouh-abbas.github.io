@@ -15,9 +15,9 @@ published: true
 
 <h4>How To Access And Traverse Array Fields In Vews In Rails</h4>
 
-In our example, We suppose that you watched our tutorial about <a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a> or <a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">rails application with Mysql database</a> and <a href="/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html">adding column type array to postgres table via migration only</a> and <a href="/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html">adding column type array to postgres table via model and migration</a> and <a href="/2016/05/01/adding_column_type_array_to_mysql_table.html">adding column type array to mysql table</a>.
+In our example, We suppose that you watched our tutorials about <a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a> or <a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">rails application with Mysql database</a> and <a href="/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html">adding column type array to postgres table via migration only</a> and <a href="/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html">adding column type array to postgres table via model and migration</a> and <a href="/2016/05/01/adding_column_type_array_to_mysql_table.html">adding column type array to mysql table</a>.
 
-Then, You must add the the of the `fields or column` i into `permited params` in our example `reader` and `editor` in the bottom of its `controller`, in our example `PostsController` as:
+Then, You must add the `fields or columns` into `permited params` in our example `reader` and `editor` in the bottom of its `controller`, in our example `PostsController` as:
 
 {% highlight ruby %}
 def post_params

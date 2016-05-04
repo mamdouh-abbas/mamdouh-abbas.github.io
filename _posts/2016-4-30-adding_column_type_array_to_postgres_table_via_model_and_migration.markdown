@@ -39,7 +39,7 @@ Edit `app/models/post.rb` to be like:
 
 {% highlight ruby %}
 class Post < ActiveRecord::Base
-	serialize :editor, Array
+serialize :editor, Array
 end
 {% endhighlight %}
 

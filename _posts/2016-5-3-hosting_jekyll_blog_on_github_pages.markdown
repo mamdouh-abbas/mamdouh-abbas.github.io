@@ -17,7 +17,7 @@ published: true
 
 First, You must create a new `repository` on you `github` account and provide its name as you `username` followed by `.github.io` i.e as `user_name.github.io`.
 
-Second, Change directory to you blog and follow these steps.
+Second, Change directory to your blog and push you blog.
 
 {% highlight ruby %}
 git init

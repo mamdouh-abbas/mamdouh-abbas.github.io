@@ -89,11 +89,133 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchbox enableHistory="true" autoCompleteMaxCompletions="5" autoCompleteMatchType='any'>
-<gcse:searchresults refinementStyle="link">
+<gcse:search></gcse:search>
   </div>
   </div>
-<!-- This loops through the paginated posts -->
+  <!-- This loops through the paginated posts -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+</code></pre>
+</div>
+
+<h3>Seeding Tables Using Migration In Rails.</h3>
+
+<p>Before starting, We assumes that you have a table <code class="highlighter-rouge">authors</code> and its <code class="highlighter-rouge">model</code>, if not, you can do</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">author</span> <span class="nb">name</span></code></pre></figure>
+
+<p>Seeding tables can be done by many ways:</p>
+
+<p>Open <code class="highlighter-rouge">db/seeds.rb</code> and paste</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+<span class="no">Author</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"John</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>First, Using <code class="highlighter-rouge">rake db:setup</code> if the database not set, where <code class="highlighter-rouge">rake db:setup</code> creates the database and make migrations and seed data from <code class="highlighter-rouge">db/seeds.rb</code>.</p>
+
+<p>Then, You can check the <code class="highlighter-rouge">authors</code> table using <code class="highlighter-rouge">console</code>.</p>
+
+<p>Second, Using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:seed</span></code></pre></figure>
+
+<p>Which insert <code class="highlighter-rouge">seeds</code> from <code class="highlighter-rouge">db/seeds.rb</code>.</p>
+
+<p>Last, Using migration as</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddSeeds</span></code></pre></figure>
+
+<p>This will create an empty migration file.
+Then paste this seeding code:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+<span class="no">Author</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"John</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then,</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Also, You can check the <code class="highlighter-rouge">authors</code> data using <code class="highlighter-rouge">rails c</code> or <code class="highlighter-rouge">browser</code></p>
+
+<p>Note, You can delete these seeds using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<p>Now, Take a look to this tutorial video:</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/0tE4oLlYv-k" frameborder="0" allowfullscreen=""></iframe>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/QwU8XHriWCU" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  join 
+</code></pre>
+</div>
+
+<h3>Joining Two Tables Via Rails Migration.</h3>
+
+<p>First, We suppose that you have two tables at least.</p>
+
+<p>In our example, we have <code class="highlighter-rouge">books</code> and <code class="highlighter-rouge">authors</code> tables, so we can join them using migration by adding <code class="highlighter-rouge">references</code> column which is author’s <code class="highlighter-rouge">id</code> of the <code class="highlighter-rouge">book</code>.</p>
+
+<p>Or in other word, each record in <code class="highlighter-rouge">books</code> has its author’s <code class="highlighter-rouge">id</code> as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddAuthorRefToBooks</span> <span class="n">author</span><span class="ss">:references</span></code></pre></figure>
+
+<p>This will generate a migration file to add this column as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddAuthorRefToBooks</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_reference</span> <span class="ss">:books</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">index: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">foreign_key: </span><span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then, Apply changes to database using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+<p>Note that you can undo this migration using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+<p>Now, You need to manually join these table via <code class="highlighter-rouge">model</code> by :</p>
+
+<blockquote>
+
+  <p>Adding <code class="highlighter-rouge">has_many :books</code> in the <code class="highlighter-rouge">author</code> model</p>
+
+  <p>Adding <code class="highlighter-rouge">belongs_to :author</code> in the <code class="highlighter-rouge">book</code> model</p>
+
+</blockquote>
+
+<p>In <code class="highlighter-rouge">models/author.rb</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_many</span> <span class="ss">:books</span></code></pre></figure>
+
+<p>In <code class="highlighter-rouge">models/book.rb</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">belongs_to</span> <span class="ss">:author</span></code></pre></figure>
+
+<p>Now, Take a look to this tutorial video:</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/DDQrRj_WQCc" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
 
 <span class="date">2016-04-28 00:00:00 +0200</span>
   <h3><a href="/2016/04/28/editing_migration_manually.html">Editing Migration File Manually In Rails</a></h3>
@@ -467,236 +589,6 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 
   </div> -->
 
-<span class="date">2016-04-22 00:00:00 +0200</span>
-  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Rails Exception Handler, Dealing With Missing Layout</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
-</code></pre>
-</div>
-
-<p>Series:</p>
-
-<ul>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
- </ul>
-
-<h4>Dealing with Missing Layout.</h4>
-
-<p>We know that the default error pages in the <code class="highlighter-rouge">public</code> folder has no layout, But in <code class="highlighter-rouge">rails exception handler</code> it uses layout, so What we can do if layout is missed.</p>
-
-<p>For this reason, rails exception handler provide</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#config.fallback_layout = 'home'</span></code></pre></figure>
-
-<p>in <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code>/</p>
-
-<p>Uncomment it and change <code class="highlighter-rouge">home</code> layout to be another one as <code class="highlighter-rouge">error</code> in our tutorial.</p>
-
-<p>As shown in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/fHPkjvPq_sY" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br />
-<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
-
-<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
-
-  </div> -->
-
-<span class="date">2016-04-22 00:00:00 +0200</span>
-  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler, Exception Handler Gem</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
-</code></pre>
-</div>
-
-<p>Series:</p>
-
-<ul>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
- </ul>
-
-<h4>1- Using Rails Exception Handler Gem.</h4>
-
-<p>First, Add rails_exception_handler to Gemfile.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">'rails_exception_handler'</span><span class="p">,</span> <span class="s2">"~&gt; 2"</span></code></pre></figure>
-
-<p>Then, Make <code class="highlighter-rouge">bundle install</code>.</p>
-
-<h4>2- Generate an initializer.</h4>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">rails_exception_handler</span><span class="ss">:install</span></code></pre></figure>
-
-<p>Open config/initializers/rails_exception_handler.rb, and choose the environments you want to handle exceptions with.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">environments</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:production</span><span class="p">,</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span><span class="p">]</span></code></pre></figure>
-
-<p>Also, You can use another layout in the case of missing application layout using home layout in <code class="highlighter-rouge">views/layouts</code> or any other layout as <code class="highlighter-rouge">error</code> in our tutorial.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">fallback_layout</span> <span class="o">=</span> <span class="s1">'error'</span></code></pre></figure>
-
-<p>You can change the error message generated with exception as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">responses</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;500&lt;/h1&gt;&lt;p&gt;Internal server error&lt;/p&gt;"</span><span class="p">,</span>
-  <span class="ss">:not_found</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;Ops, The page you write is not found&lt;/h1&gt;&lt;p&gt;Page not found&lt;/p&gt;"</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Also, You can map the relation between the error type and the message related as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">responses</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'ActiveRecord::RecordNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
-    <span class="s1">'ActionController::RoutingError'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
-    <span class="s1">'AbstractController::ActionNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span>
-  <span class="p">}</span></code></pre></figure>
-
-<h4>3- Storing the exception</h4>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">storage_strategies</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:active_record</span><span class="p">]</span>
- <span class="n">config</span><span class="p">.</span><span class="nf">active_record_store_in</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">'development'</span><span class="p">,</span> <span class="c1"># Production in the production environment</span>
-  <span class="ss">:record_table</span> <span class="o">=&gt;</span> <span class="s1">'error_messages'</span> <span class="c1"># The table name will be created.</span>
- <span class="p">}</span></code></pre></figure>
-
-<p>Note, We will create <code class="highlighter-rouge">error_messages</code> table in the same database.</p>
-
-<p>Then, Create a migration file for <code class="highlighter-rouge">error_message</code> as :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="n">error_message</span></code></pre></figure>
-
-<p>Then, Edit the generated file to be :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ErrorMessages</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
-  <span class="k">def</span> <span class="nf">change</span>
-     <span class="n">create_table</span> <span class="ss">:error_messages</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:class_name</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:message</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:trace</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:params</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:target_url</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:referer_url</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:user_agent</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:user_info</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:app_name</span>
-      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:doc_root</span>
-
-      <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Then, Make migration:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<h4>4- Delete Error Pages From Public Folder.</h4>
-
-<p>This is <code class="highlighter-rouge">important</code> step.</p>
-
-<p>You must delete or rename <code class="highlighter-rouge">404</code>,<code class="highlighter-rouge">422</code>,<code class="highlighter-rouge">500</code> error pages form public folder.</p>
-
-<h4>5- Create a Model To Deal With `error_message` Table .</h4>
-
-<p>In <code class="highlighter-rouge">app/model</code> folder create <code class="highlighter-rouge">error_message.rb</code> file and type:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ErrorMessage</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-<span class="k">end</span></code></pre></figure>
-
-<h4>6-Storing Exceptions In Database.</h4>
-
-<p>First, You must decide if you will store exceptions into the save application database or in another database.</p>
-
-<p>If you decided to store exceptoins in another database, then you have to create state that in <code class="highlighter-rouge">/config/database.yml</code>.</p>
-
-<p>But, We will use our database in this tutorial, and <code class="highlighter-rouge">database.yml</code> as it is and the <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code> will be:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RailsExceptionHandler</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">environments</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:production</span><span class="p">]</span>                <span class="c1"># Defaults to [:production]</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">fallback_layout</span> <span class="o">=</span> <span class="s1">'error'</span>                                         <span class="c1"># Defaults to 'application'</span>
-  <span class="c1"># config.after_initialize do</span>
-  <span class="c1">#   # This block will be called after the initialization is done.</span>
-  <span class="c1">#   # Usefull for interaction with authentication mechanisms, which should</span>
-  <span class="c1">#   # only happen when the exception handler is enabled.</span>
-  <span class="c1"># end</span>
-  <span class="c1"># config.filters = [                                                      # No filters are  enabled by default</span>
-  <span class="c1">#   :all_404s,</span>
-  <span class="c1">#   :no_referer_404s,</span>
-  <span class="c1">#   :anon_404s,</span>
-  <span class="c1">#   {:user_agent_regxp =&gt; /\b(ApptusBot|TurnitinBot|DotBot|SiteBot)\b/i},</span>
-  <span class="c1">#   {:target_url_regxp =&gt; /\.php/i},</span>
-  <span class="c1">#   {:referer_url_regxp =&gt; /problematicreferer/i}</span>
-  <span class="c1"># ]</span>
-  <span class="c1">#</span>
-  <span class="c1"># !!! IMPORTANT !!!</span>
-  <span class="c1"># You must remove public/500.html and public/404.html for these to have any effect</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">responses</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;500&lt;/h1&gt;&lt;p&gt;Internal server error&lt;/p&gt;"</span><span class="p">,</span>
-    <span class="ss">:not_found</span> <span class="o">=&gt;</span> <span class="s2">"&lt;h1&gt;Ops, The page you write is not found&lt;/h1&gt;&lt;p&gt;Page not found&lt;/p&gt;"</span>
-  <span class="p">}</span>
-
-  <span class="c1"># All errors are mapped to the :default response unless overridden here</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">response_mapping</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'ActiveRecord::RecordNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
-    <span class="s1">'ActionController::RoutingError'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span><span class="p">,</span>
-    <span class="s1">'AbstractController::ActionNotFound'</span> <span class="o">=&gt;</span> <span class="ss">:not_found</span>
-  <span class="p">}</span>
-
-  <span class="n">config</span><span class="p">.</span><span class="nf">storage_strategies</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:active_record</span><span class="p">]</span> <span class="c1"># Available options: [:active_record, :rails_log, :remote_url =&gt; {:target =&gt; 'http://example.com'}]</span>
-
-  <span class="c1"># Change database/table for the active_record storage strategy</span>
-  <span class="n">config</span><span class="p">.</span><span class="nf">active_record_store_in</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">'development'</span><span class="p">,</span> <span class="c1"># your database is development in this example but must be `production` in production environment</span>
-   <span class="c1">#and you must state the name if you will use another database.</span>
-   <span class="ss">:record_table</span> <span class="o">=&gt;</span> <span class="s1">'error_messages'</span> <span class="c1">#the name of the table</span>
-  <span class="p">}</span>
-
-
-  <span class="n">config</span><span class="p">.</span><span class="nf">store_request_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="p">,</span><span class="n">request</span><span class="o">|</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:target_url</span><span class="p">]</span> <span class="o">=</span>    <span class="n">request</span><span class="p">.</span><span class="nf">url</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:referer_url</span><span class="p">]</span> <span class="o">=</span>   <span class="n">request</span><span class="p">.</span><span class="nf">referer</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:params</span><span class="p">]</span> <span class="o">=</span>        <span class="n">request</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">inspect</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:user_agent</span><span class="p">]</span> <span class="o">=</span>    <span class="n">request</span><span class="p">.</span><span class="nf">user_agent</span>
-  <span class="k">end</span>
-
-  <span class="n">config</span><span class="p">.</span><span class="nf">store_exception_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="p">,</span><span class="n">exception</span><span class="o">|</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:class_name</span><span class="p">]</span> <span class="o">=</span>   <span class="n">exception</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">to_s</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:message</span><span class="p">]</span> <span class="o">=</span>      <span class="n">exception</span><span class="p">.</span><span class="nf">to_s</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:trace</span><span class="p">]</span> <span class="o">=</span>        <span class="n">exception</span><span class="p">.</span><span class="nf">backtrace</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="n">config</span><span class="p">.</span><span class="nf">store_environment_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="p">,</span><span class="n">env</span><span class="o">|</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:doc_root</span><span class="p">]</span> <span class="o">=</span>      <span class="n">env</span><span class="p">[</span><span class="s1">'DOCUMENT_ROOT'</span><span class="p">]</span>
-  <span class="k">end</span>
-
-  <span class="n">config</span><span class="p">.</span><span class="nf">store_global_info</span> <span class="k">do</span> <span class="o">|</span><span class="n">storage</span><span class="o">|</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:app_name</span><span class="p">]</span> <span class="o">=</span>     <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">parent_name</span>
-    <span class="n">storage</span><span class="p">[</span><span class="ss">:created_at</span><span class="p">]</span> <span class="o">=</span>   <span class="no">Time</span><span class="p">.</span><span class="nf">now</span>
-  <span class="k">end</span>
-  <span class="c1">#config.store_user_info = {:method =&gt; :current_user, :field =&gt; :email} # Helper method for easier access to current_user</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>All these steps in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/wZoroa-I23I" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br />
-<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
-
-<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -730,6 +622,22 @@ and <code class="highlighter-rouge">datatype = float</code></p>
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">May 3, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/03/setting_github_pages_with_name_cheap_dns.html">Setting Github Pages With NameCheap DNS</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 3, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/03/hosting_jekyll_blog_on_github_pages.html">Hosting Jekyll Blog On Github Pages</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">May 2, 2016</span>

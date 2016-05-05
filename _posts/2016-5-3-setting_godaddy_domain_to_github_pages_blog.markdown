@@ -25,4 +25,4 @@ Second, Change to `settings` tab and set the forwarding to `www` form i.e `www.n
 
 Now, Take a look to this tutorial video.
 
-<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/SpBp5ee2zNA" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/Ty32TtCca2c" frameborder="0" allowfullscreen></iframe>

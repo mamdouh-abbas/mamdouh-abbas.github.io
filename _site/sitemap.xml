@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://www.web2sons.xyz/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html</loc>
+<lastmod>2016-05-03T00:00:00+02:00</lastmod>
+</url>
+<url>
 <loc>http://www.web2sons.xyz/2016/05/03/setting_github_pages_with_name_cheap_dns.html</loc>
 <lastmod>2016-05-03T00:00:00+02:00</lastmod>
 </url>
@@ -131,6 +135,9 @@
 </url>
 <url>
 <loc>http://www.web2sons.xyz/page3/</loc>
+</url>
+<url>
+<loc>http://www.web2sons.xyz/page4/</loc>
 </url>
 <url>
 <loc>http://www.web2sons.xyz/404.html</loc>

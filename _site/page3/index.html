@@ -66,6 +66,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -93,6 +95,75 @@
   </div>
   </div>
   <!-- This loops through the paginated posts -->
+
+<span class="date">2016-04-22 00:00:00 +0200</span>
+  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Rails Exception Handler, Creating Exceptions Page</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
+</code></pre>
+</div>
+
+<p>Series:</p>
+
+<ul>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
+   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
+ </ul>
+
+<h4>Creating View For Exceptions.</h4>
+
+<p>First, Assign all exceptions from the <code class="highlighter-rouge">ErrorMessage</code> model to an instance variable <code class="highlighter-rouge">@errors</code> in the posts controller to be accessed in <code class="highlighter-rouge">errors</code> page in views as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">errors</span>
+    <span class="vi">@errors</span><span class="o">=</span><span class="no">ErrorMessage</span><span class="p">.</span><span class="nf">all</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Then, Make a route before <code class="highlighter-rouge">posts</code> to avoid <code class="highlighter-rouge">id</code> exception as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">get</span> <span class="s2">"posts/errors"</span>
+<span class="n">root</span> <span class="ss">to: </span><span class="s2">"posts#index"</span>
+<span class="n">resources</span> <span class="ss">:posts</span></code></pre></figure>
+
+<p>Then, Create <code class="highlighter-rouge">views/errors.html.erb</code> and paste the next code and save.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Errors</span><span class="o">&lt;</span><span class="sr">/h1&gt;
+&lt;table border="2"&gt;
+  &lt;tr&gt;
+  &lt;% @errors.attribute_names.each do |key,value| %&gt;
+    &lt;th&gt;
+      &lt;%= key %&gt;
+    &lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/tr&gt;
+  &lt;% @errors.each do |error| %&gt;
+  &lt;tr&gt;
+  &lt;% error.attributes.each do |key,value| %&gt;
+    &lt;td&gt;
+
+      &lt;%= value  %&gt;
+
+    &lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/tr&gt;
+    &lt;% end %&gt;
+&lt;/</span><span class="n">table</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>You can use any <code class="highlighter-rouge">paging</code> gem to handle large exceptions.</p>
+
+<p>Now, Take a look to this tutorial video :</p>
+
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/JCVsqGa0WZk" frameborder="0" allowfullscreen=""></iframe>
+
+<p><br />
+<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
+
+<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
+
+  </div> -->
 
 <span class="date">2016-04-22 00:00:00 +0200</span>
   <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Rails Exception Handler, Dealing With Missing Layout</a></h3>
@@ -942,37 +1013,6 @@ tr>td:first-child {
 
   </div> -->
 
-<span class="date">2016-03-23 00:00:00 +0200</span>
-  <h3><a href="/2016/03/23/what_is_ruby.html">What is Ruby programming language</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby 
-</code></pre>
-</div>
-
-<p><img style="width:50px; length:50px;" src="/images/ruby.png" />
-   <code class="highlighter-rouge">Ruby:</code> is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro “Matz” Matsumoto in Japan. According to its creator, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, and Lisp.
-   <img style="width:200px; length:300px; float:right; border:5px blue solid;" src="/images/Yukihiro_Matsumoto.png" /></p>
-
-<p><code class="highlighter-rouge">Ruby</code> was conceived on February 24, 1993. In a 1999 post to the ruby-talk mailing list, Ruby author <code class="highlighter-rouge">Yukihiro Matsumoto</code> describes some of his early ideas about the language.</p>
-
-<p>The name <code class="highlighter-rouge">Ruby</code> originated during an online chat session between Matsumoto and Keiju Ishitsuka on February 24, 1993, before any code had been written for the language. Initially two names were proposed: “Coral” and “Ruby”. Matsumoto chose the latter in a later e-mail to Ishitsuka. Matsumoto later noted a factor in choosing the name “Ruby” – it was the birthstone of one of his colleagues.</p>
-
-<p>The first public release of Ruby 0.95 was announced on Japanese domestic newsgroups on December 21, 1995. Subsequently three more versions of Ruby were released in two days. The release coincided with the launch of the Japanese-language ruby-list mailing list, which was the first mailing list for the new language.</p>
-
-<p><code class="highlighter-rouge">Matsumoto</code> has said that Ruby is designed for programmer productivity and fun, following the principles of good user interface design. At a Google Tech Talk in 2008 Matsumoto further stated, “I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language.”[56] He stresses that systems design needs to emphasize human, rather than computer.</p>
-
-<p>Often people, especially computer engineers, focus on the machines. They think, “By doing this, the machine will run fast. By doing this, the machine will run more effectively.</p>
-
-<p>By doing this, the machine will something something something.” They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.</p>
-
-<p>[source: <a target="_blank" href="https://en.wikipedia.org/wiki/Ruby_programming_language">wikipedia</a>]</p>
-
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -994,9 +1034,13 @@ tr>td:first-child {
       <em>3</em>
     
   
+    
+      <a href="/page4">4</a>
+    
+  
 
   
-    <span>Next &raquo;</span>
+    <a href="/page4">Next &raquo;</a>
   
 </div>
 
@@ -1006,6 +1050,14 @@ tr>td:first-child {
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">May 3, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html">Setting Github Pages With Godaddy DNS</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">May 3, 2016</span>

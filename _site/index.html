@@ -66,6 +66,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -93,6 +95,32 @@
   </div>
   </div>
   <!-- This loops through the paginated posts -->
+
+<span class="date">2016-05-03 00:00:00 +0200</span>
+  <h3><a href="/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html">Setting Github Pages With Godaddy DNS</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Hosting  Jekyll  Github  Godaddy 
+</code></pre>
+</div>
+
+<h4>How To Set Github Pages With Godaddy DNS.</h4>
+
+<p>First, Login your <code class="highlighter-rouge">Godaddy</code> account and choose desired domain and click <code class="highlighter-rouge">DNS Zone File</code> as in this picture:</p>
+
+<p><img style="width:150%; length:auto;" src="/images/godaddydns.png" /></p>
+
+<p>Second, Change to <code class="highlighter-rouge">settings</code> tab and set the forwarding to <code class="highlighter-rouge">www</code> form i.e <code class="highlighter-rouge">www.new-domiat.com</code> in our example as the next picture:</p>
+
+<p><img style="width:150%; length:auto;" src="/images/godaddyforward.png" /></p>
+
+<p>Now, Take a look to this tutorial video.</p>
+
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/SpBp5ee2zNA" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
 
 <span class="date">2016-05-03 00:00:00 +0200</span>
   <h3><a href="/2016/05/03/setting_github_pages_with_name_cheap_dns.html">Setting Github Pages With NameCheap DNS</a></h3>
@@ -570,61 +598,6 @@ this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</
 
   </div> -->
 
-<span class="date">2016-04-28 00:00:00 +0200</span>
-  <h3><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting Environment For Rails Migration</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  environment 
-</code></pre>
-</div>
-
-<h3>Setting Environment For Rails Migration.</h3>
-
-<p>You can set the <code class="highlighter-rouge">environment</code> for rails migration <code class="highlighter-rouge">RAILS_ENV</code> using one of two ways:</p>
-
-<p>First, Using <code class="highlighter-rouge">rake</code> command line as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
-<span class="c1">#or</span>
-<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">development</span>
-<span class="c1">#or</span>
-<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
-
-<p>Second, Using system variables in command line</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
-<span class="c1">#or</span>
-<span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">development</span>
-<span class="c1">#or</span>
-<span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
-
-<p>Or editing <code class="highlighter-rouge">~/.bashrc</code> file to add <code class="highlighter-rouge">RAILS_ENV</code> as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc
-#or
-echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf">bashrc</span>
-<span class="c1">#or</span>
-<span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
-
-<p>And then, refresh your system variables using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
-
-<p>You can assure that you have system variable <code class="highlighter-rouge">RAILS_ENV</code> and its value using :</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="vg">$RAILS_ENV</span></code></pre></figure>
-
-<p><i style="color:red;">Note, The database for that environment must be created before its migration.</i></p>
-
-<p>Now, Take a look to this tutorial video:</p>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/PcGxPKmmbE8" frameborder="0" allowfullscreen=""></iframe>
-
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -646,6 +619,10 @@ echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf"
       <a href="/page3">3</a>
     
   
+    
+      <a href="/page4">4</a>
+    
+  
 
   
     <a href="/page2">Next &raquo;</a>
@@ -658,6 +635,14 @@ echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf"
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">May 3, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html">Setting Github Pages With Godaddy DNS</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">May 3, 2016</span>

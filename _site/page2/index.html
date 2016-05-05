@@ -66,6 +66,8 @@
         
           
         
+          
+        
       </div>
     </nav>
 
@@ -93,6 +95,61 @@
   </div>
   </div>
   <!-- This loops through the paginated posts -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting Environment For Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  environment 
+</code></pre>
+</div>
+
+<h3>Setting Environment For Rails Migration.</h3>
+
+<p>You can set the <code class="highlighter-rouge">environment</code> for rails migration <code class="highlighter-rouge">RAILS_ENV</code> using one of two ways:</p>
+
+<p>First, Using <code class="highlighter-rouge">rake</code> command line as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
+<span class="c1">#or</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">development</span>
+<span class="c1">#or</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
+
+<p>Second, Using system variables in command line</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
+<span class="c1">#or</span>
+<span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">development</span>
+<span class="c1">#or</span>
+<span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
+
+<p>Or editing <code class="highlighter-rouge">~/.bashrc</code> file to add <code class="highlighter-rouge">RAILS_ENV</code> as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc
+#or
+echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf">bashrc</span>
+<span class="c1">#or</span>
+<span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
+
+<p>And then, refresh your system variables using:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
+
+<p>You can assure that you have system variable <code class="highlighter-rouge">RAILS_ENV</code> and its value using :</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="vg">$RAILS_ENV</span></code></pre></figure>
+
+<p><i style="color:red;">Note, The database for that environment must be created before its migration.</i></p>
+
+<p>Now, Take a look to this tutorial video:</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/PcGxPKmmbE8" frameborder="0" allowfullscreen=""></iframe>
+
+
+  </div> -->
 
 <span class="date">2016-04-28 00:00:00 +0200</span>
   <h3><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a></h3>
@@ -520,75 +577,6 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 
   </div> -->
 
-<span class="date">2016-04-22 00:00:00 +0200</span>
-  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Rails Exception Handler, Creating Exceptions Page</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
-</code></pre>
-</div>
-
-<p>Series:</p>
-
-<ul>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Storing User Information</a></li>
- </ul>
-
-<h4>Creating View For Exceptions.</h4>
-
-<p>First, Assign all exceptions from the <code class="highlighter-rouge">ErrorMessage</code> model to an instance variable <code class="highlighter-rouge">@errors</code> in the posts controller to be accessed in <code class="highlighter-rouge">errors</code> page in views as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">errors</span>
-    <span class="vi">@errors</span><span class="o">=</span><span class="no">ErrorMessage</span><span class="p">.</span><span class="nf">all</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Then, Make a route before <code class="highlighter-rouge">posts</code> to avoid <code class="highlighter-rouge">id</code> exception as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">get</span> <span class="s2">"posts/errors"</span>
-<span class="n">root</span> <span class="ss">to: </span><span class="s2">"posts#index"</span>
-<span class="n">resources</span> <span class="ss">:posts</span></code></pre></figure>
-
-<p>Then, Create <code class="highlighter-rouge">views/errors.html.erb</code> and paste the next code and save.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Errors</span><span class="o">&lt;</span><span class="sr">/h1&gt;
-&lt;table border="2"&gt;
-  &lt;tr&gt;
-  &lt;% @errors.attribute_names.each do |key,value| %&gt;
-    &lt;th&gt;
-      &lt;%= key %&gt;
-    &lt;/</span><span class="n">th</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
-  <span class="o">&lt;</span><span class="sr">/tr&gt;
-  &lt;% @errors.each do |error| %&gt;
-  &lt;tr&gt;
-  &lt;% error.attributes.each do |key,value| %&gt;
-    &lt;td&gt;
-
-      &lt;%= value  %&gt;
-
-    &lt;/</span><span class="n">td</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="sx">% end </span><span class="o">%&gt;</span>
-  <span class="o">&lt;</span><span class="sr">/tr&gt;
-    &lt;% end %&gt;
-&lt;/</span><span class="n">table</span><span class="o">&gt;</span></code></pre></figure>
-
-<p>You can use any <code class="highlighter-rouge">paging</code> gem to handle large exceptions.</p>
-
-<p>Now, Take a look to this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/JCVsqGa0WZk" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br />
-<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
-
-<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -610,6 +598,10 @@ and <code class="highlighter-rouge">datatype = float</code></p>
       <a href="/page3">3</a>
     
   
+    
+      <a href="/page4">4</a>
+    
+  
 
   
     <a href="/page3">Next &raquo;</a>
@@ -622,6 +614,14 @@ and <code class="highlighter-rouge">datatype = float</code></p>
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">May 3, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html">Setting Github Pages With Godaddy DNS</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">May 3, 2016</span>

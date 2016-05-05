@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Creating Migration File Via Generating Rails Migration</title>
+  <title>Setting Github Pages With Godaddy DNS</title>
 
   
-  <meta name="description" content="Creating Migration File Via Generating Migration In Rails Application.">
+  <meta name="description" content="How To Set Github Pages With Godaddy DNS">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="ruby rails migrate database">
+  <meta name="keywords" content="Hosting Jekyll Github Godaddy">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/28/creating_migrating_file_using_generate_migration.html">
+  <link rel="canonical" href="http://www.web2sons.xyz/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html">
   <link rel="alternate" type="application/rss+xml" title="Web 2 Sons" href="http://www.web2sons.xyz/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -81,59 +81,30 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Creating Migration File Via Generating Rails Migration</h2>
-    <p class="post-meta"><time datetime="2016-04-28T00:00:00+02:00" itemprop="datePublished">Apr 28, 2016</time></p>
+    <h2 class="post-title" itemprop="name headline">Setting Github Pages With Godaddy DNS</h2>
+    <p class="post-meta"><time datetime="2016-05-03T00:00:00+02:00" itemprop="datePublished">May 3, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
+<div class="highlighter-rouge"><pre class="highlight"><code>Hosting  Jekyll  Github  Godaddy 
 </code></pre>
 </div>
 
-<h3>Creating Migration File Via Generating Rails Migration.</h3>
+<h4>How To Set Github Pages With Godaddy DNS.</h4>
 
-<p>The general form is <code class="highlighter-rouge">rails g migration</code> and then you can create <code class="highlighter-rouge">books</code> table and state columns names and its datatypes as:</p>
+<p>First, Login your <code class="highlighter-rouge">Godaddy</code> account and choose desired domain and click <code class="highlighter-rouge">DNS Zone File</code> as in this picture:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">CreateBook</span> <span class="n">title</span><span class="ss">:string</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
+<p><img style="width:150%; length:auto;" src="/images/godaddydns.png" /></p>
 
-<p>This will create migration file in <code class="highlighter-rouge">db/migrate</code> folder to create <code class="highlighter-rouge">books</code> table.</p>
+<p>Second, Change to <code class="highlighter-rouge">settings</code> tab and set the forwarding to <code class="highlighter-rouge">www</code> form i.e <code class="highlighter-rouge">www.new-domiat.com</code> in our example as the next picture:</p>
 
-<p>Note, The generated file doesn’t create <code class="highlighter-rouge">timestamps</code> fields <code class="highlighter-rouge">created_at</code> and <code class="highlighter-rouge">updated_at</code> so, you can add:</p>
+<p><img style="width:150%; length:auto;" src="/images/godaddyforward.png" /></p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span> <span class="ss">null: </span><span class="kp">false</span></code></pre></figure>
+<p>Now, Take a look to this tutorial video.</p>
 
-<p>Also, You can edit this file and add or remove columns before making <code class="highlighter-rouge">rake db:migrate</code></p>
-
-<p>And, You can state all table’s columns manually in the migration file not in <code class="highlighter-rouge">rails g migration</code> command line.</p>
-
-<p>Then, Apply changes to database using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>Now, You must create <code class="highlighter-rouge">book.rb</code> model manually in <code class="highlighter-rouge">app/models</code> to deal with <code class="highlighter-rouge">books</code> table as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Book</span><span class="o">&lt;</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Note that you can undo this migration using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
-
-<p><i style="color:red;">Note, Any <code class="highlighter-rouge">rake db:rollback</code> may delete stored data in the <code class="highlighter-rouge">targeted</code> columns and can’t be restored again.</i></p>
-
-<p>Also, You can delete the migration file generated by converting <code class="highlighter-rouge">g</code>(for generate) to <code class="highlighter-rouge">d</code> (for destroy) in migration command as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="no">CreateBook</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span>
-<span class="c1">#to be</span>
-<span class="n">rails</span> <span class="n">d</span> <span class="no">CreateBook</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
-
-<p>The last line will delete the migration file generted by the first line.</p>
-
-<p>Now take a look to this tutorial video:</p>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/TdIQmThzN84" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/SpBp5ee2zNA" frameborder="0" allowfullscreen=""></iframe>
 
   </div>
 
@@ -141,8 +112,8 @@
 <div id="disqus_thread"></div>
 <script>    
     var disqus_config = function () {
-      this.page.url = "http://www.web2sons.xyz/2016/04/28/creating_migrating_file_using_generate_migration.html";
-      this.page.identifier = "/2016/04/28/creating_migrating_file_using_generate_migration";
+      this.page.url = "http://www.web2sons.xyz/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html";
+      this.page.identifier = "/2016/05/03/setting_godaddy_domain_to_github_pages_blog";
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');

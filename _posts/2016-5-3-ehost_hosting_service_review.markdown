@@ -17,9 +17,9 @@ published: true
 
 First, In 10/04/2016, My order was 70% discount for three yearsfor one hosting and free domain, Note, at this time, I was an initial registeration.
 
-<img style="width:150%; length:auto;" src="/images/ehost_service.png">
-
 But, When i check the billing, I found the plan is monthly for 4.19$.
+
+<img style="width:150%; length:auto;" src="/images/ehost_service.png">
 
 After 15 days in 25/04/2016, I found a new billing invoice as in the next picture, `Ehost.com` made a new price 13.98 for `renew`, the `support` chat man said that.
 

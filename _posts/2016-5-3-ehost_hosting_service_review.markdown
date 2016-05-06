@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Ehost.com Hosting Service review"
-tags: Hosting Ehost Review Godaddy
-keywords: Hosting Ehost.com Ehost Review Godaddy
+tags: Hosting Ehost Review Ehost.com
+keywords: Hosting Ehost.com Ehost Review Ehost.com
 description: Ehost.com Hosting Service review
 published: true
 ---

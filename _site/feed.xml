@@ -5,8 +5,8 @@
     <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
     <link>http://www.web2sons.xyz/</link>
     <atom:link href="http://www.web2sons.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 May 2016 05:11:01 +0200</pubDate>
-    <lastBuildDate>Thu, 05 May 2016 05:11:01 +0200</lastBuildDate>
+    <pubDate>Fri, 06 May 2016 18:11:17 +0200</pubDate>
+    <lastBuildDate>Fri, 06 May 2016 18:11:17 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -29,7 +29,7 @@
 
 &lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
 
-&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/SpBp5ee2zNA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/Ty32TtCca2c&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
         <link>http://www.web2sons.xyz/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html</link>
@@ -124,6 +124,44 @@
         <category>Github</category>
         
         <category>Pages</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ehost.com Hosting Service review</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hosting  Ehost  Review  Godaddy 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;Ehost.com Hosting Service review.&lt;/h4&gt;
+
+&lt;p&gt;First, In 10/04/2016, My order was 70% discount for three yearsfor one hosting and free domain, Note, at this time, I was an initial registeration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:150%; length:auto;&quot; src=&quot;/images/ehost_service.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But, When i check the billing, I found the plan is monthly for 4.19$.&lt;/p&gt;
+
+&lt;p&gt;After 15 days in 25/04/2016, I found a new billing invoice as in the next picture, &lt;code class=&quot;highlighter-rouge&quot;&gt;Ehost.com&lt;/code&gt; made a new price 13.98 for &lt;code class=&quot;highlighter-rouge&quot;&gt;renew&lt;/code&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;support&lt;/code&gt; chat man said that.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:150%; length:auto;&quot; src=&quot;/images/ehost_invoice.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I told him, You are a good man if you discard my account &lt;code class=&quot;highlighter-rouge&quot;&gt;now&lt;/code&gt; not &lt;code class=&quot;highlighter-rouge&quot;&gt;tomorrow&lt;/code&gt; because &lt;code class=&quot;highlighter-rouge&quot;&gt;Ehost.com&lt;/code&gt; is not trusty.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/03/ehost_hosting_service_review.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/03/ehost_hosting_service_review.html</guid>
+        
+        <category>Hosting</category>
+        
+        <category>Ehost</category>
+        
+        <category>Review</category>
+        
+        <category>Godaddy</category>
         
         
       </item>
@@ -575,56 +613,6 @@ this.page.identifier = &quot;/2016/04/30/escaping_double_curly_braces_in_markdow
         <category>Comment</category>
         
         <category>Disqus</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Setup, Reset And Drop Database</title>
-        <description>&lt;p&gt;TAGS:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby  rails  migration  database  setup  reset  drop 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Setup, Reset and Drop Database Via Rails Console.&lt;/h3&gt;
-
-&lt;p&gt;Setting up the database using &lt;code class=&quot;highlighter-rouge&quot;&gt;rake db:setup&lt;/code&gt; will create the database and migrate the migration files.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:setup&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Also, Resetting the database using&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:reset&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;will re-migrate the migration files.&lt;/p&gt;
-
-&lt;p&gt;But, Drop the database using&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:drop&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;will delete the the database itself.&lt;/p&gt;
-
-&lt;p&gt;Note, &lt;code class=&quot;highlighter-rouge&quot;&gt;rake db:reset&lt;/code&gt; equals &lt;code class=&quot;highlighter-rouge&quot;&gt;rake db:drop db:setup&lt;/code&gt;.&lt;/p&gt;
-&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/eQirPQNBy9Q&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Thu, 28 Apr 2016 00:00:00 +0200</pubDate>
-        <link>http://www.web2sons.xyz/2016/04/28/setup_reset_and_drop_database.html</link>
-        <guid isPermaLink="true">http://www.web2sons.xyz/2016/04/28/setup_reset_and_drop_database.html</guid>
-        
-        <category>ruby</category>
-        
-        <category>rails</category>
-        
-        <category>migration</category>
-        
-        <category>database</category>
-        
-        <category>setup</category>
-        
-        <category>reset</category>
-        
-        <category>drop</category>
         
         
       </item>

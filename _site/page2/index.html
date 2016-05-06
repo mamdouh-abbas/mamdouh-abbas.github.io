@@ -97,6 +97,39 @@
   <!-- This loops through the paginated posts -->
 
 <span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, Reset And Drop Database</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  setup  reset  drop 
+</code></pre>
+</div>
+
+<h3>Setup, Reset and Drop Database Via Rails Console.</h3>
+
+<p>Setting up the database using <code class="highlighter-rouge">rake db:setup</code> will create the database and migrate the migration files.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:setup</span></code></pre></figure>
+
+<p>Also, Resetting the database using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:reset</span></code></pre></figure>
+
+<p>will re-migrate the migration files.</p>
+
+<p>But, Drop the database using</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:drop</span></code></pre></figure>
+
+<p>will delete the the database itself.</p>
+
+<p>Note, <code class="highlighter-rouge">rake db:reset</code> equals <code class="highlighter-rouge">rake db:drop db:setup</code>.</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/eQirPQNBy9Q" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
   <h3><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting Environment For Rails Migration</a></h3>
   
   <!-- <div class="content">
@@ -537,46 +570,6 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 
   </div> -->
 
-<span class="date">2016-04-22 00:00:00 +0200</span>
-  <h3><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part4.html">Rails Exception Handler, Saving User Informations</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  exception  handler 
-</code></pre>
-</div>
-
-<p>Series:</p>
-
-<ul>
- 	<li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part1.html">Rails Exception Handler Gem</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part2.html">Dealing With Missing Layout</a></li>
-   <li><a href="/2016/04/22/Rails_Exception_Handler_complete_example_part3.html">Creating Exception Page</a></li>
-   
- </ul>
-
-<h4>How to save User Informations In `error_messages` table.</h4>
-
-<p>First, You must have one of the authentication methods such as devise.</p>
-
-<p>Then, Uncomment the following line in <code class="highlighter-rouge">/config/initializers/rails_exception_handler.rb</code> and edit it to be:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">config</span><span class="p">.</span><span class="nf">store_user_info</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:current_user</span><span class="p">,</span> <span class="ss">:field</span> <span class="o">=&gt;</span> <span class="ss">:email</span><span class="p">}</span> <span class="c1"># Helper method for easier access to current_user</span></code></pre></figure>
-
-<p>Where you will store the user <code class="highlighter-rouge">email</code> as user information into <code class="highlighter-rouge">ErrorMessage</code> table and we suppose that you use <code class="highlighter-rouge">current_user</code> as used in <code class="highlighter-rouge">devise</code>.</p>
-
-<p>As shown in this tutorial video :</p>
-
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/VZ5adC3Yi3E" frameborder="0" allowfullscreen=""></iframe>
-
-<p><br />
-<a target="_blank" href="https://github.com/mamdouh-abbas-farh/exception_handler" title="source on github">Source on github.com</a></p>
-
-<p><i style="color:red;">Great Note</i>, Every time you change any file in <code class="highlighter-rouge">config/initializers</code>, You must restart <code class="highlighter-rouge">server</code>.</p>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -636,6 +629,14 @@ and <code class="highlighter-rouge">datatype = float</code></p>
 
         <h2>
           <a class="post-link" href="/2016/05/03/hosting_jekyll_blog_on_github_pages.html">Hosting Jekyll Blog On Github Pages</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 3, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/03/ehost_hosting_service_review.html">Ehost.com Hosting Service review</a>
         </h2>
       </li>
     

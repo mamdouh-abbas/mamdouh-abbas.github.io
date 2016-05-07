@@ -96,6 +96,36 @@
   </div>
   <!-- This loops through the paginated posts -->
 
+<span class="date">2016-05-05 00:00:00 +0200</span>
+  <h3><a href="/2016/05/05/deploying_regular_html_website_on_heroku.html">Deploying Regular HTML Website On Heroku</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Hosting  Heroku  Deploy 
+</code></pre>
+</div>
+
+<h4>How To Deploy A Regular HTML Website On Heroku.</h4>
+
+<p>The <code class="highlighter-rouge">Heroku</code> is one of the most pupular <code class="highlighter-rouge">PAAS</code> program as a service, and used for <code class="highlighter-rouge">server side application</code> so it suppose that you have a server side programming language such as <code class="highlighter-rouge">php</code>, <code class="highlighter-rouge">ruby</code>, <code class="highlighter-rouge">java</code> and so on.</p>
+
+<p>So, For non server side application, we have a problem to deploy on <code class="highlighter-rouge">heroku</code>, but you can overcome it.</p>
+
+<p>First, Change your <code class="highlighter-rouge">index.html</code> to be <code class="highlighter-rouge">home.html</code>.</p>
+
+<p>Second, Create a new file <code class="highlighter-rouge">index.php</code> and type:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">include_once</span><span class="p">(</span><span class="s2">"home.html"</span><span class="p">);</span> <span class="cp">?&gt;</span></code></pre></figure>
+
+<p>And then, Deploy you site simply.</p>
+
+<p>Now, Take a look to this tutorial video.</p>
+
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/jni52Hp7Cug" frameborder="0" allowfullscreen=""></iframe>
+
+  </div> -->
+
 <span class="date">2016-05-03 00:00:00 +0200</span>
   <h3><a href="/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html">Setting Github Pages With Godaddy DNS</a></h3>
   
@@ -186,7 +216,7 @@
   <!-- <div class="content">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Hosting  Ehost  Review  Godaddy 
+<div class="highlighter-rouge"><pre class="highlight"><code>Hosting  Ehost  Review  Ehost.com 
 </code></pre>
 </div>
 
@@ -194,9 +224,9 @@
 
 <p>First, In 10/04/2016, My order was 70% discount for three yearsfor one hosting and free domain, Note, at this time, I was an initial registeration.</p>
 
-<p><img style="width:150%; length:auto;" src="/images/ehost_service.png" /></p>
-
 <p>But, When i check the billing, I found the plan is monthly for 4.19$.</p>
+
+<p><img style="width:150%; length:auto;" src="/images/ehost_service.png" /></p>
 
 <p>After 15 days in 25/04/2016, I found a new billing invoice as in the next picture, <code class="highlighter-rouge">Ehost.com</code> made a new price 13.98 for <code class="highlighter-rouge">renew</code>, the <code class="highlighter-rouge">support</code> chat man said that.</p>
 
@@ -511,87 +541,6 @@ this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</
 
   </div> -->
 
-<span class="date">2016-04-29 00:00:00 +0200</span>
-  <h3><a href="/2016/04/29/adding_disqus_comments_to_jekyll.html">Adding Disqus Comments To Jekyll Blog</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Jekyll  Blog  Comment  Disqus 
-</code></pre>
-</div>
-
-<h4>How To Add Disqus Comments To Jekyll Blog</h4>
-
-<blockquote>
-
-  <p>Click the <code class="highlighter-rouge">setting ring</code> in the top right corner.</p>
-
-  <p>Click <code class="highlighter-rouge">Add Disqus To Site</code>.</p>
-
-  <p>Then, Click <code class="highlighter-rouge">Start Using Engage</code>.</p>
-
-  <p>Enter the <code class="highlighter-rouge">site name</code>.</p>
-
-  <p>Enter your disqus <code class="highlighter-rouge">unique url</code>.</p>
-
-  <p>Choose the <code class="highlighter-rouge">category</code>.</p>
-
-  <p>Click <code class="highlighter-rouge">Next</code>.</p>
-
-  <p>Click <code class="highlighter-rouge">My site is just a personal site</code>.</p>
-
-  <p>You can <code class="highlighter-rouge">Skip</code> next two step.</p>
-
-  <p>Then, Choose <code class="highlighter-rouge">Universal Code</code>.</p>
-
-  <p>Then <code class="highlighter-rouge">copy</code> the next code.</p>
-
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-    <span class="kd">var</span> <span class="nx">disqus_config</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"{{site.url}}{{page.url}}"</span><span class="p">;</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"{{ page.id }}"</span><span class="p">;</span>
-    <span class="p">};</span>
-
-    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// Replace your_unique_disqus_id with your true one.</span>
-        <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
-        
-        <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'//your_unique_disqus_id.disqus.com/embed.js'</span><span class="p">;</span>
-        
-        <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-timestamp'</span><span class="p">,</span> <span class="o">+</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
-        <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">head</span> <span class="o">||</span> <span class="nx">d</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-    <span class="p">})();</span>
-<span class="nt">&lt;/script&gt;</span>
-<span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://disqus.com/?ref_noscript"</span> <span class="na">rel=</span><span class="s">"nofollow"</span><span class="nt">&gt;</span>comments powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;</span></code></pre></figure>
-
-<blockquote>
-
-  <p>And <code class="highlighter-rouge">paste</code> it in the <code class="highlighter-rouge">bottom</code> of the <code class="highlighter-rouge">_layouts/post.html</code>.</p>
-
-  <p>Don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
-
-  <p>Then <code class="highlighter-rouge">copy</code> the next code.</p>
-
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"dsq-count-scr"</span> <span class="na">src=</span><span class="s">"//your_unique_disqus_id.disqus.com/count.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span> </code></pre></figure>
-
-<blockquote>
-  <p>And <code class="highlighter-rouge">paste</code> it in the <code class="highlighter-rouge">bottom</code> of the <code class="highlighter-rouge">_layouts/default.html</code> before <code class="highlighter-rouge">&lt;/body&gt;</code>.</p>
-
-  <p>Also don’t forget replacing <code class="highlighter-rouge">your_unique_disqus_id</code> with you actual one.</p>
-
-</blockquote>
-
-<p>Now, Take a look to this tutorial video.</p>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/uXiJmo2-XDg" frameborder="0" allowfullscreen=""></iframe>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -629,6 +578,14 @@ this.page.identifier = "/2016/04/30/escaping_double_curly_braces_in_markdown";</
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">May 5, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/05/05/deploying_regular_html_website_on_heroku.html">Deploying Regular HTML Website On Heroku</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">May 3, 2016</span>

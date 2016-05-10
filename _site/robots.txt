@@ -1,0 +1,4 @@
+#Allow: /*/*/tree/master
+#Allow: /*/*/blob/master
+Disallow: /404
+Disallow: /Madmouh/Abbas

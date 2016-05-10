@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web 2 Sons</title>
+    <description>Ruby, Ruby On Rails, Docker, Databases, Opencart, Jekyll, Seo, Express.js, Emper.js, Javascript , jQuery, Bootstrap, CSS, SASS, LESS, Animate.css , Wow.js, Google, HTML</description>
+    <link>http://www.web2sons.xyz/</link>
+    <atom:link href="http://www.web2sons.xyz/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 10 May 2016 23:10:46 +0200</pubDate>
+    <lastBuildDate>Tue, 10 May 2016 23:10:46 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Deploying Regular HTML Website On Heroku</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hosting  Heroku  Deploy 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Deploy A Regular HTML Website On Heroku.&lt;/h4&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Heroku&lt;/code&gt; is one of the most pupular &lt;code class=&quot;highlighter-rouge&quot;&gt;PAAS&lt;/code&gt; program as a service, and used for &lt;code class=&quot;highlighter-rouge&quot;&gt;server side application&lt;/code&gt; so it suppose that you have a server side programming language such as &lt;code class=&quot;highlighter-rouge&quot;&gt;php&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;java&lt;/code&gt; and so on.&lt;/p&gt;
+
+&lt;p&gt;So, For non server side application, we have a problem to deploy on &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku&lt;/code&gt;, but you can overcome it.&lt;/p&gt;
+
+&lt;p&gt;First, Change your &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; to be &lt;code class=&quot;highlighter-rouge&quot;&gt;home.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second, Create a new file &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; and type:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;home.html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And then, Deploy you site simply.&lt;/p&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/jni52Hp7Cug&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Thu, 05 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/05/deploying_regular_html_website_on_heroku.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/05/deploying_regular_html_website_on_heroku.html</guid>
+        
+        <category>Hosting</category>
+        
+        <category>Heroku</category>
+        
+        <category>Deploy</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Setting Github Pages With Godaddy DNS</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hosting  Jekyll  Github  Godaddy 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Set Github Pages With Godaddy DNS.&lt;/h4&gt;
+
+&lt;p&gt;First, Login your &lt;code class=&quot;highlighter-rouge&quot;&gt;Godaddy&lt;/code&gt; account and choose desired domain and click &lt;code class=&quot;highlighter-rouge&quot;&gt;DNS Zone File&lt;/code&gt; as in this picture:&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:150%; length:auto;&quot; src=&quot;/images/godaddydns.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Second, Change to &lt;code class=&quot;highlighter-rouge&quot;&gt;settings&lt;/code&gt; tab and set the forwarding to &lt;code class=&quot;highlighter-rouge&quot;&gt;www&lt;/code&gt; form i.e &lt;code class=&quot;highlighter-rouge&quot;&gt;www.new-domiat.com&lt;/code&gt; in our example as the next picture:&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:150%; length:auto;&quot; src=&quot;/images/godaddyforward.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/Ty32TtCca2c&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/03/setting_godaddy_domain_to_github_pages_blog.html</guid>
+        
+        <category>Hosting</category>
+        
+        <category>Jekyll</category>
+        
+        <category>Github</category>
+        
+        <category>Godaddy</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Setting Github Pages With NameCheap DNS</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hosting  Jekyll  Github  Namecheap 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Set Github Pages With NameCheap DNS.&lt;/h4&gt;
+
+&lt;p&gt;First, Login your &lt;code class=&quot;highlighter-rouge&quot;&gt;Namecheap&lt;/code&gt; dashboard and hover on your desired domain and click &lt;code class=&quot;highlighter-rouge&quot;&gt;advanced dns&lt;/code&gt; as in this picture:&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:100%; length:50px;&quot; src=&quot;/images/namecheapadvanceddnshover.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Second, Create three records as in this picture except the name of your github page:&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:100%; length:50px;&quot; src=&quot;/images/namecheapdnsforgithubpages.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Last, Delete the old records of &lt;code class=&quot;highlighter-rouge&quot;&gt;Namecheap&lt;/code&gt; defaults records.&lt;/p&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/whWpsu3FCtY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/03/setting_github_pages_with_name_cheap_dns.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/03/setting_github_pages_with_name_cheap_dns.html</guid>
+        
+        <category>Hosting</category>
+        
+        <category>Jekyll</category>
+        
+        <category>Github</category>
+        
+        <category>Namecheap</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Hosting Jekyll Blog On Github Pages</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hosting  Jekyll  Blog  Github  Pages 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Host Jekyll Blog On Github Pages.&lt;/h4&gt;
+
+&lt;p&gt;First, You must create a new &lt;code class=&quot;highlighter-rouge&quot;&gt;repository&lt;/code&gt; on you &lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt; account and provide its name as you &lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt; followed by &lt;code class=&quot;highlighter-rouge&quot;&gt;.github.io&lt;/code&gt; i.e as &lt;code class=&quot;highlighter-rouge&quot;&gt;user_name.github.io&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second, Change directory to your blog and push you blog.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;remote&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;git&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;first github pages&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Last, Browse to your &lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt; url: &lt;code class=&quot;highlighter-rouge&quot;&gt;user_name.github.io&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/YdcZH4arUIc&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/03/hosting_jekyll_blog_on_github_pages.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/03/hosting_jekyll_blog_on_github_pages.html</guid>
+        
+        <category>Hosting</category>
+        
+        <category>Jekyll</category>
+        
+        <category>Blog</category>
+        
+        <category>Github</category>
+        
+        <category>Pages</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ehost.com Hosting Service review</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hosting  Ehost  Review  Ehost.com 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;Ehost.com Hosting Service review.&lt;/h4&gt;
+
+&lt;p&gt;First, In 10/04/2016, My order was 70% discount for three yearsfor one hosting and free domain, Note, at this time, I was an initial registeration.&lt;/p&gt;
+
+&lt;p&gt;But, When i check the billing, I found the plan is monthly for 4.19$.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:150%; length:auto;&quot; src=&quot;/images/ehost_service.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After 15 days in 25/04/2016, I found a new billing invoice as in the next picture, &lt;code class=&quot;highlighter-rouge&quot;&gt;Ehost.com&lt;/code&gt; made a new price 13.98 for &lt;code class=&quot;highlighter-rouge&quot;&gt;renew&lt;/code&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;support&lt;/code&gt; chat man said that.&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;width:150%; length:auto;&quot; src=&quot;/images/ehost_invoice.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I told him, You are a good man if you discard my account &lt;code class=&quot;highlighter-rouge&quot;&gt;now&lt;/code&gt; not &lt;code class=&quot;highlighter-rouge&quot;&gt;tomorrow&lt;/code&gt; because &lt;code class=&quot;highlighter-rouge&quot;&gt;Ehost.com&lt;/code&gt; is not trusty.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 03 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/03/ehost_hosting_service_review.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/03/ehost_hosting_service_review.html</guid>
+        
+        <category>Hosting</category>
+        
+        <category>Ehost</category>
+        
+        <category>Review</category>
+        
+        <category>Ehost.com</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Accessing And Traversing Array Fields In Vews In Rails</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Postgres  Mysql  Column  Array  Rails 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Access And Traverse Array Fields In Vews In Rails&lt;/h4&gt;
+
+&lt;p&gt;In our example, We suppose that you watched our tutorials about &lt;a href=&quot;/2016/03/31/Rails_With_postgres_database_complete_example.html&quot;&gt;rails application with postgres database&lt;/a&gt; or &lt;a href=&quot;/2016/03/30/Rails_With_Mysql_database_complete_example.html&quot;&gt;rails application with Mysql database&lt;/a&gt; and &lt;a href=&quot;/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html&quot;&gt;adding column type array to postgres table via migration only&lt;/a&gt; and &lt;a href=&quot;/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html&quot;&gt;adding column type array to postgres table via model and migration&lt;/a&gt; and &lt;a href=&quot;/2016/05/01/adding_column_type_array_to_mysql_table.html&quot;&gt;adding column type array to mysql table&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then, You must add the &lt;code class=&quot;highlighter-rouge&quot;&gt;fields or columns&lt;/code&gt; into &lt;code class=&quot;highlighter-rouge&quot;&gt;permited params&lt;/code&gt; in our example &lt;code class=&quot;highlighter-rouge&quot;&gt;reader&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;editor&lt;/code&gt; in the bottom of its &lt;code class=&quot;highlighter-rouge&quot;&gt;controller&lt;/code&gt;, in our example &lt;code class=&quot;highlighter-rouge&quot;&gt;PostsController&lt;/code&gt; as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post_params&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;permit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:comment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then, Edit the &lt;code class=&quot;highlighter-rouge&quot;&gt;show&lt;/code&gt; page to be like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;notice&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%= notice %&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;
+  &amp;lt;strong&amp;gt;Name:&amp;lt;/strong&amp;gt;
+  &amp;lt;%=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%&amp;gt;
+&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Comment&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:&amp;lt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%= @post.comment %&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;
+  &amp;lt;strong&amp;gt;Readers:&amp;lt;/strong&amp;gt;
+  
+  &amp;lt;ol&amp;gt;
+  	&amp;lt;% @post.reader.each do |reader| %&amp;gt;
+  		&amp;lt;li&amp;gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  	&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% end &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ol&amp;gt;
+&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Editors&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:&amp;lt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  	&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% @post.editor.each &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;editor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%&amp;gt;
+  		&amp;lt;li&amp;gt;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%= editor %&amp;gt;&amp;lt;/li&amp;gt;
+  	&amp;lt;% end %&amp;gt;
+  &amp;lt;/ol&amp;gt;
+&amp;lt;/p&amp;gt;
+
+&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;link_to&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Edit&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edit_post_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%= link_to &#39;Back&#39;, posts_path %&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note, You can use full &lt;code class=&quot;highlighter-rouge&quot;&gt;array functions&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;reader&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;editor&lt;/code&gt; fields.&lt;/p&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/vuJNhZB1DiU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Mon, 02 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/02/accessing_and_traversing_array_fields_in_views_in_rails.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/02/accessing_and_traversing_array_fields_in_views_in_rails.html</guid>
+        
+        <category>Postgres</category>
+        
+        <category>Mysql</category>
+        
+        <category>Column</category>
+        
+        <category>Array</category>
+        
+        <category>Rails</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Adding A Column Type Array To Mysql Database Table In Rails</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Rails  Array  Column  Mysql 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Add A Column Type Array To Mysql Database Table&lt;/h4&gt;
+
+&lt;p&gt;In our example, We suppose that you watched our tutorial about &lt;a href=&quot;/2016/03/30/Rails_With_Mysql_database_complete_example.html&quot;&gt;rails application with mysql database&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Creating Migration&lt;/h4&gt;
+
+&lt;p&gt;First, We need to create a migration file to do our mission, Creating a column named reader type text as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddReaderToPosts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will create a migration file like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AddReaderToPosts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Migration&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;change&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;add_column&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;app/models/post.rb&lt;/code&gt; to be like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Post&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;serialize&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Array&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then make migrate as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, You have a &lt;code class=&quot;highlighter-rouge&quot;&gt;reader&lt;/code&gt; column which is an array, it can take many values as any array[`up to tons of tons …].&lt;/p&gt;
+
+&lt;p&gt;And you can access the arry values in rails console as follow:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;first&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Mamdouh&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mamdouh&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Ali&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Ali&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Soso&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Soso&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# puts reader array values&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# traverse the reader array&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# get count&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# clear all values&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clear&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/3ndJSW2tatk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sun, 01 May 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/05/01/adding_column_type_array_to_mysql_table.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/05/01/adding_column_type_array_to_mysql_table.html</guid>
+        
+        <category>Rails</category>
+        
+        <category>Array</category>
+        
+        <category>Column</category>
+        
+        <category>Mysql</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Escaping Double Curly Braces In Markdown</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Escape  Markdown  Jekyll 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Escape Double Curly Braces In Markdown In Jekyll&lt;/h4&gt;
+
+&lt;p&gt;If you need to add the next two lines of code using &lt;code class=&quot;highlighter-rouge&quot;&gt;markdown&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;this.page.url = &quot;{{site.url}}{{page.url}}&quot;;
+this.page.identifier = &quot;{{ page.id }}&quot;;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The output will be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;this.page.url = &quot;http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html&quot;;
+this.page.identifier = &quot;/2016/04/30/escaping_double_curly_braces_in_markdown&quot;;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;But how to &lt;code class=&quot;highlighter-rouge&quot;&gt;escape&lt;/code&gt; the action of &lt;code class=&quot;highlighter-rouge&quot;&gt;double curly braces&lt;/code&gt;, This can be done by putting your desired code between &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;raw&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;endraw&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, Putting &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;raw&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;”{{site.url}}{{page.url}}”&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;endraw&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The output will be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;disqus_thread&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disqus_config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{{site.url}}{{page.url}}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;identifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;{{ page.id }}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TJzVxOKF_Xo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sat, 30 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/04/30/escaping_double_curly_braces_in_markdown.html</guid>
+        
+        <category>Escape</category>
+        
+        <category>Markdown</category>
+        
+        <category>Jekyll</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Adding A Column Type Array To Postgres Database Table Via Model And Migration In Rails</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Rails  Array  Column  Postgres 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Add A Column Type Array To Postgres Database Table Via Model And Migration&lt;/h4&gt;
+
+&lt;p&gt;In our example, We suppose that you watched our tutorial about &lt;a href=&quot;/2016/03/31/Rails_With_postgres_database_complete_example.html&quot;&gt;rails application with postgres database&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Creating Migration&lt;/h4&gt;
+
+&lt;p&gt;First, We need to create a migration file to do our mission, Creating a column named reader type text as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddEditorToPosts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;editor&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will create a migration file like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AddEditorToPosts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Migration&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;change&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;add_column&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:string&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;app/models/post.rb&lt;/code&gt; to be like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Post&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;serialize&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Array&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then make migrate as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, You have a &lt;code class=&quot;highlighter-rouge&quot;&gt;editor&lt;/code&gt; column which is an array, it can take many values as any array[`up to tons of tons …].&lt;/p&gt;
+
+&lt;p&gt;And you can access the arry values in rails console as follow:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;first&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Mamdouh&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mamdouh&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Ali&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Ali&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Soso&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Soso&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# puts reader array values&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# traverse the reader array&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# get count&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# clear all values&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clear&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/wdy1RO2e66w&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sat, 30 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html</guid>
+        
+        <category>Rails</category>
+        
+        <category>Array</category>
+        
+        <category>Column</category>
+        
+        <category>Postgres</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Adding A Column Type Array To Postgres Database Table Via Migration Only</title>
+        <description>&lt;p&gt;TAGS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Postgres  Column  Array  Rails 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4&gt;How To Add A Column Type Array To Postgres Database Table Via Migration Only&lt;/h4&gt;
+
+&lt;p&gt;In our example, We suppose that you watched our tutorial about &lt;a href=&quot;/2016/03/31/Rails_With_postgres_database_complete_example.html&quot;&gt;rails application with postgres database&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Creating Migration&lt;/h4&gt;
+
+&lt;p&gt;First, We need to create a migration file to do our mission, Creating a column named reader type text as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rails&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;migration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AddReaderToPosts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will create a migration file like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AddReaderToPosts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Migration&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;change&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;add_column&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Edit it to be like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AddReaderToPosts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Migration&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;change&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;add_column&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;array: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:[]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then make migrate as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;rake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:migrate&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, You have a &lt;code class=&quot;highlighter-rouge&quot;&gt;reader&lt;/code&gt; column which is an array, it can take many values as any array[`up to tons of tons …].&lt;/p&gt;
+
+&lt;p&gt;And you can access the arry values in rails console as follow:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;first&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Mamdouh&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mamdouh&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Ali&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Ali&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# push &quot;Soso&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Soso&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# puts reader array values&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# traverse the reader array&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# get count&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# clear all values&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clear&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, Take a look to this tutorial video.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qetZv-ZxFL8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Sat, 30 Apr 2016 00:00:00 +0200</pubDate>
+        <link>http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html</link>
+        <guid isPermaLink="true">http://www.web2sons.xyz/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html</guid>
+        
+        <category>Postgres</category>
+        
+        <category>Column</category>
+        
+        <category>Array</category>
+        
+        <category>Rails</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

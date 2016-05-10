@@ -27,7 +27,6 @@ Related:
 <li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
 </ul>
 
-
 <br>
 <h3>Joining Two Tables Via Rails Migration.</h3>
 

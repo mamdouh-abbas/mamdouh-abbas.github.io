@@ -329,6 +329,65 @@ Then paste this seeding code:</p>
   </div> -->
 
 <span class="date">2016-04-28 00:00:00 +0200</span>
+  <h3><a href="/2016/04/28/migrating_specific_version_or_step.html">Migrating Specific VERSION Or STEP In Rails Migration</a></h3>
+  
+  <!-- <div class="content">
+    <p>TAGS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  version  step 
+</code></pre>
+</div>
+
+<h3>How To Migrate Specific VERSION Or STEP In Rails Migration.</h3>
+
+<p>First, We suppose that we have three models as:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">model</span> <span class="n">author</span> <span class="nb">name</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">model</span> <span class="n">admin</span> <span class="nb">name</span></code></pre></figure>
+
+<p>This means that we have three migration files for:</p>
+
+<blockquote>
+
+  <p>author migration file.</p>
+
+  <p>book migration file.</p>
+
+  <p>admin migration file.</p>
+
+</blockquote>
+
+<p>Each one of these files has its date-time stamps which is its <code class="highlighter-rouge">VERSION</code>.</p>
+
+<p>The <code class="highlighter-rouge">author</code> migration is <code class="highlighter-rouge">STEP=1</code>.
+The <code class="highlighter-rouge">book</code> migration is <code class="highlighter-rouge">STEP=2</code>..
+The <code class="highlighter-rouge">admin</code> migration is <code class="highlighter-rouge">STEP=3</code></p>
+
+<p>If you run <code class="highlighter-rouge">rake db:migrate</code>, you will migrate all three file in the same sequence, But if you run <code class="highlighter-rouge">rake db:rollback</code>, you will <code class="highlighter-rouge">rollback</code> <code class="highlighter-rouge">one by one</code> in the <code class="highlighter-rouge">opposite</code> sequence.</p>
+
+<p>But if you want to <code class="highlighter-rouge">migrate</code> or <code class="highlighter-rouge">rollback</code> specific <code class="highlighter-rouge">STEP</code> or <code class="highlighter-rouge">VERSION</code> you can use the following form:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">VERSION</span><span class="o">=</span><span class="n">xxxxxxxxxxxxxx</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">STEP</span><span class="o">=</span><span class="n">x</span>
+<span class="n">or</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span> <span class="no">VERSION</span><span class="o">=</span><span class="n">xxxxxxxxxxxxxx</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span> <span class="no">STEP</span><span class="o">=</span><span class="n">x</span></code></pre></figure>
+
+<p>Where <code class="highlighter-rouge">xxxxxxxxxxxxxx</code> is the <code class="highlighter-rouge">VERSION</code> of the desired migration file and <code class="highlighter-rouge">x</code> is the <code class="highlighter-rouge">index</code> of the desired migration file.</p>
+
+<p><i style="color:red;">Great Note:</i> You must be care with the <code class="highlighter-rouge">dependencies</code> between migration file also you may lost you data.</p>
+
+<p>Now, Take a look to this tutorial videos:</p>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jCC8nyBoC5E" frameborder="0" allowfullscreen=""></iframe>
+<p><br /></p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/A4DvaZ_lR0U" frameborder="0" allowfullscreen=""></iframe>
+
+
+  </div> -->
+
+<span class="date">2016-04-28 00:00:00 +0200</span>
   <h3><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining Two Tables Via Rails Migration</a></h3>
   
   <!-- <div class="content">
@@ -538,61 +597,6 @@ Then paste this seeding code:</p>
 
   </div> -->
 
-<span class="date">2016-04-28 00:00:00 +0200</span>
-  <h3><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating Migration File Via Generating Rails Migration</a></h3>
-  
-  <!-- <div class="content">
-    <p>TAGS:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database 
-</code></pre>
-</div>
-
-<h3>Creating Migration File Via Generating Rails Migration.</h3>
-
-<p>The general form is <code class="highlighter-rouge">rails g migration</code> and then you can create <code class="highlighter-rouge">books</code> table and state columns names and its datatypes as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">CreateBook</span> <span class="n">title</span><span class="ss">:string</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
-
-<p>This will create migration file in <code class="highlighter-rouge">db/migrate</code> folder to create <code class="highlighter-rouge">books</code> table.</p>
-
-<p>Note, The generated file doesn’t create <code class="highlighter-rouge">timestamps</code> fields <code class="highlighter-rouge">created_at</code> and <code class="highlighter-rouge">updated_at</code> so, you can add:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span> <span class="ss">null: </span><span class="kp">false</span></code></pre></figure>
-
-<p>Also, You can edit this file and add or remove columns before making <code class="highlighter-rouge">rake db:migrate</code></p>
-
-<p>And, You can state all table’s columns manually in the migration file not in <code class="highlighter-rouge">rails g migration</code> command line.</p>
-
-<p>Then, Apply changes to database using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
-
-<p>Now, You must create <code class="highlighter-rouge">book.rb</code> model manually in <code class="highlighter-rouge">app/models</code> to deal with <code class="highlighter-rouge">books</code> table as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Book</span><span class="o">&lt;</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Note that you can undo this migration using:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
-
-<p><i style="color:red;">Note, Any <code class="highlighter-rouge">rake db:rollback</code> may delete stored data in the <code class="highlighter-rouge">targeted</code> columns and can’t be restored again.</i></p>
-
-<p>Also, You can delete the migration file generated by converting <code class="highlighter-rouge">g</code>(for generate) to <code class="highlighter-rouge">d</code> (for destroy) in migration command as:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="no">CreateBook</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span>
-<span class="c1">#to be</span>
-<span class="n">rails</span> <span class="n">d</span> <span class="no">CreateBook</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span></code></pre></figure>
-
-<p>The last line will delete the migration file generted by the first line.</p>
-
-<p>Now take a look to this tutorial video:</p>
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/TdIQmThzN84" frameborder="0" allowfullscreen=""></iframe>
-
-  </div> -->
-
 
 <!-- Paginations links -->
 
@@ -740,6 +744,14 @@ Then paste this seeding code:</p>
 
         <h2>
           <a class="post-link" href="/2016/04/28/seeding_tables_in_migration.html">Seeding Tables Using Migration In Rails</a>
+        </h2>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 28, 2016</span>
+
+        <h2>
+          <a class="post-link" href="/2016/04/28/migrating_specific_version_or_step.html">Migrating Specific VERSION Or STEP In Rails Migration</a>
         </h2>
       </li>
     

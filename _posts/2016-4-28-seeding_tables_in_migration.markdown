@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Seeding Tables Using Migration In Rails.</h3>
 
 Before starting, We assumes that you have a table `authors` and its `model`, if not, you can do

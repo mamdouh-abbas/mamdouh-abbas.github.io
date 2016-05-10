@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Creating Migration File Via Generating Rails Model.</h3>
 
 Generating model will create a migration file to create its table as

@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Setting Environment For Rails Migration.</h3>
 
 You can set the `environment` for rails migration `RAILS_ENV` using one of two ways:

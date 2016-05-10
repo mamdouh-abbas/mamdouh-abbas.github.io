@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Creating Migration File Via Generating Rails Migration.</h3>
 
 The general form is `rails g migration` and then you can create `books` table and state columns names and its datatypes as:

@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Adding Column Or More To An Existed Table.</h3>
 
 The general form of `adding` field to table is:

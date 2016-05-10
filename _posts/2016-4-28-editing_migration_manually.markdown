@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Editing Migration File Manaully In Rails.</h3>
 
 The general form is `rails g migration` and then you can create `students` table and don't state columns names and its datatypes as:

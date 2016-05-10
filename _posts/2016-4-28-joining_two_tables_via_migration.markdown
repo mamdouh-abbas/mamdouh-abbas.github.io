@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Joining Two Tables Via Rails Migration.</h3>
 
 First, We suppose that you have two tables at least.

@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>Creating Migration File Via Rails Scaffold.</h3>
 
 Generating `scaffold` will create a migration file that create its table as:

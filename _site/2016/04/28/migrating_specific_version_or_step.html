@@ -92,35 +92,52 @@
 </code></pre>
 </div>
 
+<p>Related:</p>
+<ul>
+<li><a href="/2016/04/28/adding_fields_to_table_via_migration.html">Adding fields to table via migration.</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating migration file using generate migration</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
+<li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
+<li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
+<li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
+<li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
+<li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
+<li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
+<li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+
+<br />
+
 <h3>How To Migrate Specific VERSION Or STEP In Rails Migration.</h3>
 
-<p>First, We suppose that we have three models as:</p>
+First, We suppose that we have three models as:
+
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">model</span> <span class="n">author</span> <span class="nb">name</span>
 <span class="n">rails</span> <span class="n">g</span> <span class="n">model</span> <span class="n">book</span> <span class="n">title</span> <span class="n">brief</span><span class="ss">:text</span>
 <span class="n">rails</span> <span class="n">g</span> <span class="n">model</span> <span class="n">admin</span> <span class="nb">name</span></code></pre></figure>
 
-<p>This means that we have three migration files for:</p>
 
-<blockquote>
+This means that we have three migration files for:
 
-  <p>author migration file.</p>
+&gt;
+&gt; author migration file.
+&gt;
+&gt; book migration file.
+&gt;
+&gt; admin migration file.
+&gt;
 
-  <p>book migration file.</p>
+Each one of these files has its date-time stamps which is its `VERSION`.
 
-  <p>admin migration file.</p>
+The `author` migration is `STEP=1`.
+The `book` migration is `STEP=2`..
+The `admin` migration is `STEP=3`
 
-</blockquote>
+If you run `rake db:migrate`, you will migrate all three file in the same sequence, But if you run `rake db:rollback`, you will `rollback` `one by one` in the `opposite` sequence.
 
-<p>Each one of these files has its date-time stamps which is its <code class="highlighter-rouge">VERSION</code>.</p>
+But if you want to `migrate` or `rollback` specific `STEP` or `VERSION` you can use the following form: 
 
-<p>The <code class="highlighter-rouge">author</code> migration is <code class="highlighter-rouge">STEP=1</code>.
-The <code class="highlighter-rouge">book</code> migration is <code class="highlighter-rouge">STEP=2</code>..
-The <code class="highlighter-rouge">admin</code> migration is <code class="highlighter-rouge">STEP=3</code></p>
-
-<p>If you run <code class="highlighter-rouge">rake db:migrate</code>, you will migrate all three file in the same sequence, But if you run <code class="highlighter-rouge">rake db:rollback</code>, you will <code class="highlighter-rouge">rollback</code> <code class="highlighter-rouge">one by one</code> in the <code class="highlighter-rouge">opposite</code> sequence.</p>
-
-<p>But if you want to <code class="highlighter-rouge">migrate</code> or <code class="highlighter-rouge">rollback</code> specific <code class="highlighter-rouge">STEP</code> or <code class="highlighter-rouge">VERSION</code> you can use the following form:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">VERSION</span><span class="o">=</span><span class="n">xxxxxxxxxxxxxx</span>
 <span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">STEP</span><span class="o">=</span><span class="n">x</span>
@@ -128,16 +145,18 @@ The <code class="highlighter-rouge">admin</code> migration is <code class="highl
 <span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span> <span class="no">VERSION</span><span class="o">=</span><span class="n">xxxxxxxxxxxxxx</span>
 <span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span> <span class="no">STEP</span><span class="o">=</span><span class="n">x</span></code></pre></figure>
 
-<p>Where <code class="highlighter-rouge">xxxxxxxxxxxxxx</code> is the <code class="highlighter-rouge">VERSION</code> of the desired migration file and <code class="highlighter-rouge">x</code> is the <code class="highlighter-rouge">index</code> of the desired migration file.</p>
 
-<p><i style="color:red;">Great Note:</i> You must be care with the <code class="highlighter-rouge">dependencies</code> between migration file also you may lost you data.</p>
+Where `xxxxxxxxxxxxxx` is the `VERSION` of the desired migration file and `x` is the `index` of the desired migration file.
 
-<p>Now, Take a look to this tutorial videos:</p>
+<i style="color:red;">Great Note:</i> You must be care with the `dependencies` between migration file also you may lost you data.
+
+Now, Take a look to this tutorial videos:
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/jCC8nyBoC5E" frameborder="0" allowfullscreen=""></iframe>
-<p><br /></p>
+<br />
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/A4DvaZ_lR0U" frameborder="0" allowfullscreen=""></iframe>
 
+</a></a></li></ul>
 
   </div>
 

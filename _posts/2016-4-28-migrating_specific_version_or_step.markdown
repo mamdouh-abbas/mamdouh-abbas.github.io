@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>How To Migrate Specific VERSION Or STEP In Rails Migration.</h3>
 
 First, We suppose that we have three models as:

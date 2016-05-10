@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Eng. Mamdouh Abbas Farh">
-  <title>Setup, Reset And Drop Database</title>
+  <title>Removing Fields From Table via migration</title>
 
   
-  <meta name="description" content="Setup, Reset And Drop Database In Rails Application.">
+  <meta name="description" content="How to remove fields from table via rails migration .">
   
 <meta name="google-site-verification" content="a8-KvnaAYEVywda0OOaNUbyYK5ZshqZgdMVcs8enrnc" />
-  <meta name="keywords" content="ruby rails migrate database setup reset drop">
+  <meta name="keywords" content="ruby rails migrate database">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/28/setup_reset_and_drop_database.html">
+  <link rel="canonical" href="http://www.web2sons.xyz/2016/04/28/removing_fields_from_tables_via_migration.html">
   <link rel="alternate" type="application/rss+xml" title="Web 2 Sons" href="http://www.web2sons.xyz/feed.xml">
   <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/designbolts/seo/64/Natural-Link-icon.png" />
   <script>
@@ -81,14 +81,14 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">Setup, Reset And Drop Database</h2>
+    <h2 class="post-title" itemprop="name headline">Removing Fields From Table via migration</h2>
     <p class="post-meta"><time datetime="2016-04-28T00:00:00+02:00" itemprop="datePublished">Apr 28, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <p>TAGS:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  setup  reset  drop 
+<div class="highlighter-rouge"><pre class="highlight"><code>ruby  rails  migration  database  add 
 </code></pre>
 </div>
 
@@ -108,37 +108,50 @@
 
 <br />
 
-<h3>Setup, Reset and Drop Database Via Rails Console.</h3>
+<h3>Removing Fields From Table Via Rails Migration.</h3>
 
-Setting up the database using `rake db:setup` will create the database and migrate the migration files.
-
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:setup</span></code></pre></figure>
+First, We suppose that you have a `books` table as:
 
 
-Also, Resetting the database using
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">book</span> <span class="nb">name</span> <span class="n">brief</span><span class="ss">:text</span> <span class="n">price</span><span class="ss">:float</span>
+<span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:reset</span></code></pre></figure>
+Now, You can remove the column `price` using:
 
 
-will re-migrate the migration files.
-
-But, Drop the database using 
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">RemovePriceFromBooks</span> <span class="n">price</span><span class="ss">:float</span></code></pre></figure>
 
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:drop</span></code></pre></figure>
+This mean, Remove price field from the books table, and will create a migration file as:
 
 
-This will delete the the database itself.
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">RemovePriceFromBooks</span><span class="o">&lt;</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+	<span class="k">def</span> <span class="nf">change</span>
+		<span class="n">remove_column</span> <span class="ss">:books</span><span class="p">,</span> <span class="ss">:price</span><span class="p">,</span> <span class="ss">:float</span>
+	<span class="k">end</span> 
+<span class="k">end</span></code></pre></figure>
+
+
+Then run 
+
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
+
+
+This will remove the `price` column form `books` table.
+
+<i style="color:red">Take care,</i> The data stored in this field will be destoyed and can't be restored, So, What will happened if you run:
+
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
+
+
+<i style="color:red">Sure</i>, It will restore `price` field but not restore its `data`.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/2cSW_dLK6Rs" frameborder="0" allowfullscreen=""></iframe>
 <br />
-<i style="color:red">Note,</i> `rake db:reset` equals `rake db:drop db:setup`.
-
-<br />
-
-Now, Take a look to this tutorial video:
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/eQirPQNBy9Q" frameborder="0" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/VUWfJfCUWYM" frameborder="0" allowfullscreen=""></iframe>
 </a></a></li></ul>
 
   </div>
@@ -147,8 +160,8 @@ Now, Take a look to this tutorial video:
 <div id="disqus_thread"></div>
 <script>    
     var disqus_config = function () {
-      this.page.url = "http://www.web2sons.xyz/2016/04/28/setup_reset_and_drop_database.html";
-      this.page.identifier = "/2016/04/28/setup_reset_and_drop_database";
+      this.page.url = "http://www.web2sons.xyz/2016/04/28/removing_fields_from_tables_via_migration.html";
+      this.page.identifier = "/2016/04/28/removing_fields_from_tables_via_migration";
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');

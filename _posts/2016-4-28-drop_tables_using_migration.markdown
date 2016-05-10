@@ -11,6 +11,8 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
+{% include migration_related.html %}
+
 <h3>1- Drop Tables Using Rails Migration.</h3>
 
 {% highlight ruby %}

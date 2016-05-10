@@ -92,17 +92,36 @@
 </code></pre>
 </div>
 
+<p>Related:</p>
+<ul>
+<li><a href="/2016/04/28/adding_fields_to_table_via_migration.html">Adding fields to table via migration.</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating migration file using generate migration</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
+<li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
+<li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
+<li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
+<li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
+<li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
+<li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
+<li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+
+<br />
+
 <h3>Joining Two Tables Via Rails Migration.</h3>
 
-<p>First, We suppose that you have two tables at least.</p>
+First, We suppose that you have two tables at least.
 
-<p>In our example, we have <code class="highlighter-rouge">books</code> and <code class="highlighter-rouge">authors</code> tables, so we can join them using migration by adding <code class="highlighter-rouge">references</code> column which is author’s <code class="highlighter-rouge">id</code> of the <code class="highlighter-rouge">book</code>.</p>
+In our example, we have `books` and `authors` tables, so we can join them using migration by adding `references` column which is author's `id` of the `book`.
 
-<p>Or in other word, each record in <code class="highlighter-rouge">books</code> has its author’s <code class="highlighter-rouge">id</code> as:</p>
+Or in other word, each record in `books` has its author's `id` as:
+
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">AddAuthorRefToBooks</span> <span class="n">author</span><span class="ss">:references</span></code></pre></figure>
 
-<p>This will generate a migration file to add this column as:</p>
+
+This will generate a migration file to add this column as:
+
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddAuthorRefToBooks</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
   <span class="k">def</span> <span class="nf">change</span>
@@ -110,35 +129,43 @@
   <span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
-<p>Then, Apply changes to database using:</p>
+
+Then, Apply changes to database using:
+
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-<p>Note that you can undo this migration using:</p>
+
+Note that you can undo this migration using:
+
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
-<p>Now, You need to manually join these table via <code class="highlighter-rouge">model</code> by :</p>
 
-<blockquote>
+Now, You need to manually join these table via `model` by :
 
-  <p>Adding <code class="highlighter-rouge">has_many :books</code> in the <code class="highlighter-rouge">author</code> model</p>
+&gt; 
+&gt;Adding `has_many :books` in the `author` model
+&gt;
+&gt;Adding `belongs_to :author` in the `book` model
+&gt;
 
-  <p>Adding <code class="highlighter-rouge">belongs_to :author</code> in the <code class="highlighter-rouge">book</code> model</p>
+In `models/author.rb`
 
-</blockquote>
-
-<p>In <code class="highlighter-rouge">models/author.rb</code></p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_many</span> <span class="ss">:books</span></code></pre></figure>
 
-<p>In <code class="highlighter-rouge">models/book.rb</code></p>
+
+In `models/book.rb`
+
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">belongs_to</span> <span class="ss">:author</span></code></pre></figure>
 
-<p>Now, Take a look to this tutorial video:</p>
+
+Now, Take a look to this tutorial video:
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/DDQrRj_WQCc" frameborder="0" allowfullscreen=""></iframe>
+</a></a></li></ul>
 
   </div>
 

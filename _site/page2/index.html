@@ -201,8 +201,8 @@
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
 
-<br />
 
+<br />
 <h3>Setup, Reset and Drop Database Via Rails Console.</h3>
 
 Setting up the database using `rake db:setup` will create the database and migrate the migration files.
@@ -255,21 +255,20 @@ Now, Take a look to this tutorial video:
 <li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
 <li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
-<li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+</ul>
 
-<br />
-
+<p><br /></p>
 <h3>Setting Environment For Rails Migration.</h3>
 
-You can set the `environment` for rails migration `RAILS_ENV` using one of two ways:
+<p>You can set the <code class="highlighter-rouge">environment</code> for rails migration <code class="highlighter-rouge">RAILS_ENV</code> using one of two ways:</p>
 
-First, Using `rake` command line as:
-
+<p>First, Using <code class="highlighter-rouge">rake</code> command line as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
 <span class="c1">#or</span>
@@ -277,9 +276,7 @@ First, Using `rake` command line as:
 <span class="c1">#or</span>
 <span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
 
-
-Second, Using system variables in command line
-
+<p>Second, Using system variables in command line</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
 <span class="c1">#or</span>
@@ -287,9 +284,7 @@ Second, Using system variables in command line
 <span class="c1">#or</span>
 <span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
 
-
-Or editing `~/.bashrc` file to add `RAILS_ENV` as:
-
+<p>Or editing <code class="highlighter-rouge">~/.bashrc</code> file to add <code class="highlighter-rouge">RAILS_ENV</code> as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc
 #or
@@ -297,26 +292,20 @@ echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf"
 <span class="c1">#or</span>
 <span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
 
-
-And then, refresh your system variables using:
-
+<p>And then, refresh your system variables using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
 
-
-You can assure that you have system variable `RAILS_ENV` and its value using :
-
+<p>You can assure that you have system variable <code class="highlighter-rouge">RAILS_ENV</code> and its value using :</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="vg">$RAILS_ENV</span></code></pre></figure>
 
+<p><i style="color:red;">Note, The database for that environment must be created before its migration.</i></p>
 
-<i style="color:red;">Note, The database for that environment must be created before its migration.</i>
-
-Now, Take a look to this tutorial video:
+<p>Now, Take a look to this tutorial video:</p>
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/PcGxPKmmbE8" frameborder="0" allowfullscreen=""></iframe>
 
-</a></a></li></ul>
 
   </div> -->
 
@@ -338,14 +327,15 @@ Now, Take a look to this tutorial video:
 <li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
 <li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
 <li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
-<li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+
+
 
 <br />
-
 <h3>Seeding Tables Using Migration In Rails.</h3>
 
 Before starting, We assumes that you have a table `authors` and its `model`, if not, you can do
@@ -435,11 +425,12 @@ Now, Take a look to this tutorial video:
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
-<li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+
+
 
 <br />
-
 <h3>Removing Fields From Table Via Rails Migration.</h3>
 
 First, We suppose that you have a `books` table as:
@@ -508,12 +499,14 @@ This will remove the `price` column form `books` table.
 <li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
-<li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
+
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+
+
 
 <br />
-
 <h3>How To Migrate Specific VERSION Or STEP In Rails Migration.</h3>
 
 First, We suppose that we have three models as:
@@ -585,13 +578,15 @@ Now, Take a look to this tutorial videos:
 <li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
 <li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
-<li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
+
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+
+
 
 <br />
-
 <h3>Joining Two Tables Via Rails Migration.</h3>
 
 First, We suppose that you have two tables at least.
@@ -670,71 +665,58 @@ Now, Take a look to this tutorial video:
 <li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
 <li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
-<li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+</ul>
 
-<br />
-
+<p><br /></p>
 <h3>Editing Migration File Manaully In Rails.</h3>
 
-The general form is `rails g migration` and then you can create `students` table and don't state columns names and its datatypes as:
-
+<p>The general form is <code class="highlighter-rouge">rails g migration</code> and then you can create <code class="highlighter-rouge">students</code> table and don’t state columns names and its datatypes as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="n">migration</span> <span class="no">CreateStudent</span></code></pre></figure>
 
+<p>This will create migration file in <code class="highlighter-rouge">db/migrate</code> folder to create <code class="highlighter-rouge">students</code> table.</p>
 
-This will create migration file in `db/migrate` folder to create `students` table.
-
-Note, The generated file doesn't contain any fields so, you can add:
-
+<p>Note, The generated file doesn’t contain any fields so, you can add:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:name</span>
 <span class="n">t</span><span class="p">.</span><span class="nf">date</span> <span class="ss">:birthdate</span>
 <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:address</span>
 <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span> <span class="ss">null: </span><span class="kp">false</span></code></pre></figure>
 
+<p>Also, You can edit this file and add or remove columns before making <code class="highlighter-rouge">rake db:migrate</code></p>
 
-Also, You can edit this file and add or remove columns before making `rake db:migrate`
-
-Then, Apply changes to database using:
-
+<p>Then, Apply changes to database using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span></code></pre></figure>
 
-
-Now, You must create `student.rb` model manually in `app/models` to deal with `students` table as:
-
+<p>Now, You must create <code class="highlighter-rouge">student.rb</code> model manually in <code class="highlighter-rouge">app/models</code> to deal with <code class="highlighter-rouge">students</code> table as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Student</span><span class="o">&lt;</span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
 <span class="k">end</span></code></pre></figure>
 
-
-Note that you can undo this migration using:
-
+<p>Note that you can undo this migration using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:rollback</span></code></pre></figure>
 
+<p><i style="color:red;">Note, Any <code class="highlighter-rouge">rake db:rollback</code> may delete stored data in the <code class="highlighter-rouge">targeted</code> columns and can’t be restored again.</i></p>
 
-<i style="color:red;">Note, Any `rake db:rollback` may delete stored data in the `targeted` columns and can't be restored again.</i>
-
-Also, You can delete the migration file generated by converting `g`(for generate) to `d` (for destroy) in migration command as:
- 
+<p>Also, You can delete the migration file generated by converting <code class="highlighter-rouge">g</code>(for generate) to <code class="highlighter-rouge">d</code> (for destroy) in migration command as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rails</span> <span class="n">g</span> <span class="no">CreateStudent</span>
 <span class="c1">#to be</span>
 <span class="n">rails</span> <span class="n">d</span> <span class="no">CreateStudent</span></code></pre></figure>
 
+<p>The last line will delete the migration file generted by the first line.</p>
 
-The last line will delete the migration file generted by the first line.
-
-Now take a look to this tutorial video:
+<p>Now take a look to this tutorial video:</p>
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/TdIQmThzN84" frameborder="0" allowfullscreen=""></iframe>
-</a></a></li></ul>
 
   </div> -->
 
@@ -754,16 +736,18 @@ Now take a look to this tutorial video:
 <li><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating migration file using generate migration</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
-<li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
+
 <li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+
+
 
 <br />
-
 <h3>1- Drop Tables Using Rails Migration.</h3>
 
 
@@ -805,7 +789,6 @@ Note that you can undo this migration using:
 <li><a href="/2016/04/28/adding_fields_to_table_via_migration.html">Adding fields to table via migration.</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating migration file using generate migration</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
-<li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
 <li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
 <li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
@@ -813,9 +796,11 @@ Note that you can undo this migration using:
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+
+
 
 <br />
-
 <h3>Creating Migration File Via Rails Scaffold.</h3>
 
 Generating `scaffold` will create a migration file that create its table as:

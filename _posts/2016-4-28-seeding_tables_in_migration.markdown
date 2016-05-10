@@ -11,8 +11,23 @@ published: true
    
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
-{% include migration_related.html %}
+Related:
+<ul>
+<li><a href="/2016/04/28/adding_fields_to_table_via_migration.html">Adding fields to table via migration.</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_generate_migration.html">Creating migration file using generate migration</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
+<li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
+<li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
+<li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a></li>
+<li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
+<li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
+<li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
+<li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+</ul>
 
+
+<br>
 <h3>Seeding Tables Using Migration In Rails.</h3>
 
 Before starting, We assumes that you have a table `authors` and its `model`, if not, you can do

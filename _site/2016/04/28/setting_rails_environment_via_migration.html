@@ -99,21 +99,20 @@
 <li><a href="/2016/04/28/creating_migrating_file_using_generating-_model.html">Creation migration file using generate model.</a></li>
 <li><a href="/2016/04/28/creating_migrating_file_using_scaffold.html">Creating migration file using scaffold.</a></li>
 <li><a href="/2016/04/28/drop_tables_using_migration.html">Drop tables using migration.</a></li>
-<li><a href="/2016/04/28/editing_migration_manually.html">Editing migration file manually.<a>
 <li><a href="/2016/04/28/seeding_tables_in_migration.html">Seeding data into tables via migration.</a></li>
 <li><a href="/2016/04/28/joining_two_tables_via_migration.html">Joining two tables via migration.</a></li>
 <li><a href="/2016/04/28/migrating_specific_version_or_step.html">Migration specific VERSION or STEP.</a></li>
 <li><a href="/2016/04/28/removing_fields_from_tables_via_migration.html">Removing fields from tables via migration.</a></li>
 <li><a href="/2016/04/28/setting_rails_environment_via_migration.html">Setting rails environment via migration command.</a></li>
+<li><a href="/2016/04/28/setup_reset_and_drop_database.html">Setup, reset and drop database</a></li>
+</ul>
 
-<br />
-
+<p><br /></p>
 <h3>Setting Environment For Rails Migration.</h3>
 
-You can set the `environment` for rails migration `RAILS_ENV` using one of two ways:
+<p>You can set the <code class="highlighter-rouge">environment</code> for rails migration <code class="highlighter-rouge">RAILS_ENV</code> using one of two ways:</p>
 
-First, Using `rake` command line as:
-
+<p>First, Using <code class="highlighter-rouge">rake</code> command line as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
 <span class="c1">#or</span>
@@ -121,9 +120,7 @@ First, Using `rake` command line as:
 <span class="c1">#or</span>
 <span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
 
-
-Second, Using system variables in command line
-
+<p>Second, Using system variables in command line</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="nb">test</span>
 <span class="c1">#or</span>
@@ -131,9 +128,7 @@ Second, Using system variables in command line
 <span class="c1">#or</span>
 <span class="n">export</span> <span class="no">RAILS_ENV</span><span class="o">=</span><span class="n">production</span></code></pre></figure>
 
-
-Or editing `~/.bashrc` file to add `RAILS_ENV` as:
-
+<p>Or editing <code class="highlighter-rouge">~/.bashrc</code> file to add <code class="highlighter-rouge">RAILS_ENV</code> as:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc
 #or
@@ -141,26 +136,20 @@ echo 'RAILS_ENV=test' &gt;&gt; ~/</span><span class="p">.</span><span class="nf"
 <span class="c1">#or</span>
 <span class="n">echo</span> <span class="s1">'RAILS_ENV=test'</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
 
-
-And then, refresh your system variables using:
-
+<p>And then, refresh your system variables using:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="o">~</span><span class="sr">/.bashrc</span></code></pre></figure>
 
-
-You can assure that you have system variable `RAILS_ENV` and its value using :
-
+<p>You can assure that you have system variable <code class="highlighter-rouge">RAILS_ENV</code> and its value using :</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="vg">$RAILS_ENV</span></code></pre></figure>
 
+<p><i style="color:red;">Note, The database for that environment must be created before its migration.</i></p>
 
-<i style="color:red;">Note, The database for that environment must be created before its migration.</i>
-
-Now, Take a look to this tutorial video:
+<p>Now, Take a look to this tutorial video:</p>
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/PcGxPKmmbE8" frameborder="0" allowfullscreen=""></iframe>
 
-</a></a></li></ul>
 
   </div>
 

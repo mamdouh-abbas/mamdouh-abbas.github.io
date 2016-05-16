@@ -3,7 +3,7 @@ layout: post
 title:  "Seeding Tables Using Migration In Rails"
 tags: ruby rails migration database 
 keywords: ruby rails migrate database seed rollback
-description: Seeding Tables Using Migration In Rails.
+description: Tutorial video will guide you to seed tables using Migration in Rails.
 published: true
 ---
 

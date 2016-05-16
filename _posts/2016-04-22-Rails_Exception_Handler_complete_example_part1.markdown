@@ -3,7 +3,7 @@ layout: post
 title: "Rails Exception Handler, Exception Handler Gem"
 keywords: ruby rails exception error handler
 tags: ruby rails exception handler
-description: How to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.
+description: Tutorial video will guide you to handle exceptions in your rails application using rails exception handler gem, step by step tutorial guide.
 published: true
 ---
 

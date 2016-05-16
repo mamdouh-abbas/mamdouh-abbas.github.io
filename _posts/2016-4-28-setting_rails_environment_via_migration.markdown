@@ -3,7 +3,7 @@ layout: post
 title:  "Setting Environment For Rails Migration"
 tags: ruby rails migration database environment
 keywords: ruby rails migrate database environment
-description: Setting Environment For Rails Migration.
+description: Tutorial video will guide you to Set environment for Rails Migration.
 published: true
 ---
 

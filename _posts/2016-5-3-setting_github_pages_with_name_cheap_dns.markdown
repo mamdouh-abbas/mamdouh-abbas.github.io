@@ -3,7 +3,7 @@ layout: post
 title:  "Setting Github Pages With NameCheap DNS"
 tags: Hosting Jekyll Github Namecheap
 keywords: Hosting Jekyll Github Namecheap
-description: How To Set Github Pages With NameCheap DNS
+description: Tutorial video will guide you to set Github pages with Namecheap DNS.
 published: true
 ---
 

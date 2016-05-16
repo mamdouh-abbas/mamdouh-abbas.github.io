@@ -3,7 +3,7 @@ layout: post
 title:  "Migrating Database"
 tags: ruby rails migration database 
 keywords: ruby rails migrate database
-description: Migrating database in rails application.
+description: Tutorial video will guide you to migrate database in Rails Application.
 published: true
 ---
 

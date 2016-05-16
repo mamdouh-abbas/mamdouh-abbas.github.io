@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Accessing And Traversing Array Fields In Vews In Rails"
+title:  "Accessing And Traversing Array Fields In Views In Rails"
 tags: Postgres Mysql Column Array Rails
 keywords: Postgres Mysql Column Array Rails
-description: How To Access And Traverse Array Fields In Vews In Rails
+description: Tutorial video will guide you to access and traverse array fields in views in Rails.
 published: true
 ---
 
@@ -13,7 +13,7 @@ published: true
 
    {% for category in page.categories %} {{ category }} {% endfor %}
 
-<h4>How To Access And Traverse Array Fields In Vews In Rails</h4>
+<h4>How To Access And Traverse Array Fields In Views In Rails</h4>
 
 In our example, We suppose that you watched our tutorials about <a href="/2016/03/31/Rails_With_postgres_database_complete_example.html">rails application with postgres database</a> or <a href="/2016/03/30/Rails_With_Mysql_database_complete_example.html">rails application with Mysql database</a> and <a href="/2016/04/30/adding_column_type_array_to_postgres_table_via_migration_only.html">adding column type array to postgres table via migration only</a> and <a href="/2016/04/30/adding_column_type_array_to_postgres_table_via_model_and_migration.html">adding column type array to postgres table via model and migration</a> and <a href="/2016/05/01/adding_column_type_array_to_mysql_table.html">adding column type array to mysql table</a>.
 

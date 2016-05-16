@@ -3,7 +3,7 @@ layout: post
 title:  "Adding Column Or More To An Existed Table In Rails"
 tags: ruby rails migration database add
 keywords: ruby rails migrate database
-description: Adding Column Or More To An Existed Table In Rails Application.
+description: Tutorial video will guide you to add column or more to an existed table in Rails Application.
 published: true
 ---
 

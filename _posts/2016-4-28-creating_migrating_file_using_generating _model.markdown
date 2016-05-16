@@ -3,7 +3,7 @@ layout: post
 title:  "Creating Migration File Via Generating Rails Model"
 tags: ruby rails migration database 
 keywords: ruby rails migrate database
-description: reating Migration File Via Generating Rails Model.
+description: Tutorial video will guide you to create Migration file via generating Rails Model.
 published: true
 ---
 
@@ -52,4 +52,5 @@ rake db:rollback
 Take a look to this tutorial video:
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/ck3LhvLtLZI" frameborder="0" allowfullscreen></iframe>
+<br>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/UpsRsGvMRYA" frameborder="0" allowfullscreen></iframe>

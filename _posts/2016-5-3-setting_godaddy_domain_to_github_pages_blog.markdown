@@ -3,7 +3,7 @@ layout: post
 title:  "Setting Github Pages With Godaddy DNS"
 tags: Hosting Jekyll Github Godaddy
 keywords: Hosting Jekyll Github Godaddy
-description: How To Set Github Pages With Godaddy DNS
+description: Tutorial video will guide you to set github pages with godaddy DNS
 published: true
 ---
 

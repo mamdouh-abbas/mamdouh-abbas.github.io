@@ -3,7 +3,7 @@ layout: post
 title:  "Deploying Regular HTML Website On Heroku"
 tags: Hosting Heroku Deploy
 keywords: Hosting Heroku Deploy
-description: How to deploy or host an HTML on heroku
+description: Tutorial video will guide you to deploy or host an HTML on heroku.
 published: true
 ---
 
@@ -15,7 +15,7 @@ published: true
 
 <h4>How To Deploy A Regular HTML Website On Heroku.</h4>
 
-The `Heroku` is one of the most pupular `PAAS` program as a service, and used for `server side application` so it suppose that you have a server side programming language such as `php`, `ruby`, `java` and so on.
+The `Heroku` is one of the most pupular `PAAS` program as a service, and used for `server side application` so it supposes that you have a server side programming language such as `php`, `ruby`, `java` and so on.
 
 So, For non server side application, we have a problem to deploy on `heroku`, but you can overcome it.
 

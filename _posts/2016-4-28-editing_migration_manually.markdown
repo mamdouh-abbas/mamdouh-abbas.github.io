@@ -3,7 +3,7 @@ layout: post
 title:  "Editing Migration File Manually In Rails"
 tags: ruby rails migration database 
 keywords: ruby rails migrate database
-description: Editing Migration File Manaully In Rails Application.
+description: Tutorial video will guide you to edit migration file manaully in Rails application.
 published: true
 ---
 

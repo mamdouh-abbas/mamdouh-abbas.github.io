@@ -3,7 +3,7 @@ layout: post
 title:  "Hosting Jekyll Blog On Github Pages"
 tags: Hosting Jekyll Blog Github Pages
 keywords: Hosting Jekyll Blog Github Pages
-description: How To Host Jekyll Blog On Github Pages
+description: Tutorial video will guide you to host Jekyll blog on Github pages.
 published: true
 ---
 

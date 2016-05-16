@@ -3,7 +3,7 @@ layout: post
 title:  "Adding A Column Type Array To Mysql Database Table In Rails"
 tags: Rails Array Column Mysql
 keywords: Rails Array Column Mysql
-description: How To Add A Column Type Array To Mysql Table In Rails Application
+description: Tutorial video will guide you to add a column type array to Mysql table in Rails application.
 published: true
 ---
 

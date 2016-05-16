@@ -3,7 +3,7 @@ layout: post
 title:  "Drop Tables Using Rails Migration"
 tags: ruby rails migration database drop 
 keywords: ruby rails migrate database drop
-description: Drop Tables Using Rails Migration In Rails Application.
+description: Tutorial video will guide you to Drop tables using Rails Migration.
 published: true
 ---
 

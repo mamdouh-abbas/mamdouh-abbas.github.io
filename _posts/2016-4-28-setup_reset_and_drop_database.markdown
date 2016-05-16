@@ -3,7 +3,7 @@ layout: post
 title:  "Setup, Reset And Drop Database"
 tags: ruby rails migration database setup reset drop 
 keywords: ruby rails migrate database setup reset drop
-description: Setup, Reset And Drop Database In Rails Application.
+description: Tutorial video will guide you to Setup, Reset And Drop database in Rails application.
 published: true
 ---
 

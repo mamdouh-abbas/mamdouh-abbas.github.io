@@ -3,7 +3,7 @@ layout: post
 title: "Rails With Mysql database, complete example"
 keywords: ruby rails mysql database
 tags: ruby rails mysql database
-description: How to install, create mysql database and create rails application using it, step by step tutorial guide.
+description: Tutorial video will guide you to install, create mysql database and create rails application using it, step by step tutorial guide.
 published: true
 ---
 

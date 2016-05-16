@@ -3,7 +3,7 @@ layout: post
 title:  "Creating Migration File Via Generating Rails Migration"
 tags: ruby rails migration database 
 keywords: ruby rails migrate database
-description: Creating Migration File Via Generating Migration In Rails Application.
+description: Tutorial video will guide you to create Migration file via generating Migration in Rails Application.
 published: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "Removing Fields From Table via migration"
 tags: ruby rails migration database add
 keywords: ruby rails migrate database
-description: How to remove fields from table via rails migration .
+description: Tutorial video will guide you to remove fields from table via rails migration .
 published: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "Adding A Column Type Array To Postgres Database Table Via Model And Migration In Rails"
 tags: Rails Array Column Postgres
 keywords: Rails Array Column Postgres
-description: How To Add A Column Type Array To Postgres Table In Rails Application
+description: Tutorial video will guide you to add a column type array to Postgres table in Rails. Application
 published: true
 ---
 

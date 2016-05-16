@@ -3,7 +3,7 @@ layout: post
 title:  "Joining Two Tables Via Rails Migration"
 tags: ruby rails migration database join 
 keywords: ruby rails migrate database join
-description: Joining Two Tables Via Rails Migration.
+description: Tutorial video will guide you to Join two tables via Rails Migration.
 published: true
 ---
    

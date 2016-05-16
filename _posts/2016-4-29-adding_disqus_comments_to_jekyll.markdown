@@ -3,7 +3,7 @@ layout: post
 title:  "Adding Disqus Comments To Jekyll Blog"
 tags:  Jekyll Blog Comment Disqus
 keywords: jekyll blog comment disqus
-description: How To Add Disqus Comments To Jekyll Blog
+description: Tutorial video will guide you to add disqus comments to Jekyll blog.
 published: true
 ---
 

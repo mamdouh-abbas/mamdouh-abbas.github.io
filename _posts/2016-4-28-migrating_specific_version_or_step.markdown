@@ -3,7 +3,7 @@ layout: post
 title:  "Migrating Specific VERSION Or STEP In Rails Migration"
 tags: ruby rails migration database version step 
 keywords: ruby rails migrate database version step
-description: Migrating Specific VERSION Or STEP In Rails Migration Migration In Rails Application.
+description: Tutorial video will guide you to migrate specific VERSION or STEP in Rails Migration.
 published: true
 ---
 

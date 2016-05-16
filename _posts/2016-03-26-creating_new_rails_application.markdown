@@ -3,7 +3,7 @@ layout: post
 title: "Creating a new Rails application"
 tags: ruby on rails rails software 
 keywords: ruby rails 
-description: Starting a new Rails application and screencast.
+description: Tutorial video will guide you to start a new Rails application.
 published: true
 ---
 

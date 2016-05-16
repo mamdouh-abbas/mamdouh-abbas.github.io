@@ -3,7 +3,7 @@ layout: post
 title: "Rails With Postgresql database, complete example"
 keywords: ruby rails postgres database
 tags: ruby rails postgres database
-description: How to install, create postgres database and create rails application using it, step by step tutorial guide.
+description: Tutorial video will guide you to install, create postgres database and create rails application using it, step by step tutorial guide.
 published: true
 ---
 

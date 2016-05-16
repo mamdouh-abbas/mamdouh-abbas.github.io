@@ -3,7 +3,7 @@ layout: post
 title:  "Creating Migration File Via Rails Scaffold"
 tags: ruby rails migration database 
 keywords: ruby rails migrate scaffold database
-description: Creating Migration File Via Rails Scaffold.
+description: Tutorial video will guide you to create migration file via Rails Scaffold.
 published: true
 ---
 

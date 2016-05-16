@@ -3,7 +3,7 @@ layout: post
 title:  "Escaping Double Curly Braces In Markdown"
 tags: Escape Markdown Jekyll
 keywords: Escape Markdown Jekyll
-description: How To Escape Double Curly Braces In Markdown
+description: Tutorial video will guide you to escape double curly braces in Markdown.
 published: true
 ---
 

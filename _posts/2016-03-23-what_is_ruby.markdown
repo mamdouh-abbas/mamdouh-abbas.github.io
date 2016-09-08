@@ -9,6 +9,7 @@ published: true
 
    TAGS:
    
+   
    {% for tag in page.tags %} {{ tag }} {% endfor %}
 
    {% for category in page.categories %} {{ category }} {% endfor %}
